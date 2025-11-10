@@ -25,8 +25,8 @@ export const viewport: Viewport = {
   maximumScale: 5,
   userScalable: true,
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#1428A0' },
-    { media: '(prefers-color-scheme: dark)', color: '#1428A0' }
+    { media: '(prefers-color-scheme: light)', color: '#4ECDC4' },
+    { media: '(prefers-color-scheme: dark)', color: '#0a0a0f' }
   ],
   colorScheme: 'light'
 }
@@ -42,52 +42,53 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   
   return {
     title: {
-      default: locale === 'ar' 
-        ? "معرض سيتي سكيب العالمي 2025 | Cityscape Global 2025"
-        : "Cityscape Global 2025 | World Real Estate Exhibition",
-      template: locale === 'ar' 
-        ? "%s | معرض سيتي سكيب العالمي"
-        : "%s | Cityscape Global"
+      default: locale === 'ar'
+        ? "دارك كور | شريكك الاستثماري الاستراتيجي في السعودية"
+        : "Dark Core | Your Strategic Investment Partner in Saudi Arabia",
+      template: locale === 'ar'
+        ? "%s | دارك كور"
+        : "%s | Dark Core"
     },
     description: locale === 'ar'
-      ? "شريكك الاستراتيجي في الاستثمار والتطوير العقاري. نقدم حلول متكاملة لبناء مستقبل عقاري مزدهر في المملكة العربية السعودية"
-      : "Your strategic partner in real estate investment and development. We provide integrated solutions for building a prosperous real estate future in Saudi Arabia",
+      ? "شركة استثمارية سعودية متخصصة في التمويل التنفيذي، إدارة المشاريع، والاستثمار في الطاقة المتجددة والتطوير العقاري والبنية التحتية الذكية. نحول الفرص الاستثمارية عالية العوائد إلى مشاريع ناجحة من خلال تمويل دقيق وإدارة مباشرة وشفافية كاملة."
+      : "Saudi investment firm specializing in executive financing, project management, and investments in renewable energy, real estate development, and smart infrastructure. We transform high-return investment opportunities into successful projects through precise financing, direct management, and complete transparency.",
 
     keywords: [
-      "معرض سيتي سكيب", "سيتي سكيب العالمي", "Cityscape Global", "العقارات", "التطوير العمراني", "المعارض",
-      "مطورين عقاريين", "real estate exhibition", "property development", "urban development",
-      "cityscape 2025", "معرض 2025"
+      "دارك كور", "Dark Core", "استثمار سعودي", "Saudi investment", "التمويل التنفيذي", "executive financing",
+      "إدارة المشاريع", "project management", "الطاقة المتجددة", "renewable energy", "التطوير العقاري", "real estate development",
+      "الاستحواذ المرحلي", "phased acquisition", "الشراكات الاستراتيجية", "strategic partnerships", "استثمار الرياض", "Riyadh investment",
+      "البنية التحتية الذكية", "smart infrastructure", "المدن الذكية", "smart cities", "الاستثمار الاستراتيجي", "strategic investment"
     ],
 
-    authors: [{ name: "Cityscape Global Team" }],
-    creator: "Cityscape Global",
-    publisher: "Cityscape",
+    authors: [{ name: "Dark Core Investment Team" }],
+    creator: "Dark Core",
+    publisher: "Dark Core",
 
     alternates: {
-      canonical: `https://cityscape-global.com/${locale}`,
+      canonical: `https://darkcore.sa/${locale}`,
       languages: {
-        'ar': 'https://cityscape-global.com/ar',
-        'en': 'https://cityscape-global.com/en'
+        'ar': 'https://darkcore.sa/ar',
+        'en': 'https://darkcore.sa/en'
       }
     },
 
     openGraph: {
       type: 'website',
       locale: locale === 'ar' ? 'ar_SA' : 'en_US',
-      url: `https://cityscape-global.com/${locale}`,
+      url: `https://darkcore.sa/${locale}`,
       title: locale === 'ar'
-        ? 'معرض سيتي سكيب العالمي 2025 | Cityscape Global'
-        : 'Cityscape Global 2025 | World Real Estate Exhibition',
+        ? 'دارك كور | شريكك الاستثماري الاستراتيجي في السعودية'
+        : 'Dark Core | Your Strategic Investment Partner in Saudi Arabia',
       description: locale === 'ar'
-        ? 'انضم إلى معرض سيتي سكيب العالمي 2025 مع أفضل الشركات والمطورين في قطاع العقارات'
-        : 'Join Cityscape Global 2025 with the best companies and developers in real estate',
-      siteName: locale === 'ar' ? 'معرض سيتي سكيب العالمي' : 'Cityscape Global',
+        ? 'شركة استثمارية سعودية متخصصة في التمويل التنفيذي وإدارة المشاريع والاستثمار في الطاقة المتجددة والتطوير العقاري'
+        : 'Saudi investment firm specializing in executive financing, project management, and investments in renewable energy and real estate development',
+      siteName: locale === 'ar' ? 'دارك كور' : 'Dark Core',
       images: [
         {
-          url: 'https://cityscape-global.com/images/og-image.jpg',
+          url: 'https://darkcore.sa/images/og-image.jpg',
           width: 1200,
           height: 630,
-          alt: locale === 'ar' ? 'معرض سيتي سكيب العالمي 2025' : 'Cityscape Global 2025',
+          alt: locale === 'ar' ? 'دارك كور - الاستثمار الاستراتيجي' : 'Dark Core - Strategic Investment',
           type: 'image/jpeg',
         }
       ],
@@ -95,15 +96,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     twitter: {
       card: 'summary_large_image',
-      site: '@CityscapeGlobal',
-      creator: '@CityscapeGlobal',
-      title: locale === 'ar' 
-        ? 'معرض سيتي سكيب العالمي 2025'
-        : 'Cityscape Global 2025',
+      site: '@darkcoreinv',
+      creator: '@darkcoreinv',
+      title: locale === 'ar'
+        ? 'دارك كور | الاستثمار الاستراتيجي'
+        : 'Dark Core | Strategic Investment',
       description: locale === 'ar'
-        ? 'انضم إلى معرض سيتي سكيب العالمي 2025'
-        : 'Join Cityscape Global 2025',
-      images: ['https://cityscape-global.com/images/twitter-image.jpg'],
+        ? 'شريكك الاستثماري الاستراتيجي في السعودية'
+        : 'Your Strategic Investment Partner in Saudi Arabia',
+      images: ['https://darkcore.sa/images/twitter-image.jpg'],
     },
 
     manifest: '/manifest.json',
@@ -137,7 +138,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         {
           rel: 'mask-icon',
           url: '/safari-pinned-tab.svg',
-          color: '#1428A0'
+          color: '#4ECDC4'
         }
       ]
     },
@@ -158,7 +159,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     referrer: 'origin-when-cross-origin',
     generator: 'Next.js',
-    applicationName: locale === 'ar' ? 'معرض سيتي سكيب العالمي' : 'Cityscape Global',
+    applicationName: locale === 'ar' ? 'دارك كور' : 'Dark Core',
     formatDetection: {
       email: false,
       address: false,
@@ -195,14 +196,14 @@ export default async function LocaleLayout({
 
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content={locale === 'ar' ? "سيتي سكيب 2025" : "Cityscape 2025"} />
+        <meta name="apple-mobile-web-app-title" content={locale === 'ar' ? "دارك كور" : "Dark Core"} />
 
-        <meta name="msapplication-TileColor" content="#1428A0" />
+        <meta name="msapplication-TileColor" content="#4ECDC4" />
         <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
 
         <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="application-name" content={locale === 'ar' ? "سيتي سكيب 2025" : "Cityscape 2025"} />
+        <meta name="application-name" content={locale === 'ar' ? "دارك كور" : "Dark Core"} />
 
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
@@ -212,36 +213,29 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Event",
-              "name": locale === 'ar' ? "معرض سيتي سكيب العالمي 2025" : "Cityscape Global 2025",
-              "description": locale === 'ar' 
-                ? "معرض سيتي سكيب العالمي للعقارات والتطوير العمراني"
-                : "Cityscape Global Exhibition for Real Estate and Urban Development",
-              "startDate": "2025-11-17",
-              "endDate": "2025-11-23",
-              "location": {
-                "@type": "Place",
-                "name": locale === 'ar' 
-                  ? "مركز الرياض للمعارض والمؤتمرات"
-                  : "Riyadh Exhibition and Convention Center",
-                "address": {
-                  "@type": "PostalAddress",
-                  "streetAddress": locale === 'ar' ? "طريق الملك عبدالله" : "King Abdullah Road",
-                  "addressLocality": locale === 'ar' ? "الرياض" : "Riyadh",
-                  "addressCountry": "SA"
-                }
+              "@type": "Organization",
+              "name": locale === 'ar' ? "دارك كور" : "Dark Core",
+              "description": locale === 'ar'
+                ? "شركة استثمارية سعودية متخصصة في التمويل التنفيذي وإدارة المشاريع"
+                : "Saudi investment firm specializing in executive financing and project management",
+              "url": "https://darkcore.sa",
+              "logo": "https://darkcore.sa/Asset 1.svg",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+966558181410",
+                "contactType": "customer service",
+                "areaServed": "SA",
+                "availableLanguage": ["ar", "en"]
               },
-              "organizer": {
-                "@type": "Organization",
-                "name": "Cityscape Global",
-                "url": "https://cityscape-global.com"
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": locale === 'ar' ? "الرياض" : "Riyadh",
+                "addressCountry": "SA"
               },
-              "offers": {
-                "@type": "Offer",
-                "availability": "https://schema.org/InStock",
-                "price": "0",
-                "priceCurrency": "SAR"
-              }
+              "sameAs": [
+                "https://www.instagram.com/darkcoreinv",
+                "https://x.com/darkcoreinv"
+              ]
             })
           }}
         />

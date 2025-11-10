@@ -89,7 +89,7 @@ export function Navbar() {
             />
           </motion.div>
 
-          {/* Desktop Navigation */}
+          {/* Deskto p Navigation */}
           <div
             className={`hidden lg:flex items-center justify-center flex-1 ${
               isRTL ? "mr-10" : "ml-10"
