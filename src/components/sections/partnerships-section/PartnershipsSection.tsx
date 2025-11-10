@@ -67,7 +67,7 @@ export function PartnershipsSection() {
                 >
                     <h2
                         className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 ${
-                            isRTL ? "font-cairo" : "font-poppins"
+                            isRTL ? "font-almarai" : "font-poppins"
                         }`}
                     >
                         <span className="text-white">{currentContent.title} </span>
@@ -85,7 +85,7 @@ export function PartnershipsSection() {
 
                     <motion.p
                         className={`text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-6 ${
-                            isRTL ? "font-cairo" : "font-poppins"
+                            isRTL ? "font-almarai" : "font-poppins"
                         }`}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -117,7 +117,7 @@ export function PartnershipsSection() {
                             <div className="aspect-[4/3] bg-gradient-to-br from-[#4ECDC4]/20 to-[#5bb5a2]/20 flex items-center justify-center">
                                 <div className="text-center p-8">
                                     <HandshakeIcon className="w-20 h-20 sm:w-24 sm:h-24 text-[#4ECDC4] mx-auto mb-4 opacity-50" />
-                                    <p className={`text-gray-400 text-sm sm:text-base ${isRTL ? "font-cairo" : "font-poppins"}`}>
+                                    <p className={`text-gray-400 text-sm sm:text-base ${isRTL ? "font-almarai" : "font-poppins"}`}>
                                         {isRTL ? "سيتم إضافة الصورة هنا" : "Image will be added here"}
                                     </p>
                                 </div>
@@ -145,7 +145,7 @@ export function PartnershipsSection() {
                         >
                             <p
                                 className={`text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed ${
-                                    isRTL ? "font-cairo" : "font-poppins"
+                                    isRTL ? "font-almarai" : "font-poppins"
                                 }`}
                             >
                                 {currentContent.description}
@@ -184,7 +184,7 @@ export function PartnershipsSection() {
 
                                 <h3
                                     className={`text-xl sm:text-2xl font-bold text-white mb-3 ${
-                                        isRTL ? "font-cairo" : "font-poppins"
+                                        isRTL ? "font-almarai" : "font-poppins"
                                     }`}
                                 >
                                     {feature.title}
@@ -192,7 +192,7 @@ export function PartnershipsSection() {
 
                                 <p
                                     className={`text-sm sm:text-base text-gray-400 leading-relaxed ${
-                                        isRTL ? "font-cairo" : "font-poppins"
+                                        isRTL ? "font-almarai" : "font-poppins"
                                     }`}
                                 >
                                     {feature.description}
@@ -212,7 +212,7 @@ export function PartnershipsSection() {
                 >
                     <h3
                         className={`text-xl sm:text-2xl md:text-3xl font-bold text-white mb-6 ${
-                            isRTL ? "font-cairo" : "font-poppins"
+                            isRTL ? "font-almarai" : "font-poppins"
                         }`}
                     >
                         {currentContent.cta.title}
@@ -220,7 +220,7 @@ export function PartnershipsSection() {
 
                     <motion.button
                         className={`group px-8 sm:px-10 py-4 sm:py-5 rounded-lg font-semibold text-base sm:text-lg text-[#0a0a0f] bg-[#4ECDC4] hover:bg-[#5bb5a2] transition-all duration-300 shadow-lg hover:shadow-[#4ECDC4]/50 flex items-center gap-3 mx-auto ${
-                            isRTL ? "flex-row-reverse font-cairo" : "font-poppins"
+                            isRTL ? "flex-row-reverse font-almarai" : "font-poppins"
                         }`}
                         whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.95 }}

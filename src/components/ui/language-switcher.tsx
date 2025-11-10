@@ -87,7 +87,7 @@ function LanguageSwitcher() {
                         damping: 30
                     }}
                 >
-                    <span className="font-cairo">ع</span>
+                    <span className="font-almarai">ع</span>
                 </motion.div>
 
                 {/* Sliding Background - ينتقل بشكل خفيف */}

@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import { LanguageSwitcher } from "./language-switcher";
 import { motion, AnimatePresence } from "framer-motion";
 import { navbarContent } from "./navbar-content";
+import Image from "next/image";
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -78,19 +79,14 @@ export function Navbar() {
             transition={{ duration: 0.2 }}
             onClick={() => scrollToSection("home")}
           >
-            <h1
-              className={`text-2xl sm:text-3xl font-bold ${
-                isRTL ? "font-cairo" : "font-poppins"
-              }`}
-              style={{
-                background: "linear-gradient(to right, #4ECDC4 0%, #5bb5a2 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              {currentContent.logo}
-            </h1>
+            <Image
+              src="/Asset 1.svg"
+              alt="Logo"
+              width={180}
+              height={60}
+              priority
+              className="h-12 w-auto sm:h-14"
+            />
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -104,7 +100,7 @@ export function Navbar() {
                 key={index}
                 href={`#${item.id}`}
                 className={`font-medium text-sm xl:text-base transition-all duration-300 py-2 px-3 xl:px-4 rounded-lg relative text-center text-white ${
-                  isRTL ? "font-cairo" : "font-poppins"
+                  isRTL ? "font-almarai" : "font-poppins"
                 }`}
                 whileHover={{
                   scale: 1.05,
@@ -189,7 +185,7 @@ export function Navbar() {
                       key={index}
                       onClick={() => scrollToSection(item.id)}
                       className={`w-full py-3 px-4 rounded-lg transition-all duration-300 text-white hover:text-[#4ECDC4] hover:bg-[#4ECDC4]/10 ${
-                        isRTL ? "text-right font-cairo" : "text-left font-poppins"
+                        isRTL ? "text-right font-almarai" : "text-left font-poppins"
                       }`}
                       initial={{ opacity: 0, x: isRTL ? 20 : -20 }}
                       animate={{ opacity: 1, x: 0 }}

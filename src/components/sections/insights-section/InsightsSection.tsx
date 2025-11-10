@@ -60,7 +60,7 @@ export function InsightsSection() {
                 >
                     <h2
                         className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 ${
-                            isRTL ? "font-cairo" : "font-poppins"
+                            isRTL ? "font-almarai" : "font-poppins"
                         }`}
                     >
                         <span className="text-white">{currentContent.title} </span>
@@ -80,7 +80,7 @@ export function InsightsSection() {
 
                     <motion.p
                         className={`text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed ${
-                            isRTL ? "font-cairo" : "font-poppins"
+                            isRTL ? "font-almarai" : "font-poppins"
                         }`}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -115,7 +115,7 @@ export function InsightsSection() {
                                 <div className="flex items-center justify-between mb-4">
                                     <span
                                         className={`text-xs sm:text-sm font-semibold px-3 py-1 rounded-full ${
-                                            isRTL ? "font-cairo" : "font-poppins"
+                                            isRTL ? "font-almarai" : "font-poppins"
                                         }`}
                                         style={{
                                             background: "rgba(78, 205, 196, 0.1)",
@@ -132,7 +132,7 @@ export function InsightsSection() {
                                 {/* Title */}
                                 <h3
                                     className={`text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-[#4ECDC4] transition-colors ${
-                                        isRTL ? "font-cairo" : "font-poppins"
+                                        isRTL ? "font-almarai" : "font-poppins"
                                     }`}
                                 >
                                     {article.title}
@@ -146,7 +146,7 @@ export function InsightsSection() {
                                 {/* Description */}
                                 <p
                                     className={`text-sm sm:text-base text-gray-400 leading-relaxed mb-6 ${
-                                        isRTL ? "font-cairo" : "font-poppins"
+                                        isRTL ? "font-almarai" : "font-poppins"
                                     }`}
                                 >
                                     {article.description}
@@ -156,7 +156,7 @@ export function InsightsSection() {
                                 <motion.a
                                     href={article.link}
                                     className={`inline-flex items-center gap-2 text-[#4ECDC4] font-semibold hover:gap-3 transition-all duration-300 ${
-                                        isRTL ? "flex-row-reverse font-cairo" : "font-poppins"
+                                        isRTL ? "flex-row-reverse font-almarai" : "font-poppins"
                                     }`}
                                     whileHover={{ x: isRTL ? -5 : 5 }}
                                 >
@@ -177,7 +177,7 @@ export function InsightsSection() {
                 >
                     <h3
                         className={`text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12 sm:mb-16 text-white ${
-                            isRTL ? "font-cairo" : "font-poppins"
+                            isRTL ? "font-almarai" : "font-poppins"
                         }`}
                     >
                         {currentContent.reportsTitle}
@@ -214,7 +214,7 @@ export function InsightsSection() {
                                     {/* Title */}
                                     <h4
                                         className={`text-xl sm:text-2xl font-bold text-white mb-3 ${
-                                            isRTL ? "font-cairo" : "font-poppins"
+                                            isRTL ? "font-almarai" : "font-poppins"
                                         }`}
                                     >
                                         {report.title}
@@ -223,7 +223,7 @@ export function InsightsSection() {
                                     {/* Description */}
                                     <p
                                         className={`text-sm sm:text-base text-gray-400 leading-relaxed mb-6 ${
-                                            isRTL ? "font-cairo" : "font-poppins"
+                                            isRTL ? "font-almarai" : "font-poppins"
                                         }`}
                                     >
                                         {report.description}
@@ -233,7 +233,7 @@ export function InsightsSection() {
                                     <motion.a
                                         href={report.link}
                                         className={`inline-flex items-center gap-2 text-[#4ECDC4] font-semibold hover:gap-3 transition-all duration-300 ${
-                                            isRTL ? "flex-row-reverse font-cairo" : "font-poppins"
+                                            isRTL ? "flex-row-reverse font-almarai" : "font-poppins"
                                         }`}
                                         whileHover={{ x: isRTL ? -5 : 5 }}
                                     >
@@ -264,14 +264,14 @@ export function InsightsSection() {
                         <div className="text-center mb-8">
                             <h3
                                 className={`text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 ${
-                                    isRTL ? "font-cairo" : "font-poppins"
+                                    isRTL ? "font-almarai" : "font-poppins"
                                 }`}
                             >
                                 {currentContent.subscribe.title}
                             </h3>
                             <p
                                 className={`text-base sm:text-lg text-gray-300 ${
-                                    isRTL ? "font-cairo" : "font-poppins"
+                                    isRTL ? "font-almarai" : "font-poppins"
                                 }`}
                             >
                                 {currentContent.subscribe.description}
@@ -284,12 +284,12 @@ export function InsightsSection() {
                                 type="email"
                                 placeholder={currentContent.subscribe.placeholder}
                                 className={`flex-1 px-6 py-4 rounded-lg bg-[#0a0a0f] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#4ECDC4] transition-all duration-300 ${
-                                    isRTL ? "text-right font-cairo" : "text-left font-poppins"
+                                    isRTL ? "text-right font-almarai" : "text-left font-poppins"
                                 }`}
                             />
                             <motion.button
                                 className={`px-8 py-4 rounded-lg font-semibold text-[#0a0a0f] bg-[#4ECDC4] hover:bg-[#5bb5a2] transition-all duration-300 shadow-lg hover:shadow-[#4ECDC4]/50 ${
-                                    isRTL ? "font-cairo" : "font-poppins"
+                                    isRTL ? "font-almarai" : "font-poppins"
                                 }`}
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}

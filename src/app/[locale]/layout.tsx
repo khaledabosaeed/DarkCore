@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Cairo, Tajawal } from "next/font/google";
+import { Inter, Almarai } from "next/font/google";
 import "../globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { LoadingProvider } from "@/components/ui/loading";
@@ -11,17 +11,10 @@ const inter = Inter({
   display: 'swap',
 });
 
-const cairo = Cairo({
+const almarai = Almarai({
   subsets: ["arabic"],
-  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-cairo",
-  display: 'swap',
-});
-
-const tajawal = Tajawal({
-  subsets: ["arabic"],
-  weight: ["200", "300", "400", "500", "700", "800", "900"],
-  variable: "--font-tajawal",
+  weight: ["300", "400", "700", "800"],
+  variable: "--font-almarai",
   display: 'swap',
 });
 
@@ -57,8 +50,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         : "%s | Cityscape Global"
     },
     description: locale === 'ar'
-      ? "انضم إلى معرض سيتي سكيب العالمي 2025. فرصتك للتألق مع أفضل الشركات والمطورين في قطاع العقارات والتطوير العمراني"
-      : "Join Cityscape Global 2025. Your opportunity to shine with the best companies and developers in the real estate and urban development sector",
+      ? "شريكك الاستراتيجي في الاستثمار والتطوير العقاري. نقدم حلول متكاملة لبناء مستقبل عقاري مزدهر في المملكة العربية السعودية"
+      : "Your strategic partner in real estate investment and development. We provide integrated solutions for building a prosperous real estate future in Saudi Arabia",
 
     keywords: [
       "معرض سيتي سكيب", "سيتي سكيب العالمي", "Cityscape Global", "العقارات", "التطوير العمراني", "المعارض",
@@ -117,10 +110,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     icons: {
       icon: [
-        { url: '/logo/1.svg', sizes: '16x16', type: 'image/png' },
-        { url: '/logo/1.svg', sizes: '32x32', type: 'image/png' },
-        { url: '/logo/1.svg', sizes: '96x96', type: 'image/png' },
-        { url: '/logo/1.svg', sizes: 'any' }
+        { url: '/favicon.svg', sizes: '16x16', type: 'image/svg+xml' },
+        { url: '/favicon.svg', sizes: '32x32', type: 'image/svg+xml' },
+        { url: '/favicon.svg', sizes: '96x96', type: 'image/svg+xml' },
+        { url: '/favicon.svg', sizes: 'any', type: 'image/svg+xml' }
       ],
 
       apple: [
@@ -255,7 +248,7 @@ export default async function LocaleLayout({
       </head>
 
       <body
-        className={`${cairo.variable} ${tajawal.variable} ${inter.variable} antialiased min-h-screen ${locale === 'ar' ? 'font-arabic' : 'font-english'}`}
+        className={`${almarai.variable} ${inter.variable} antialiased min-h-screen ${locale === 'ar' ? 'font-arabic' : 'font-english'}`}
         suppressHydrationWarning
       >
         <LanguageProvider initialLocale={locale as 'ar' | 'en'}>

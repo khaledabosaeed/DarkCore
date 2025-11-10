@@ -66,7 +66,7 @@ export function ShareholdersSection() {
                 >
                     <h2
                         className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 ${
-                            isRTL ? "font-cairo" : "font-poppins"
+                            isRTL ? "font-almarai" : "font-poppins"
                         }`}
                     >
                         <span className="text-white">{currentContent.preTitle} </span>
@@ -86,7 +86,7 @@ export function ShareholdersSection() {
 
                     <motion.p
                         className={`text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed ${
-                            isRTL ? "font-cairo" : "font-poppins"
+                            isRTL ? "font-almarai" : "font-poppins"
                         }`}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -123,7 +123,7 @@ export function ShareholdersSection() {
 
                             <h3
                                 className={`text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 ${
-                                    isRTL ? "font-cairo" : "font-poppins"
+                                    isRTL ? "font-almarai" : "font-poppins"
                                 }`}
                             >
                                 {currentContent.mainFeature.title}
@@ -131,7 +131,7 @@ export function ShareholdersSection() {
 
                             <p
                                 className={`text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl ${
-                                    isRTL ? "font-cairo" : "font-poppins"
+                                    isRTL ? "font-almarai" : "font-poppins"
                                 }`}
                             >
                                 {currentContent.mainFeature.description}
@@ -170,7 +170,7 @@ export function ShareholdersSection() {
 
                                 <h4
                                     className={`text-xl sm:text-2xl font-bold text-white mb-3 ${
-                                        isRTL ? "font-cairo" : "font-poppins"
+                                        isRTL ? "font-almarai" : "font-poppins"
                                     }`}
                                 >
                                     {benefit.title}
@@ -178,7 +178,7 @@ export function ShareholdersSection() {
 
                                 <p
                                     className={`text-sm sm:text-base text-gray-400 leading-relaxed ${
-                                        isRTL ? "font-cairo" : "font-poppins"
+                                        isRTL ? "font-almarai" : "font-poppins"
                                     }`}
                                 >
                                     {benefit.description}
@@ -205,7 +205,7 @@ export function ShareholdersSection() {
                     >
                         <h3
                             className={`text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 text-center ${
-                                isRTL ? "font-cairo" : "font-poppins"
+                                isRTL ? "font-almarai" : "font-poppins"
                             }`}
                         >
                             {currentContent.philosophy.title}
@@ -213,7 +213,7 @@ export function ShareholdersSection() {
 
                         <p
                             className={`text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed mb-4 text-center ${
-                                isRTL ? "font-cairo" : "font-poppins"
+                                isRTL ? "font-almarai" : "font-poppins"
                             }`}
                         >
                             {currentContent.philosophy.description}
@@ -221,7 +221,7 @@ export function ShareholdersSection() {
 
                         <p
                             className={`text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed text-center ${
-                                isRTL ? "font-cairo" : "font-poppins"
+                                isRTL ? "font-almarai" : "font-poppins"
                             }`}
                         >
                             {currentContent.philosophy.subdescription}
@@ -239,7 +239,7 @@ export function ShareholdersSection() {
                 >
                     <h4
                         className={`text-xl sm:text-2xl md:text-3xl font-bold text-white mb-6 ${
-                            isRTL ? "font-cairo" : "font-poppins"
+                            isRTL ? "font-almarai" : "font-poppins"
                         }`}
                     >
                         {currentContent.cta.question}
@@ -247,7 +247,7 @@ export function ShareholdersSection() {
 
                     <motion.button
                         className={`group px-8 sm:px-10 py-4 sm:py-5 rounded-lg font-semibold text-base sm:text-lg text-[#0a0a0f] bg-[#4ECDC4] hover:bg-[#5bb5a2] transition-all duration-300 shadow-lg hover:shadow-[#4ECDC4]/50 flex items-center gap-3 mx-auto ${
-                            isRTL ? "flex-row-reverse font-cairo" : "font-poppins"
+                            isRTL ? "flex-row-reverse font-almarai" : "font-poppins"
                         }`}
                         whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.95 }}
@@ -262,7 +262,7 @@ export function ShareholdersSection() {
 
                     <motion.p
                         className={`text-sm sm:text-base text-gray-500 mt-6 ${
-                            isRTL ? "font-cairo" : "font-poppins"
+                            isRTL ? "font-almarai" : "font-poppins"
                         }`}
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}

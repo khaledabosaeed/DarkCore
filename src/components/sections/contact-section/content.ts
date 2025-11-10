@@ -24,38 +24,20 @@ export const contactContent = {
             button: "إرسال الرسالة"
         },
         offices: {
-            title: "المكاتب العالمية",
+            title: "مقرنا الرئيسي",
             locations: [
                 {
-                    city: "نيويورك",
-                    country: "الولايات المتحدة",
-                    address: "450 Park Avenue, 15th Floor",
-                    phone: "+1 (212) 555-0100"
-                },
-                {
-                    city: "لندن",
-                    country: "المملكة المتحدة",
-                    address: "25 Bank Street, Canary Wharf",
-                    phone: "+44 (20) 7946 0958"
-                },
-                {
-                    city: "سنغافورة",
-                    country: "سنغافورة",
-                    address: "1 Raffles Place, Tower 2",
-                    phone: "+65 6557 0123"
-                },
-                {
-                    city: "دبي",
-                    country: "الإمارات العربية المتحدة",
-                    address: "DIFC, Gate Village 4",
-                    phone: "+971 4 567 8900"
+                    city: "الرياض",
+                    country: "المملكة العربية السعودية",
+                    address: "الرياض، المملكة العربية السعودية",
+                    phone: "+966 55 818 1410"
                 }
             ]
         },
         generalInquiries: {
             title: "الاستفسارات العامة",
             email: "info@darkcore.com",
-            phone: "+1 (212) 555-0100"
+            phone: "+966 55 818 1410"
         }
     },
     en: {
@@ -83,38 +65,20 @@ export const contactContent = {
             button: "Send Message"
         },
         offices: {
-            title: "Global Offices",
+            title: "Our Headquarters",
             locations: [
                 {
-                    city: "New York",
-                    country: "United States",
-                    address: "450 Park Avenue, 15th Floor",
-                    phone: "+1 (212) 555-0100"
-                },
-                {
-                    city: "London",
-                    country: "United Kingdom",
-                    address: "25 Bank Street, Canary Wharf",
-                    phone: "+44 (20) 7946 0958"
-                },
-                {
-                    city: "Singapore",
-                    country: "Singapore",
-                    address: "1 Raffles Place, Tower 2",
-                    phone: "+65 6557 0123"
-                },
-                {
-                    city: "Dubai",
-                    country: "United Arab Emirates",
-                    address: "DIFC, Gate Village 4",
-                    phone: "+971 4 567 8900"
+                    city: "Riyadh",
+                    country: "Saudi Arabia",
+                    address: "Riyadh, Saudi Arabia",
+                    phone: "+966 55 818 1410"
                 }
             ]
         },
         generalInquiries: {
             title: "General Inquiries",
             email: "info@darkcore.com",
-            phone: "+1 (212) 555-0100"
+            phone: "+966 55 818 1410"
         }
     }
 }

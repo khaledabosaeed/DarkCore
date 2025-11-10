@@ -122,7 +122,7 @@ export function HeroSection() {
                         >
                             <h1
                                 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 ${
-                                    isRTL ? "font-cairo" : "font-poppins"
+                                    isRTL ? "font-almarai" : "font-poppins"
                                 }`}
                             >
                                 <motion.span
@@ -154,7 +154,7 @@ export function HeroSection() {
                             {/* Description */}
                             <motion.p
                                 className={`text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed ${
-                                    isRTL ? "font-cairo" : "font-poppins"
+                                    isRTL ? "font-almarai" : "font-poppins"
                                 }`}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -176,9 +176,10 @@ export function HeroSection() {
                             viewport={{ once: true }}
                         >
                             {/* Primary Button */}
-                            <motion.button
+                            <motion.a
+                                href="#contact"
                                 className={`group px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg text-[#0a0a0f] bg-[#4ECDC4] hover:bg-[#5bb5a2] transition-all duration-300 shadow-lg hover:shadow-[#4ECDC4]/50 flex items-center gap-2 ${
-                                    isRTL ? "flex-row-reverse font-cairo" : "font-poppins"
+                                    isRTL ? "flex-row-reverse font-almarai" : "font-poppins"
                                 }`}
                                 whileHover={{ scale: 1.05, y: -2 }}
                                 whileTap={{ scale: 0.95 }}
@@ -189,18 +190,19 @@ export function HeroSection() {
                                         isRTL ? "rotate-180" : ""
                                     }`}
                                 />
-                            </motion.button>
+                            </motion.a>
 
                             {/* Secondary Button */}
-                            <motion.button
+                            <motion.a
+                                href="#contact"
                                 className={`px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg text-white border-2 border-[#4ECDC4] hover:bg-[#4ECDC4]/10 transition-all duration-300 ${
-                                    isRTL ? "font-cairo" : "font-poppins"
+                                    isRTL ? "font-almarai" : "font-poppins"
                                 }`}
                                 whileHover={{ scale: 1.05, y: -2 }}
                                 whileTap={{ scale: 0.95 }}
                             >
                                 {currentContent.secondaryButton}
-                            </motion.button>
+                            </motion.a>
                         </motion.div>
 
                         {/* Features */}
@@ -237,7 +239,7 @@ export function HeroSection() {
                                         {/* Title */}
                                         <h3
                                             className={`text-lg sm:text-xl font-bold text-white mb-2 ${
-                                                isRTL ? "font-cairo" : "font-poppins"
+                                                isRTL ? "font-almarai" : "font-poppins"
                                             }`}
                                         >
                                             {feature.title}
@@ -246,7 +248,7 @@ export function HeroSection() {
                                         {/* Description */}
                                         <p
                                             className={`text-sm sm:text-base text-gray-400 ${
-                                                isRTL ? "font-cairo" : "font-poppins"
+                                                isRTL ? "font-almarai" : "font-poppins"
                                             }`}
                                         >
                                             {feature.description}

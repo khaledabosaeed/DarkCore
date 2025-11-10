@@ -57,7 +57,7 @@ export function ContactSection() {
                 >
                     <h2
                         className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 ${
-                            isRTL ? "font-cairo" : "font-poppins"
+                            isRTL ? "font-almarai" : "font-poppins"
                         }`}
                     >
                         <span className="text-white">{currentContent.title} </span>
@@ -75,7 +75,7 @@ export function ContactSection() {
 
                     <motion.p
                         className={`text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed ${
-                            isRTL ? "font-cairo" : "font-poppins"
+                            isRTL ? "font-almarai" : "font-poppins"
                         }`}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -104,7 +104,7 @@ export function ContactSection() {
                         >
                             <h3
                                 className={`text-2xl sm:text-3xl font-bold text-white mb-6 ${
-                                    isRTL ? "font-cairo" : "font-poppins"
+                                    isRTL ? "font-almarai" : "font-poppins"
                                 }`}
                             >
                                 {currentContent.form.title}
@@ -115,7 +115,7 @@ export function ContactSection() {
                                 <div>
                                     <label
                                         className={`block text-sm font-medium text-gray-300 mb-2 ${
-                                            isRTL ? "text-right font-cairo" : "text-left font-poppins"
+                                            isRTL ? "text-right font-almarai" : "text-left font-poppins"
                                         }`}
                                     >
                                         {currentContent.form.name.label}
@@ -124,7 +124,7 @@ export function ContactSection() {
                                         type="text"
                                         placeholder={currentContent.form.name.placeholder}
                                         className={`w-full px-4 py-3 rounded-lg bg-[#0a0a0f] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#4ECDC4] transition-all duration-300 ${
-                                            isRTL ? "text-right font-cairo" : "text-left font-poppins"
+                                            isRTL ? "text-right font-almarai" : "text-left font-poppins"
                                         }`}
                                     />
                                 </div>
@@ -133,7 +133,7 @@ export function ContactSection() {
                                 <div>
                                     <label
                                         className={`block text-sm font-medium text-gray-300 mb-2 ${
-                                            isRTL ? "text-right font-cairo" : "text-left font-poppins"
+                                            isRTL ? "text-right font-almarai" : "text-left font-poppins"
                                         }`}
                                     >
                                         {currentContent.form.email.label}
@@ -142,7 +142,7 @@ export function ContactSection() {
                                         type="email"
                                         placeholder={currentContent.form.email.placeholder}
                                         className={`w-full px-4 py-3 rounded-lg bg-[#0a0a0f] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#4ECDC4] transition-all duration-300 ${
-                                            isRTL ? "text-right font-cairo" : "text-left font-poppins"
+                                            isRTL ? "text-right font-almarai" : "text-left font-poppins"
                                         }`}
                                     />
                                 </div>
@@ -151,7 +151,7 @@ export function ContactSection() {
                                 <div>
                                     <label
                                         className={`block text-sm font-medium text-gray-300 mb-2 ${
-                                            isRTL ? "text-right font-cairo" : "text-left font-poppins"
+                                            isRTL ? "text-right font-almarai" : "text-left font-poppins"
                                         }`}
                                     >
                                         {currentContent.form.company.label}
@@ -160,7 +160,7 @@ export function ContactSection() {
                                         type="text"
                                         placeholder={currentContent.form.company.placeholder}
                                         className={`w-full px-4 py-3 rounded-lg bg-[#0a0a0f] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#4ECDC4] transition-all duration-300 ${
-                                            isRTL ? "text-right font-cairo" : "text-left font-poppins"
+                                            isRTL ? "text-right font-almarai" : "text-left font-poppins"
                                         }`}
                                     />
                                 </div>
@@ -169,7 +169,7 @@ export function ContactSection() {
                                 <div>
                                     <label
                                         className={`block text-sm font-medium text-gray-300 mb-2 ${
-                                            isRTL ? "text-right font-cairo" : "text-left font-poppins"
+                                            isRTL ? "text-right font-almarai" : "text-left font-poppins"
                                         }`}
                                     >
                                         {currentContent.form.message.label}
@@ -178,7 +178,7 @@ export function ContactSection() {
                                         rows={5}
                                         placeholder={currentContent.form.message.placeholder}
                                         className={`w-full px-4 py-3 rounded-lg bg-[#0a0a0f] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#4ECDC4] transition-all duration-300 resize-none ${
-                                            isRTL ? "text-right font-cairo" : "text-left font-poppins"
+                                            isRTL ? "text-right font-almarai" : "text-left font-poppins"
                                         }`}
                                     />
                                 </div>
@@ -187,7 +187,7 @@ export function ContactSection() {
                                 <motion.button
                                     type="submit"
                                     className={`w-full px-8 py-4 rounded-lg font-semibold text-[#0a0a0f] bg-[#4ECDC4] hover:bg-[#5bb5a2] transition-all duration-300 shadow-lg hover:shadow-[#4ECDC4]/50 ${
-                                        isRTL ? "font-cairo" : "font-poppins"
+                                        isRTL ? "font-almarai" : "font-poppins"
                                     }`}
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
@@ -259,7 +259,7 @@ export function ContactSection() {
                         <div className="space-y-6">
                             <h3
                                 className={`text-2xl sm:text-3xl font-bold text-white mb-6 ${
-                                    isRTL ? "font-cairo" : "font-poppins"
+                                    isRTL ? "font-almarai" : "font-poppins"
                                 }`}
                             >
                                 {currentContent.offices.title}
@@ -290,21 +290,21 @@ export function ContactSection() {
                                             <div className={`flex-1 ${isRTL ? "text-right" : "text-left"}`}>
                                                 <h4
                                                     className={`text-lg font-bold text-white mb-1 ${
-                                                        isRTL ? "font-cairo" : "font-poppins"
+                                                        isRTL ? "font-almarai" : "font-poppins"
                                                     }`}
                                                 >
                                                     {office.city}
                                                 </h4>
                                                 <p
                                                     className={`text-sm text-gray-400 mb-2 ${
-                                                        isRTL ? "font-cairo" : "font-poppins"
+                                                        isRTL ? "font-almarai" : "font-poppins"
                                                     }`}
                                                 >
                                                     {office.country}
                                                 </p>
                                                 <p
                                                     className={`text-sm text-gray-300 mb-2 ${
-                                                        isRTL ? "font-cairo" : "font-poppins"
+                                                        isRTL ? "font-almarai" : "font-poppins"
                                                     }`}
                                                 >
                                                     {office.address}
@@ -314,7 +314,7 @@ export function ContactSection() {
                                                     <a
                                                         href={`tel:${office.phone}`}
                                                         className={`text-sm text-[#4ECDC4] hover:text-[#5bb5a2] transition-colors ${
-                                                            isRTL ? "font-cairo" : "font-poppins"
+                                                            isRTL ? "font-almarai" : "font-poppins"
                                                         }`}
                                                     >
                                                         {office.phone}
@@ -346,7 +346,7 @@ export function ContactSection() {
                     >
                         <h3
                             className={`text-xl sm:text-2xl font-bold text-white mb-6 text-center ${
-                                isRTL ? "font-cairo" : "font-poppins"
+                                isRTL ? "font-almarai" : "font-poppins"
                             }`}
                         >
                             {currentContent.generalInquiries.title}
@@ -361,7 +361,7 @@ export function ContactSection() {
                                 <a
                                     href={`mailto:${currentContent.generalInquiries.email}`}
                                     className={`text-base sm:text-lg text-[#4ECDC4] hover:text-[#5bb5a2] transition-colors ${
-                                        isRTL ? "font-cairo" : "font-poppins"
+                                        isRTL ? "font-almarai" : "font-poppins"
                                     }`}
                                 >
                                     {currentContent.generalInquiries.email}
@@ -376,7 +376,7 @@ export function ContactSection() {
                                 <a
                                     href={`tel:${currentContent.generalInquiries.phone}`}
                                     className={`text-base sm:text-lg text-[#4ECDC4] hover:text-[#5bb5a2] transition-colors ${
-                                        isRTL ? "font-cairo" : "font-poppins"
+                                        isRTL ? "font-almarai" : "font-poppins"
                                     }`}
                                 >
                                     {currentContent.generalInquiries.phone}

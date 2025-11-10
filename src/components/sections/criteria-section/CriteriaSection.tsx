@@ -60,7 +60,7 @@ export function CriteriaSection() {
                 >
                     <h2
                         className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 ${
-                            isRTL ? "font-cairo" : "font-poppins"
+                            isRTL ? "font-almarai" : "font-poppins"
                         }`}
                     >
                         <span className="text-white">{currentContent.title} </span>
@@ -78,7 +78,7 @@ export function CriteriaSection() {
 
                     <motion.p
                         className={`text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed ${
-                            isRTL ? "font-cairo" : "font-poppins"
+                            isRTL ? "font-almarai" : "font-poppins"
                         }`}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -121,7 +121,7 @@ export function CriteriaSection() {
                                 {/* Title */}
                                 <h3
                                     className={`text-xl sm:text-2xl font-bold text-white mb-3 ${
-                                        isRTL ? "font-cairo" : "font-poppins"
+                                        isRTL ? "font-almarai" : "font-poppins"
                                     }`}
                                 >
                                     {criterion.title}
@@ -130,7 +130,7 @@ export function CriteriaSection() {
                                 {/* Description */}
                                 <p
                                     className={`text-sm sm:text-base text-gray-400 leading-relaxed ${
-                                        isRTL ? "font-cairo" : "font-poppins"
+                                        isRTL ? "font-almarai" : "font-poppins"
                                     }`}
                                 >
                                     {criterion.description}
@@ -157,7 +157,7 @@ export function CriteriaSection() {
                     >
                         <p
                             className={`text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed text-center ${
-                                isRTL ? "font-cairo" : "font-poppins"
+                                isRTL ? "font-almarai" : "font-poppins"
                             }`}
                         >
                             {currentContent.footer}

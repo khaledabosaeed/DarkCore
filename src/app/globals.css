@@ -4,8 +4,8 @@
    CSS CUSTOM PROPERTIES (DESIGN TOKENS)
    ======================================== */
 
-font-arabic {
-  font-family: var(--font-cairo), "Cairo", "Segoe UI", "Tahoma", sans-serif;
+.font-arabic {
+  font-family: var(--font-almarai), "Almarai", "Segoe UI", "Tahoma", sans-serif;
   font-feature-settings: "kern" 1, "liga" 1;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
