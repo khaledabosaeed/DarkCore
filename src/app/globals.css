@@ -1,0 +1,550 @@
+@import "tailwindcss";
+
+/* ========================================
+   CSS CUSTOM PROPERTIES (DESIGN TOKENS)
+   ======================================== */
+
+font-arabic {
+  font-family: var(--font-cairo), "Cairo", "Segoe UI", "Tahoma", sans-serif;
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* الخط الإنجليزي - Poppins */
+.font-english {
+  font-family: var(--font-poppins), "Poppins", "Inter", "Helvetica", sans-serif;
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* اتجاه النص */
+html.rtl {
+  direction: rtl;
+}
+
+html.ltr {
+  direction: ltr;
+}
+
+/* تعطيل scroll animations عند تغيير اللغة */
+html.disable-scroll-animations * {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* تحسينات للعناوين العربية */
+.font-arabic h1,
+.font-arabic h2,
+.font-arabic h3,
+.font-arabic h4,
+.font-arabic h5,
+.font-arabic h6 {
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+/* تحسينات للنصوص العربية */
+.font-arabic p,
+.font-arabic span,
+.font-arabic div {
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* تحسينات للعناوين الإنجليزية */
+.font-english h1,
+.font-english h2,
+.font-english h3,
+.font-english h4,
+.font-english h5,
+.font-english h6 {
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+}
+
+/* تحسينات للنصوص الإنجليزية */
+.font-english p,
+.font-english span,
+.font-english div {
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* أنماط خاصة للأزرار */
+.font-arabic button {
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.font-english button {
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* تحسينات للنماذج */
+.font-arabic input,
+.font-arabic textarea,
+.font-arabic select {
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.font-english input,
+.font-english textarea,
+.font-english select {
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+/* تحسينات إضافية للقراءة */
+.font-arabic {
+  word-spacing: 0.1em;
+}
+
+.font-english {
+  word-spacing: 0;
+}
+
+/* لضمان الانتقال السلس */
+body {
+  transition: font-family 0.3s ease;
+}
+
+/* تحسين أداء الخطوط */
+.font-arabic,
+.font-english {
+  font-display: swap;
+}
+
+:root {
+  --font-size: 16px;
+  --background: #0a0a0f;
+  --foreground: #e8e8ee;
+  --card: #131318;
+  --card-foreground: #e8e8ee;
+  --popover: #131318;
+  --popover-foreground: #e8e8ee;
+  --primary: #4ECDC4;
+  --primary-foreground: #0a0a0f;
+  --secondary: #1a1a24;
+  --secondary-foreground: #e8e8ee;
+  --muted: #1f1f2a;
+  --muted-foreground: #9999a8;
+  --accent: #4ECDC4;
+  --accent-foreground: #0a0a0f;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(78, 205, 196, 0.15);
+  --input: transparent;
+  --input-background: #1a1a24;
+  --switch-background: #2a2a35;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #4ECDC4;
+  --chart-1: #4ECDC4;
+  --chart-2: #5bb5a2;
+  --chart-3: #6b8fb3;
+  --chart-4: #ba8fc9;
+  --chart-5: #3fb8af;
+  --radius: 0.5rem;
+  --sidebar: #131318;
+  --sidebar-foreground: #e8e8ee;
+  --sidebar-primary: #4ECDC4;
+  --sidebar-primary-foreground: #0a0a0f;
+  --sidebar-accent: #1a1a24;
+  --sidebar-accent-foreground: #e8e8ee;
+  --sidebar-border: rgba(78, 205, 196, 0.15);
+  --sidebar-ring: #4ECDC4;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+/* ========================================
+   BASE STYLES
+   ======================================== */
+
+
+
+
+
+
+/* Staggered animations للعناصر المتعددة */
+
+
+body {
+  font-family: var(--font-family-primary);
+  line-height: 1.6;
+  color: var(--neutral-800);
+  background: var(--background-primary);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: font-family 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              direction 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  transition: direction 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: var(--font-size);
+
+}
+
+.hero-responsive-height {
+  min-height: var(--viewport-height, 100vh);
+}
+
+@supports (height: 100svh) {
+  .hero-responsive-height {
+    min-height: 100svh;
+  }
+}
+
+@supports (height: 100dvh) {
+  .hero-responsive-height {
+    min-height: 100dvh;
+  }
+}
+button,
+[role="button"],
+.cursor-pointer,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  cursor: pointer;
+}
+
+/* ========================================
+   SECTION BACKGROUNDS
+   ======================================== */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+
+
+/* ========================================
+   ENHANCED UTILITY CLASSES
+   ======================================== */
+
+/* Color Utilities */
+
+/* ========================================
+   ENHANCED BUTTON COMPONENTS
+   ======================================== */
+
+/* ========================================
+   SCROLL ANIMATIONS
+   ======================================== */
+
+
+/* ========================================
+   ENHANCED CARD COMPONENTS
+   ======================================== */
+
+
+/* ========================================
+   RTL/LTR ENHANCEMENTS
+   ======================================== */
+
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="ltr"] {
+  text-align: left;
+}
+
+[dir="rtl"] .space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6 {
+  font-family: var(--font-family-arabic);
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+[dir="rtl"] p,
+[dir="rtl"] li,
+[dir="rtl"] span {
+  font-family: var(--font-family-arabic);
+  line-height: 1.7;
+  word-spacing: 0.1em;
+}
+
+/* ========================================
+   GRADIENT TEXT
+   ======================================== */
+
+.gradient-text {
+  background: var(--background-gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* ========================================
+   FLOATING ELEMENTS
+   ======================================== */
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ========================================
+   PULSE ANIMATION
+   ======================================== */
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.pulse-soft {
+  animation: pulse-soft 4s ease-in-out infinite;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .btn {
+    width: 100%;
+    padding: var(--spacing-lg) var(--spacing-xl);
+  }
+
+  .card {
+    margin: var(--spacing-md);
+  }
+
+  [dir="rtl"] h1,
+  [dir="rtl"] h2,
+  [dir="rtl"] h3 {
+    line-height: 1.3;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY ENHANCEMENTS
+   ======================================== */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-on-scroll,
+  .animate-slide-left,
+  .animate-slide-right,
+  .animate-scale {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ========================================
+   CUSTOM SCROLLBAR
+   ======================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--neutral-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-light);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
