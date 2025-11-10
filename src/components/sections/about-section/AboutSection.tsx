@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { aboutContent } from "./content"
-import { Target, Shield, Eye, Users } from "lucide-react"
+import { Target, Shield, Eye, Users, Award } from "lucide-react"
 import { useLanguage } from "@/context/LanguageContext"
 
 export function AboutSection() {
@@ -34,7 +34,7 @@ export function AboutSection() {
     const animateProps = disableAnimations ? { initial: false, whileInView: undefined, viewport: undefined } : {}
 
     // Icon mapping for values
-    const valueIcons = [Target, Shield, Eye, Users]
+    const valueIcons = [Target, Shield, Eye, Users, Award]
 
     return (
         <section
@@ -128,7 +128,7 @@ export function AboutSection() {
                         {currentContent.valuesTitle}
                     </h3>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8">
                         {currentContent.values.map((value, index) => {
                             const Icon = valueIcons[index]
                             return (

@@ -1,31 +1,31 @@
 export const insightsContent = {
     ar: {
-        title: "الرؤى والأخبار",
-        highlightedTitle: "",
-        subtitle: "ابق على اطلاع بأحدث معلومات السوق والأبحاث والقيادة الفكرية من فريق خبرائنا.",
+        title: "القطاعات",
+        highlightedTitle: "المستهدفة",
+        subtitle: "نستثمر في القطاعات الحيوية التي تُشكل مستقبل الاقتصاد والمجتمع بأثر ملموس ومستدام.",
         articles: [
             {
-                category: "نظرة السوق",
+                category: "الطاقة المتجددة",
                 readTime: "8 دقائق قراءة",
-                title: "البنية التحتية العالمية: العقد القادم",
+                title: "محطات الطاقة الشمسية وتخزين الطاقة",
                 date: "أكتوبر 2025",
-                description: "تحليل فرصة البنية التحتية البالغة 15 تريليون دولار عبر الأسواق الناشئة والاقتصادات المتقدمة.",
+                description: "استثمارات في مشاريع الطاقة النظيفة وأنظمة البطاريات المتطورة لدعم التحول الأخضر.",
                 link: "#"
             },
             {
-                category: "الاستثمار البيئي والاجتماعي والحوكمة",
+                category: "الاستدامة والبيئة",
                 readTime: "6 دقائق قراءة",
-                title: "صعود السندات الخضراء في المحافظ المؤسسية",
+                title: "تقنيات معالجة النفايات وإعادة التدوير",
                 date: "سبتمبر 2025",
-                description: "كيف تعيد أدوات الديون المستدامة تشكيل مشهد الدخل الثابت للمستثمرين المؤسسيين.",
+                description: "حلول مبتكرة لإدارة النفايات وتحويلها إلى موارد ذات قيمة اقتصادية.",
                 link: "#"
             },
             {
-                category: "الطاقة والطاقة المتجددة",
+                category: "التطوير العقاري",
                 readTime: "10 دقائق قراءة",
-                title: "التحول في الطاقة: استراتيجيات الاستثمار لعام 2026",
+                title: "المدن الذكية والمجمعات السكنية المتكاملة",
                 date: "أغسطس 2025",
-                description: "رؤى استراتيجية حول استثمارات الطاقة المتجددة بينما يتسارع العالم نحو أهداف صافي الصفر.",
+                description: "مشاريع عقارية متطورة تجمع بين الذكاء الاصطناعي والاستدامة لخلق مجتمعات حضرية متقدمة.",
                 link: "#"
             }
         ],
@@ -56,32 +56,32 @@ export const insightsContent = {
         }
     },
     en: {
-        title: "Insights &",
-        highlightedTitle: "News",
-        subtitle: "Stay informed with the latest market intelligence, research, and thought leadership from our expert team.",
+        title: "Target",
+        highlightedTitle: "Sectors",
+        subtitle: "We invest in vital sectors that shape the future of economy and society with tangible and sustainable impact.",
         articles: [
             {
-                category: "Market Outlook",
+                category: "Renewable Energy",
                 readTime: "8 min read",
-                title: "Global Infrastructure: The Next Decade",
+                title: "Solar Power Plants and Energy Storage",
                 date: "October 2025",
-                description: "Analyzing the $15 trillion infrastructure opportunity across emerging markets and developed economies.",
+                description: "Investments in clean energy projects and advanced battery systems to support the green transition.",
                 link: "#"
             },
             {
-                category: "ESG Investment",
+                category: "Sustainability & Environment",
                 readTime: "6 min read",
-                title: "The Rise of Green Bonds in Institutional Portfolios",
+                title: "Waste Treatment and Recycling Technologies",
                 date: "September 2025",
-                description: "How sustainable debt instruments are reshaping the fixed income landscape for institutional investors.",
+                description: "Innovative solutions for waste management, transforming waste into economically valuable resources.",
                 link: "#"
             },
             {
-                category: "Energy & Renewables",
+                category: "Real Estate Development",
                 readTime: "10 min read",
-                title: "Energy Transition: Investment Strategies for 2026",
+                title: "Smart Cities and Integrated Residential Complexes",
                 date: "August 2025",
-                description: "Strategic insights into renewable energy investments as the world accelerates toward net zero targets.",
+                description: "Advanced real estate projects combining artificial intelligence and sustainability to create progressive urban communities.",
                 link: "#"
             }
         ],

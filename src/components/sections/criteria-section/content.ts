@@ -1,50 +1,50 @@
 export const criteriaContent = {
     ar: {
-        title: "معايير",
-        highlightedTitle: "الاختيار",
-        description: "تحافظ دارك كور على معايير اختيار صارمة لضمان أن كل مشروع يلبي متطلباتنا للنجاح والشفافية.",
+        title: "كيف",
+        highlightedTitle: "ننفذ",
+        description: "نتبع منهجية واضحة ومنضبطة لتحويل الفرص الاستثمارية إلى مشاريع ناجحة ومستدامة.",
         criteria: [
             {
-                title: "عقد حكومي صالح",
-                description: "عقد حكومي صالح أو معتمد."
+                title: "الفحص والتحليل",
+                description: "دراسة شاملة للمشروع: الجدوى المالية، المخاطر، العوائد المتوقعة، والبيانات التشغيلية."
             },
             {
-                title: "هامش ربح أدنى",
-                description: "هامش ربح لا يقل عن 20%."
+                title: "التمويل الاستراتيجي",
+                description: "توفير رأس المال اللازم بمرونة تتناسب مع طبيعة المشروع ومراحله التنفيذية."
             },
             {
-                title: "الشفافية المالية",
-                description: "مسؤوليات واضحة وتوفر البيانات المالية."
+                title: "التنفيذ المباشر",
+                description: "الانخراط الفعلي في الإدارة والتنفيذ الميداني لضمان سير العمل وفق المعايير المحددة."
             },
             {
-                title: "نقل الإدارة",
-                description: "الاستعداد لنقل الإدارة مؤقتاً حتى التنفيذ الكامل."
+                title: "المتابعة والتطوير",
+                description: "مراقبة دورية للأداء، تحسين مستمر للعمليات، وتقييم منتظم للنتائج والعوائد."
             }
         ],
-        footer: "تضمن هذه المعايير أن كل مشروع تتعامل معه دارك كور لديه الأساس للنجاح والوضوح التشغيلي وإمكانية تحقيق عوائد استثنائية."
+        footer: "هذه المنهجية تضمن أن كل مشروع ننفذه يحقق أهدافه بشفافية، كفاءة، وعوائد قابلة للقياس."
     },
     en: {
-        title: "Selection",
-        highlightedTitle: "Criteria",
-        description: "Dark Core maintains strict selection standards to ensure every project meets our requirements for success and transparency.",
+        title: "How We",
+        highlightedTitle: "Execute",
+        description: "We follow a clear and disciplined methodology to transform investment opportunities into successful and sustainable projects.",
         criteria: [
             {
-                title: "Valid Government Contract",
-                description: "Valid or approved government contract."
+                title: "Due Diligence & Analysis",
+                description: "Comprehensive project study: financial feasibility, risks, expected returns, and operational data."
             },
             {
-                title: "Minimum Profit Margin",
-                description: "Profit margin of no less than 20%."
+                title: "Strategic Financing",
+                description: "Providing necessary capital with flexibility tailored to the project's nature and execution phases."
             },
             {
-                title: "Financial Transparency",
-                description: "Clear responsibilities and availability of financial data."
+                title: "Direct Execution",
+                description: "Active involvement in management and field execution to ensure work proceeds according to set standards."
             },
             {
-                title: "Management Transfer",
-                description: "Willingness to transfer management temporarily until full execution."
+                title: "Monitoring & Development",
+                description: "Periodic performance monitoring, continuous process improvement, and regular evaluation of results and returns."
             }
         ],
-        footer: "These criteria ensure that every project Dark Core engages with has the foundation for success, operational clarity, and the potential for exceptional returns."
+        footer: "This methodology ensures that every project we execute achieves its objectives with transparency, efficiency, and measurable returns."
     }
 }

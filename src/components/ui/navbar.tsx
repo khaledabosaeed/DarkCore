@@ -71,16 +71,16 @@ export function Navbar() {
       }}
     >
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between  h-20">
           {/* Logo */}
           <motion.div
             className="flex-shrink-0 cursor-pointer"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
             onClick={() => scrollToSection("home")}
-          >
-            <Image
-              src="/Asset 1.svg"
+          >                                                                                                                                                                 
+            <Image                                                                      
+              src="/Asset 1.svg"  
               alt="Logo"
               width={180}
               height={60}
