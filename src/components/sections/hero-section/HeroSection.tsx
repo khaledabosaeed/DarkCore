@@ -52,11 +52,21 @@ export function HeroSection() {
             ref={sectionRef}
             className="relative overflow-hidden hero-responsive-height flex flex-col"
         >
-            {/* Gradient Background */}
+            {/* Background Video & Overlays */}
             <div className="absolute inset-0 w-full h-full overflow-hidden">
+                <video
+                    className="absolute inset-0 w-full h-full object-cover"
+                    src="/hero.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    aria-hidden="true"
+                />
+
                 {/* Main gradient background */}
                 <div
-                    className="absolute inset-0"
+                    className="absolute inset-0 opacity-70"
                     style={{
                         background: "linear-gradient(135deg, #0a0a0f 0%, #1a1a24 50%, #0d1117 100%)"
                     }}
