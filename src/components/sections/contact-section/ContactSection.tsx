@@ -7,6 +7,15 @@ import { MapPin, Phone, Mail, Linkedin, Youtube } from "lucide-react"
 
 export function ContactSection() {
     const [language, setLanguage] = useState<"en" | "ar">("ar")
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        message: ''
+    })
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
     useEffect(() => {
         const handleLanguageChange = () => {
@@ -27,6 +36,50 @@ export function ContactSection() {
 
     const currentContent = contactContent[language]
     const isRTL = language === "ar"
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault()
+        setIsSubmitting(true)
+        setSubmitStatus('idle')
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+
+            if (response.ok) {
+                setSubmitStatus('success')
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    company: '',
+                    message: ''
+                })
+                setTimeout(() => setSubmitStatus('idle'), 5000)
+            } else {
+                setSubmitStatus('error')
+                setTimeout(() => setSubmitStatus('idle'), 5000)
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error)
+            setSubmitStatus('error')
+            setTimeout(() => setSubmitStatus('idle'), 5000)
+        } finally {
+            setIsSubmitting(false)
+        }
+    }
 
     return (
         <section
@@ -110,7 +163,27 @@ export function ContactSection() {
                                 {currentContent.form.title}
                             </h3>
 
-                            <form className="space-y-6">
+                            <form onSubmit={handleSubmit} className="space-y-6">
+                                {/* Success/Error Messages */}
+                                {submitStatus === 'success' && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: -10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className="p-4 rounded-lg bg-[#4ECDC4]/10 border border-[#4ECDC4]/30 text-[#4ECDC4] text-center"
+                                    >
+                                        {isRTL ? "تم إرسال رسالتك بنجاح! سنتواصل معك قريباً" : "Message sent successfully! We'll contact you soon"}
+                                    </motion.div>
+                                )}
+                                {submitStatus === 'error' && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: -10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className="p-4 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400 text-center"
+                                    >
+                                        {isRTL ? "حدث خطأ. الرجاء المحاولة مرة أخرى" : "An error occurred. Please try again"}
+                                    </motion.div>
+                                )}
+
                                 {/* Name Field */}
                                 <div>
                                     <label
@@ -118,10 +191,14 @@ export function ContactSection() {
                                             isRTL ? "text-right font-almarai" : "text-left font-poppins"
                                         }`}
                                     >
-                                        {currentContent.form.name.label}
+                                        {currentContent.form.name.label} *
                                     </label>
                                     <input
                                         type="text"
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleInputChange}
+                                        required
                                         placeholder={currentContent.form.name.placeholder}
                                         className={`w-full px-4 py-3 rounded-lg bg-[#0a0a0f] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#4ECDC4] transition-all duration-300 ${
                                             isRTL ? "text-right font-almarai" : "text-left font-poppins"
@@ -136,11 +213,36 @@ export function ContactSection() {
                                             isRTL ? "text-right font-almarai" : "text-left font-poppins"
                                         }`}
                                     >
-                                        {currentContent.form.email.label}
+                                        {currentContent.form.email.label} *
                                     </label>
                                     <input
                                         type="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleInputChange}
+                                        required
                                         placeholder={currentContent.form.email.placeholder}
+                                        className={`w-full px-4 py-3 rounded-lg bg-[#0a0a0f] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#4ECDC4] transition-all duration-300 ${
+                                            isRTL ? "text-right font-almarai" : "text-left font-poppins"
+                                        }`}
+                                    />
+                                </div>
+
+                                {/* Phone Field */}
+                                <div>
+                                    <label
+                                        className={`block text-sm font-medium text-gray-300 mb-2 ${
+                                            isRTL ? "text-right font-almarai" : "text-left font-poppins"
+                                        }`}
+                                    >
+                                        {currentContent.form.phone.label}
+                                    </label>
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        value={formData.phone}
+                                        onChange={handleInputChange}
+                                        placeholder={currentContent.form.phone.placeholder}
                                         className={`w-full px-4 py-3 rounded-lg bg-[#0a0a0f] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#4ECDC4] transition-all duration-300 ${
                                             isRTL ? "text-right font-almarai" : "text-left font-poppins"
                                         }`}
@@ -158,6 +260,9 @@ export function ContactSection() {
                                     </label>
                                     <input
                                         type="text"
+                                        name="company"
+                                        value={formData.company}
+                                        onChange={handleInputChange}
                                         placeholder={currentContent.form.company.placeholder}
                                         className={`w-full px-4 py-3 rounded-lg bg-[#0a0a0f] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#4ECDC4] transition-all duration-300 ${
                                             isRTL ? "text-right font-almarai" : "text-left font-poppins"
@@ -172,10 +277,14 @@ export function ContactSection() {
                                             isRTL ? "text-right font-almarai" : "text-left font-poppins"
                                         }`}
                                     >
-                                        {currentContent.form.message.label}
+                                        {currentContent.form.message.label} *
                                     </label>
                                     <textarea
                                         rows={5}
+                                        name="message"
+                                        value={formData.message}
+                                        onChange={handleInputChange}
+                                        required
                                         placeholder={currentContent.form.message.placeholder}
                                         className={`w-full px-4 py-3 rounded-lg bg-[#0a0a0f] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#4ECDC4] transition-all duration-300 resize-none ${
                                             isRTL ? "text-right font-almarai" : "text-left font-poppins"
@@ -186,13 +295,17 @@ export function ContactSection() {
                                 {/* Submit Button */}
                                 <motion.button
                                     type="submit"
-                                    className={`w-full px-8 py-4 rounded-lg font-semibold text-[#0a0a0f] bg-[#4ECDC4] hover:bg-[#5bb5a2] transition-all duration-300 shadow-lg hover:shadow-[#4ECDC4]/50 ${
+                                    disabled={isSubmitting}
+                                    className={`w-full px-8 py-4 rounded-lg font-semibold text-[#0a0a0f] bg-[#4ECDC4] hover:bg-[#5bb5a2] transition-all duration-300 shadow-lg hover:shadow-[#4ECDC4]/50 disabled:opacity-50 disabled:cursor-not-allowed ${
                                         isRTL ? "font-almarai" : "font-poppins"
                                     }`}
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
+                                    whileHover={!isSubmitting ? { scale: 1.02 } : {}}
+                                    whileTap={!isSubmitting ? { scale: 0.98 } : {}}
                                 >
-                                    {currentContent.form.button}
+                                    {isSubmitting
+                                        ? (isRTL ? "جارٍ الإرسال..." : "Sending...")
+                                        : currentContent.form.button
+                                    }
                                 </motion.button>
                             </form>
 

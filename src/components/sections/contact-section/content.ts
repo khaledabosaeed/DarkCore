@@ -13,6 +13,10 @@ export const contactContent = {
                 label: "البريد الإلكتروني",
                 placeholder: "your@email.com"
             },
+            phone: {
+                label: "رقم الهاتف",
+                placeholder: "+966"
+            },
             company: {
                 label: "الشركة",
                 placeholder: "اسم شركتك"
@@ -53,6 +57,10 @@ export const contactContent = {
             email: {
                 label: "Email",
                 placeholder: "your@email.com"
+            },
+            phone: {
+                label: "Phone Number",
+                placeholder: "+966"
             },
             company: {
                 label: "Company",
