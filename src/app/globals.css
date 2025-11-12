@@ -268,8 +268,19 @@ body {
 
 html {
   transition: direction 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    font-size: var(--font-size);
+  font-size: var(--font-size);
+  scroll-behavior: smooth;
+}
 
+/* Smooth scrolling with easing */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  * {
+    scroll-behavior: smooth;
+  }
 }
 
 .hero-responsive-height {

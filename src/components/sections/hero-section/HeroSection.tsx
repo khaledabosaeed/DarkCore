@@ -267,9 +267,9 @@ export function HeroSection() {
                             </motion.a> */}
                         </motion.div>
 
-                        {/* Statistics Section - Simplified inline style */}
+                        {/* Statistics Section - Card style with transparency */}
                         <motion.div
-                            className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16 mt-16"
+                            className="flex flex-wrap items-center justify-center gap-6 md:gap-8 mt-16 max-w-5xl mx-auto"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: 1.2, duration: 0.8 }}
@@ -278,13 +278,24 @@ export function HeroSection() {
                             {currentContent.stats.map((stat, index) => (
                                 <motion.div
                                     key={index}
-                                    className="flex flex-col items-center"
+                                    className="flex flex-col items-center p-6 sm:p-8 rounded-2xl border min-w-[140px] sm:min-w-[160px] transition-all duration-300"
+                                    style={{
+                                        background: "linear-gradient(135deg, rgba(26, 26, 36, 0.6) 0%, rgba(20, 40, 160, 0.15) 50%, rgba(20, 20, 28, 0.5) 100%)",
+                                        backdropFilter: "blur(16px)",
+                                        borderColor: "rgba(78, 205, 196, 0.25)",
+                                        boxShadow: "0 8px 32px rgba(0, 0, 0, 0.4)"
+                                    }}
                                     initial={{ opacity: 0, scale: 0.8 }}
                                     whileInView={{ opacity: 1, scale: 1 }}
                                     transition={{ delay: 1.3 + index * 0.1, duration: 0.5 }}
                                     viewport={{ once: true }}
+                                    whileHover={{
+                                        y: -8,
+                                        borderColor: "rgba(78, 205, 196, 0.6)",
+                                        boxShadow: "0 12px 40px rgba(78, 205, 196, 0.25)"
+                                    }}
                                 >
-                                    <div className={`text-4xl sm:text-5xl md:text-6xl font-bold mb-2 ${
+                                    <div className={`text-4xl sm:text-5xl md:text-6xl font-bold mb-3 ${
                                         isRTL ? "font-almarai" : "font-poppins"
                                     }`}
                                     style={{
@@ -299,7 +310,7 @@ export function HeroSection() {
                                             duration={2.5}
                                         />
                                     </div>
-                                    <div className={`text-xs sm:text-sm text-gray-400 text-center max-w-[120px] ${
+                                    <div className={`text-xs sm:text-sm text-gray-300 text-center leading-tight ${
                                         isRTL ? "font-almarai" : "font-poppins"
                                     }`}>
                                         {stat.label}
