@@ -238,18 +238,19 @@ export function HeroSection() {
                             {/* Primary Button - Bigger and more prominent */}
                             <motion.a
                                 href="#contact"
-                                className={`group px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-bold text-lg sm:text-xl text-[#0a0a0f] bg-[#4ECDC4] hover:bg-[#5bb5a2] transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-[#4ECDC4]/50 flex items-center gap-3 ${
-                                    isRTL ? "flex-row-reverse font-almarai" : "font-poppins"
+                                className={` group px-8 sm:px-10 py-4 sm:py-5 flex-row-reverse rounded-xl font-bold text-lg sm:text-xl text-[#0a0a0f] bg-[#4ECDC4] hover:bg-[#5bb5a2] transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-[#4ECDC4]/50 flex items-center gap-3 ${
+                                    isRTL ? " font-almarai " : "font-poppins "
                                 }`}
                                 whileHover={{ scale: 1.08, y: -3 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                {currentContent.primaryButton}
-                                <ArrowRight
+                                     <ArrowRight
                                     className={`w-6 h-6 group-hover:translate-x-1 transition-transform ${
                                         isRTL ? "rotate-180" : ""
                                     }`}
                                 />
+                                {currentContent.primaryButton}
+                           
                             </motion.a>
 
                             {/* Download Button */}
@@ -269,7 +270,7 @@ export function HeroSection() {
 
                         {/* Statistics Section - Card style with transparency */}
                         <motion.div
-                            className="flex flex-wrap items-center justify-center gap-6 md:gap-8 mt-16 max-w-5xl mx-auto"
+                            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-16 max-w-5xl mx-auto px-4"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: 1.2, duration: 0.8 }}
@@ -278,7 +279,7 @@ export function HeroSection() {
                             {currentContent.stats.map((stat, index) => (
                                 <motion.div
                                     key={index}
-                                    className="flex flex-col items-center p-6 sm:p-8 rounded-2xl border min-w-[140px] sm:min-w-[160px] transition-all duration-300"
+                                    className="flex flex-col items-center p-6 sm:p-8 rounded-2xl border transition-all duration-300"
                                     style={{
                                         background: "linear-gradient(135deg, rgba(26, 26, 36, 0.6) 0%, rgba(20, 40, 160, 0.15) 50%, rgba(20, 20, 28, 0.5) 100%)",
                                         backdropFilter: "blur(16px)",

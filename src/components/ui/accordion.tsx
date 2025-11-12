@@ -46,7 +46,7 @@ export function Accordion({ items, isRTL = false, defaultOpen = 0 }: AccordionPr
                         <motion.button
                             onClick={() => toggleItem(index)}
                             className={`w-full p-6 flex items-center justify-between gap-4 hover:bg-white/5 transition-colors ${
-                                isRTL ? "flex-row-reverse text-right" : "text-left"
+                                isRTL ? "text-right" : "text-left"
                             }`}
                             whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.05)" }}
                         >

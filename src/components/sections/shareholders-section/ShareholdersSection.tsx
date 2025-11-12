@@ -256,18 +256,19 @@ export function ShareholdersSection() {
                     </h4>
 
                     <motion.button
-                        className={`group px-8 sm:px-10 py-4 sm:py-5 rounded-lg font-semibold text-base sm:text-lg text-[#0a0a0f] bg-[#4ECDC4] hover:bg-[#5bb5a2] transition-all duration-300 shadow-lg hover:shadow-[#4ECDC4]/50 flex items-center gap-3 mx-auto ${
-                            isRTL ? "flex-row-reverse font-almarai" : "font-poppins"
+                        className={`group px-8 sm:px-10  py-4 sm:py-5 flex-row-reverse rounded-lg font-semibold text-base sm:text-lg text-[#0a0a0f] bg-[#4ECDC4] hover:bg-[#5bb5a2] transition-all duration-300 shadow-lg hover:shadow-[#4ECDC4]/50 flex items-center gap-3 mx-auto ${
+                            isRTL ? " font-almarai " : "font-poppins  "
                         }`}
                         whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.95 }}
                     >
-                        {currentContent.cta.button}
-                        <ArrowRight
+                         <ArrowRight
                             className={`w-5 h-5 group-hover:translate-x-1 transition-transform ${
                                 isRTL ? "rotate-180" : ""
                             }`}
                         />
+                        {currentContent.cta.button}
+                       
                     </motion.button>
 
                     <motion.p

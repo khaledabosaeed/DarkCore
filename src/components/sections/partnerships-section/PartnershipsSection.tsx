@@ -123,10 +123,10 @@ export function PartnershipsSection() {
                 </motion.div>
 
                 {/* Main Content Grid - Image and Description */}
-                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16 sm:mb-20 ${isRTL ? "lg:flex-row-reverse" : ""}`}>
+<div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch mb-16 sm:mb-20 ${isRTL ? "lg:flex-row-reverse" : ""}`}>
                     {/* Image Side */}
-                    <motion.div
-                        className={`relative ${isRTL ? "lg:order-2" : "lg:order-1"}`}
+               <motion.div className={`relative h-full ${isRTL ? "lg:order-2" : "lg:order-1"}`}
+
                         initial={{ opacity: 0, x: isRTL ? 50 : -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
@@ -155,22 +155,21 @@ export function PartnershipsSection() {
                     </motion.div>
 
                     {/* Description Side */}
-                    <motion.div
-                        className={`${isRTL ? "lg:order-1" : "lg:order-2"}`}
+                <motion.div className={`h-full ${isRTL ? "lg:order-1" : "lg:order-2"} `}
                         initial={{ opacity: 0, x: isRTL ? -50 : 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
                         viewport={{ once: true }}
                     >
                         <div
-                            className="p-8 sm:p-10 rounded-2xl border border-white/10"
+                            className="h-full p-8 sm:p-10 rounded-2xl border border-white/10 flex flex-col items-center justify-around "
                             style={{
                                 background: "rgba(26, 26, 36, 0.4)",
                                 backdropFilter: "blur(10px)"
                             }}
                         >
                             {/* Split description into visual sections */}
-                            <div className="space-y-6">
+                            <div className="space-y-6 ">
                                 {/* Vision Section */}
                                 <div>
                                     <h4

@@ -263,7 +263,7 @@ export function InsightsSection() {
                 </motion.div>
 
                 {/* Subscribe Section */}
-                <motion.div
+                {/* <motion.div
                     className="mt-20 sm:mt-24"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -294,7 +294,6 @@ export function InsightsSection() {
                             </p>
                         </div>
 
-                        {/* Email Subscription Form */}
                         <div className={`flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto ${isRTL ? "sm:flex-row-reverse" : ""}`}>
                             <input
                                 type="email"
@@ -314,7 +313,7 @@ export function InsightsSection() {
                             </motion.button>
                         </div>
                     </div>
-                </motion.div>
+                </motion.div> */}
             </div>
         </section>
     )

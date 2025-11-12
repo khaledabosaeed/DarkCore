@@ -65,7 +65,7 @@ export default function Home() {
       {/* Page Loader */}
       <PageLoader />
 
-      <main className="min-h-screen bg-[#0a0a0f] overflow-x-hidden">
+      <main className=" bg-[#0a0a0f] overflow-x-hidden">
         {/* Navigation */}
         <Navbar />
 
