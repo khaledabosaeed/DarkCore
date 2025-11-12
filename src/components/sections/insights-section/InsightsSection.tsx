@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { insightsContent } from "./content"
 import { FileText, TrendingUp, BookOpen, ArrowRight, Download } from "lucide-react"
+import { InvestmentBackground, AnimatedColorGradient } from "@/components/ui/investment-shapes"
 
 export function InsightsSection() {
     const [language, setLanguage] = useState<"en" | "ar">("ar")
@@ -36,17 +37,32 @@ export function InsightsSection() {
             id="insights"
             className="relative py-20 sm:py-24 md:py-28 lg:py-32 overflow-hidden"
             style={{
-                background: "#0a0a0f"
+                background: "linear-gradient(135deg, rgba(10, 10, 15, 0.98) 0%, rgba(20, 40, 160, 0.05) 50%, rgba(10, 10, 15, 0.98) 100%)"
             }}
         >
             {/* Background decorative elements */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div
-                    className="absolute top-1/4 left-1/4 w-96 h-96 opacity-10"
+                <motion.div
+                    className="absolute top-1/4 left-1/4 w-96 h-96 opacity-15"
                     style={{
                         background: "radial-gradient(circle, rgba(78, 205, 196, 0.2) 0%, transparent 70%)"
                     }}
+                    animate={{
+                        scale: [1, 1.2, 1],
+                        opacity: [0.1, 0.2, 0.1]
+                    }}
+                    transition={{
+                        duration: 7,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }}
                 />
+                
+                {/* Investment Background Shapes */}
+                <InvestmentBackground variant="grid" intensity="light" />
+                
+                {/* Animated Color Gradient */}
+                <AnimatedColorGradient />
             </div>
 
             <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 relative z-10">

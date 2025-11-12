@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { servicesContent } from "./content"
 import { FileText, Users, BarChart3, TrendingUp, Handshake } from "lucide-react"
+import { InvestmentBackground, AnimatedColorGradient } from "@/components/ui/investment-shapes"
 
 export function ServicesSection() {
     const [language, setLanguage] = useState<"en" | "ar">("ar")
@@ -36,23 +37,48 @@ export function ServicesSection() {
             id="services"
             className="relative py-20 sm:py-24 md:py-28 lg:py-32 overflow-hidden"
             style={{
-                background: "#0f0f14"
+                background: "linear-gradient(135deg, rgba(15, 15, 20, 0.98) 0%, rgba(20, 40, 160, 0.06) 50%, rgba(15, 15, 20, 0.98) 100%)"
             }}
         >
-            {/* Background decorative elements */}
+            {/* Background decorative elements with animated gradients */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div
-                    className="absolute top-1/4 right-0 w-96 h-96 opacity-10"
+                <motion.div
+                    className="absolute top-1/4 right-0 w-96 h-96 opacity-15"
                     style={{
-                        background: "radial-gradient(circle, rgba(78, 205, 196, 0.3) 0%, transparent 70%)"
+                        background: "radial-gradient(circle, rgba(78, 205, 196, 0.2) 0%, transparent 70%)"
+                    }}
+                    animate={{
+                        scale: [1, 1.2, 1],
+                        opacity: [0.1, 0.2, 0.1]
+                    }}
+                    transition={{
+                        duration: 7,
+                        repeat: Infinity,
+                        ease: "easeInOut"
                     }}
                 />
-                <div
-                    className="absolute bottom-1/4 left-0 w-96 h-96 opacity-10"
+                <motion.div
+                    className="absolute bottom-1/4 left-0 w-96 h-96 opacity-15"
                     style={{
-                        background: "radial-gradient(circle, rgba(91, 181, 162, 0.3) 0%, transparent 70%)"
+                        background: "radial-gradient(circle, rgba(91, 181, 162, 0.18) 0%, transparent 70%)"
+                    }}
+                    animate={{
+                        scale: [1.2, 1, 1.2],
+                        opacity: [0.1, 0.2, 0.1]
+                    }}
+                    transition={{
+                        duration: 9,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 3
                     }}
                 />
+                
+                {/* Investment Background Shapes */}
+                <InvestmentBackground variant="charts" intensity="light" />
+                
+                {/* Animated Color Gradient */}
+                <AnimatedColorGradient />
             </div>
 
             <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 relative z-10">
@@ -106,7 +132,7 @@ export function ServicesSection() {
                                 key={index}
                                 className="group p-6 sm:p-8 rounded-xl border border-white/10 hover:border-[#4ECDC4]/50 transition-all duration-300"
                                 style={{
-                                    background: "rgba(20, 20, 28, 0.6)",
+                                    background: "linear-gradient(135deg, rgba(20, 20, 28, 0.7) 0%, rgba(20, 40, 160, 0.08) 50%, rgba(26, 26, 36, 0.6) 100%)",
                                     backdropFilter: "blur(10px)"
                                 }}
                                 initial={{ opacity: 0, y: 30 }}

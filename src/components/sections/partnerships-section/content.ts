@@ -3,7 +3,9 @@ export const partnershipsContent = {
         title: "رؤيتنا",
         highlightedTitle: "ورسالتنا",
         subtitle: "نسعى لبناء مستقبل استثماري مبني على الشفافية والانضباط والقيمة المستدامة.",
-        description: "رؤيتنا: أن نكون الشريك الاستثماري الأكثر موثوقية في المملكة العربية السعودية، حيث يلتقي رأس المال الاستراتيجي بالتنفيذ الميداني المنضبط. رسالتنا: تحويل الفرص الاستثمارية عالية العوائد إلى مشاريع ناجحة من خلال تمويل دقيق، إدارة مباشرة، وشفافية كاملة في كل مرحلة.",
+        vision: "أن نكون الشريك الاستثماري الأكثر موثوقية في المملكة العربية السعودية، حيث يلتقي رأس المال الاستراتيجي بالتنفيذ الميداني المنضبط.",
+        mission: "تحويل الفرص الاستثمارية عالية العوائد إلى مشاريع ناجحة من خلال تمويل دقيق، إدارة مباشرة، وشفافية كاملة في كل مرحلة.",
+        description: "",
         features: [
             {
                 title: "الريادة في الاستثمار",
@@ -27,7 +29,9 @@ export const partnershipsContent = {
         title: "Our Vision",
         highlightedTitle: "& Mission",
         subtitle: "We strive to build an investment future founded on transparency, discipline, and sustainable value.",
-        description: "Our Vision: To be the most trusted investment partner in Saudi Arabia, where strategic capital meets disciplined field execution. Our Mission: Transform high-return investment opportunities into successful projects through precise financing, direct management, and complete transparency at every stage.",
+        vision: "To be the most trusted investment partner in Saudi Arabia, where strategic capital meets disciplined field execution.",
+        mission: "Transform high-return investment opportunities into successful projects through precise financing, direct management, and complete transparency at every stage.",
+        description: "",
         features: [
             {
                 title: "Investment Leadership",

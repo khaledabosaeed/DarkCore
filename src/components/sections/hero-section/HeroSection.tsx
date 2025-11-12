@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import { heroContent } from "./content"
 import { TrendingUp, Globe, Zap, ArrowRight } from "lucide-react"
+import { FloatingInvestmentIcons, InvestmentWaves } from "@/components/ui/investment-animations"
 
 export function HeroSection() {
     const [language, setLanguage] = useState<"en" | "ar">("ar")
@@ -64,56 +65,104 @@ export function HeroSection() {
                     aria-hidden="true"
                 />
 
-                {/* Main gradient background */}
+                {/* Main gradient background with investment theme */}
                 <div
-                    className="absolute inset-0 opacity-70"
+                    className="absolute inset-0 opacity-75"
                     style={{
-                        background: "linear-gradient(135deg, #0a0a0f 0%, #1a1a24 50%, #0d1117 100%)"
+                        background: "linear-gradient(135deg, rgba(10, 10, 15, 0.95) 0%, rgba(20, 40, 160, 0.08) 35%, rgba(26, 26, 36, 0.9) 65%, rgba(13, 17, 23, 0.95) 100%)"
                     }}
                 />
 
-                {/* Accent gradient overlays */}
-                <div
-                    className="absolute inset-0 opacity-30"
+                {/* Animated Accent gradient overlays */}
+                <motion.div
+                    className="absolute inset-0 opacity-25"
                     style={{
-                        background: "radial-gradient(circle at 20% 50%, rgba(78, 205, 196, 0.15) 0%, transparent 50%)"
+                        background: "radial-gradient(circle at 20% 50%, rgba(78, 205, 196, 0.2) 0%, transparent 50%)"
+                    }}
+                    animate={{
+                        opacity: [0.15, 0.25, 0.15],
+                        scale: [1, 1.1, 1]
+                    }}
+                    transition={{
+                        duration: 6,
+                        repeat: Infinity,
+                        ease: "easeInOut"
                     }}
                 />
-                <div
+                <motion.div
                     className="absolute inset-0 opacity-20"
                     style={{
-                        background: "radial-gradient(circle at 80% 50%, rgba(91, 181, 162, 0.12) 0%, transparent 50%)"
+                        background: "radial-gradient(circle at 80% 50%, rgba(91, 181, 162, 0.15) 0%, transparent 50%)"
+                    }}
+                    animate={{
+                        opacity: [0.12, 0.2, 0.12],
+                        scale: [1.1, 1, 1.1]
+                    }}
+                    transition={{
+                        duration: 8,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 2
+                    }}
+                />
+                {/* Additional investment gradient overlay */}
+                <motion.div
+                    className="absolute inset-0 opacity-15"
+                    style={{
+                        background: "radial-gradient(ellipse at center, rgba(78, 205, 196, 0.1) 0%, transparent 60%)"
+                    }}
+                    animate={{
+                        opacity: [0.1, 0.15, 0.1]
+                    }}
+                    transition={{
+                        duration: 10,
+                        repeat: Infinity,
+                        ease: "easeInOut"
                     }}
                 />
             </div>
 
-            {/* Animated Background Elements */}
+            {/* Animated Background Elements with Investment Theme */}
             <div className="absolute inset-0 pointer-events-none z-10">
                 <motion.div
-                    className="absolute top-20 left-10 w-32 h-32 bg-[#4ECDC4]/10 rounded-full blur-3xl"
+                    className="absolute top-20 left-10 w-32 h-32 rounded-full blur-3xl"
+                    style={{
+                        background: "radial-gradient(circle, rgba(78, 205, 196, 0.15) 0%, transparent 70%)"
+                    }}
                     animate={{
-                        scale: [1, 1.2, 1],
-                        opacity: [0.3, 0.6, 0.3],
+                        scale: [1, 1.3, 1],
+                        opacity: [0.2, 0.4, 0.2],
+                        x: [0, 20, 0],
+                        y: [0, -20, 0]
                     }}
                     transition={{
-                        duration: 4,
+                        duration: 5,
                         repeat: Infinity,
                         ease: "easeInOut",
                     }}
                 />
                 <motion.div
-                    className="absolute bottom-20 right-10 w-48 h-48 bg-[#4ECDC4]/15 rounded-full blur-3xl"
+                    className="absolute bottom-20 right-10 w-48 h-48 rounded-full blur-3xl"
+                    style={{
+                        background: "radial-gradient(circle, rgba(91, 181, 162, 0.12) 0%, transparent 70%)"
+                    }}
                     animate={{
                         scale: [1.2, 1, 1.2],
-                        opacity: [0.2, 0.5, 0.2],
+                        opacity: [0.15, 0.35, 0.15],
+                        x: [0, -30, 0],
+                        y: [0, 30, 0]
                     }}
                     transition={{
-                        duration: 6,
+                        duration: 7,
                         repeat: Infinity,
                         ease: "easeInOut",
                         delay: 2,
                     }}
                 />
+                {/* Investment Waves */}
+                <InvestmentWaves />
+                {/* Floating Investment Icons */}
+                <FloatingInvestmentIcons />
             </div>
 
             {/* Main Content */}

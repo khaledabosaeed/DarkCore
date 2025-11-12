@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { criteriaContent } from "./content"
 import { FileCheck, Percent, Database, RefreshCw } from "lucide-react"
+import { InvestmentBackground, AnimatedColorGradient } from "@/components/ui/investment-shapes"
 
 export function CriteriaSection() {
     const [language, setLanguage] = useState<"en" | "ar">("ar")
@@ -41,12 +42,27 @@ export function CriteriaSection() {
         >
             {/* Background decorative elements */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div
-                    className="absolute top-1/3 left-1/4 w-96 h-96 opacity-10"
+                <motion.div
+                    className="absolute top-1/3 left-1/4 w-96 h-96 opacity-15"
                     style={{
                         background: "radial-gradient(circle, rgba(78, 205, 196, 0.2) 0%, transparent 70%)"
                     }}
+                    animate={{
+                        scale: [1, 1.2, 1],
+                        opacity: [0.1, 0.2, 0.1]
+                    }}
+                    transition={{
+                        duration: 6,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }}
                 />
+                
+                {/* Investment Background Shapes */}
+                <InvestmentBackground variant="icons" intensity="medium" />
+                
+                {/* Animated Color Gradient */}
+                <AnimatedColorGradient />
             </div>
 
             <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 relative z-10">

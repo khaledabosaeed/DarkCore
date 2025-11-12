@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { partnershipsContent } from "./content"
 import { Building2, HandshakeIcon, Globe2, ArrowRight } from "lucide-react"
 import Image from "next/image"
+import { InvestmentBackground, AnimatedColorGradient } from "@/components/ui/investment-shapes"
 
 export function PartnershipsSection() {
     const [language, setLanguage] = useState<"en" | "ar">("ar")
@@ -42,18 +43,43 @@ export function PartnershipsSection() {
         >
             {/* Background decorative elements */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div
-                    className="absolute top-1/4 left-0 w-[600px] h-[600px] opacity-10"
+                <motion.div
+                    className="absolute top-1/4 left-0 w-[600px] h-[600px] opacity-15"
                     style={{
-                        background: "radial-gradient(circle, rgba(78, 205, 196, 0.3) 0%, transparent 70%)"
+                        background: "radial-gradient(circle, rgba(78, 205, 196, 0.25) 0%, transparent 70%)"
+                    }}
+                    animate={{
+                        scale: [1, 1.15, 1],
+                        opacity: [0.1, 0.2, 0.1]
+                    }}
+                    transition={{
+                        duration: 9,
+                        repeat: Infinity,
+                        ease: "easeInOut"
                     }}
                 />
-                <div
-                    className="absolute bottom-1/4 right-0 w-[600px] h-[600px] opacity-10"
+                <motion.div
+                    className="absolute bottom-1/4 right-0 w-[600px] h-[600px] opacity-15"
                     style={{
-                        background: "radial-gradient(circle, rgba(91, 181, 162, 0.3) 0%, transparent 70%)"
+                        background: "radial-gradient(circle, rgba(91, 181, 162, 0.25) 0%, transparent 70%)"
+                    }}
+                    animate={{
+                        scale: [1.15, 1, 1.15],
+                        opacity: [0.1, 0.2, 0.1]
+                    }}
+                    transition={{
+                        duration: 11,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 4
                     }}
                 />
+                
+                {/* Investment Background Shapes */}
+                <InvestmentBackground variant="points" intensity="light" />
+                
+                {/* Animated Color Gradient */}
+                <AnimatedColorGradient />
             </div>
 
             <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 relative z-10">
@@ -143,13 +169,47 @@ export function PartnershipsSection() {
                                 backdropFilter: "blur(10px)"
                             }}
                         >
-                            <p
-                                className={`text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed ${
-                                    isRTL ? "font-almarai" : "font-poppins"
-                                }`}
-                            >
-                                {currentContent.description}
-                            </p>
+                            {/* Split description into visual sections */}
+                            <div className="space-y-6">
+                                {/* Vision Section */}
+                                <div>
+                                    <h4
+                                        className={`text-xl sm:text-2xl font-bold text-[#4ECDC4] mb-3 ${
+                                            isRTL ? "font-almarai text-right" : "font-poppins"
+                                        }`}
+                                    >
+                                        {isRTL ? "رؤيتنا" : "Our Vision"}
+                                    </h4>
+                                    <p
+                                        className={`text-base sm:text-lg text-gray-300 leading-relaxed ${
+                                            isRTL ? "font-almarai text-right" : "font-poppins"
+                                        }`}
+                                    >
+                                        {currentContent.vision || currentContent.description}
+                                    </p>
+                                </div>
+
+                                {/* Divider */}
+                                <div className="h-px bg-gradient-to-r from-transparent via-[#4ECDC4]/30 to-transparent" />
+
+                                {/* Mission Section */}
+                                <div>
+                                    <h4
+                                        className={`text-xl sm:text-2xl font-bold text-[#4ECDC4] mb-3 ${
+                                            isRTL ? "font-almarai text-right" : "font-poppins"
+                                        }`}
+                                    >
+                                        {isRTL ? "رسالتنا" : "Our Mission"}
+                                    </h4>
+                                    <p
+                                        className={`text-base sm:text-lg text-gray-300 leading-relaxed ${
+                                            isRTL ? "font-almarai text-right" : "font-poppins"
+                                        }`}
+                                    >
+                                        {currentContent.mission || currentContent.description}
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </motion.div>
                 </div>

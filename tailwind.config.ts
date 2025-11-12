@@ -146,6 +146,18 @@ module.exports = {
                 'gradient-mixed': 'linear-gradient(135deg, #1428A0 0%, #84939e 50%, #2d4bb8 100%)',
                 'gradient-hero': 'linear-gradient(135deg, #102080 0%, #1428A0 35%, #84939e 100%)',
                 'gradient-section': 'linear-gradient(180deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%)',
+                // Investment-themed gradients
+                'gradient-investment': 'linear-gradient(135deg, rgba(20, 40, 160, 0.15) 0%, rgba(78, 205, 196, 0.1) 50%, rgba(91, 181, 162, 0.15) 100%)',
+                'gradient-investment-soft': 'linear-gradient(135deg, rgba(78, 205, 196, 0.05) 0%, rgba(91, 181, 162, 0.03) 50%, rgba(78, 205, 196, 0.05) 100%)',
+                'gradient-investment-strong': 'linear-gradient(135deg, rgba(78, 205, 196, 0.2) 0%, rgba(91, 181, 162, 0.15) 50%, rgba(78, 205, 196, 0.2) 100%)',
+                'gradient-card-soft': 'linear-gradient(135deg, rgba(26, 26, 36, 0.6) 0%, rgba(20, 20, 28, 0.5) 100%)',
+                'gradient-card-hover': 'linear-gradient(135deg, rgba(78, 205, 196, 0.1) 0%, rgba(91, 181, 162, 0.05) 100%)',
+                'gradient-dark-soft': 'linear-gradient(135deg, rgba(10, 10, 15, 0.95) 0%, rgba(26, 26, 36, 0.9) 50%, rgba(13, 17, 23, 0.95) 100%)',
+                'gradient-dark-investment': 'linear-gradient(135deg, rgba(10, 10, 15, 0.98) 0%, rgba(20, 40, 160, 0.05) 50%, rgba(10, 10, 15, 0.98) 100%)',
+                // Radial gradients
+                'gradient-radial-primary': 'radial-gradient(circle at 50% 50%, rgba(78, 205, 196, 0.15) 0%, transparent 70%)',
+                'gradient-radial-secondary': 'radial-gradient(circle at 50% 50%, rgba(91, 181, 162, 0.12) 0%, transparent 70%)',
+                'gradient-radial-soft': 'radial-gradient(ellipse at center, rgba(78, 205, 196, 0.1) 0%, transparent 60%)',
             },
 
             // Box shadows مع الألوان الجديدة
@@ -187,6 +199,14 @@ module.exports = {
                 'bounce-soft': 'bounceSoft 0.6s ease-in-out',
                 'glow-pulse': 'glowPulse 2s ease-in-out infinite alternate',
                 'float': 'float 3s ease-in-out infinite',
+                // Investment animations
+                'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+                'wave': 'wave 4s ease-in-out infinite',
+                'money-flow': 'moneyFlow 5s linear infinite',
+                'growth': 'growth 2s ease-out',
+                'chart-line': 'chartLine 2s ease-out',
+                'gradient-shift': 'gradientShift 8s ease-in-out infinite',
+                'investment-pulse': 'investmentPulse 3s ease-in-out infinite',
             },
 
             keyframes: {
@@ -211,7 +231,49 @@ module.exports = {
                 float: {
                     '0%, 100%': { transform: 'translateY(0px)' },
                     '50%': { transform: 'translateY(-10px)' },
-                }
+                },
+                // Investment animations
+                pulseGlow: {
+                    '0%, 100%': { 
+                        boxShadow: '0 0 20px rgba(78, 205, 196, 0.3), 0 0 40px rgba(78, 205, 196, 0.1)',
+                        opacity: '0.8'
+                    },
+                    '50%': { 
+                        boxShadow: '0 0 40px rgba(78, 205, 196, 0.6), 0 0 80px rgba(78, 205, 196, 0.2)',
+                        opacity: '1'
+                    },
+                },
+                wave: {
+                    '0%, 100%': { transform: 'translateY(0) scaleY(1)', opacity: '0.3' },
+                    '50%': { transform: 'translateY(-20px) scaleY(1.1)', opacity: '0.6' },
+                },
+                moneyFlow: {
+                    '0%': { transform: 'translateY(100%) rotate(0deg)', opacity: '0' },
+                    '50%': { opacity: '0.6' },
+                    '100%': { transform: 'translateY(-10%) rotate(360deg)', opacity: '0' },
+                },
+                growth: {
+                    '0%': { transform: 'scale(0.8)', opacity: '0' },
+                    '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                chartLine: {
+                    '0%': { strokeDashoffset: '100%', opacity: '0' },
+                    '100%': { strokeDashoffset: '0%', opacity: '1' },
+                },
+                gradientShift: {
+                    '0%, 100%': { backgroundPosition: '0% 50%' },
+                    '50%': { backgroundPosition: '100% 50%' },
+                },
+                investmentPulse: {
+                    '0%, 100%': { 
+                        transform: 'scale(1)',
+                        opacity: '0.4'
+                    },
+                    '50%': { 
+                        transform: 'scale(1.1)',
+                        opacity: '0.8'
+                    },
+                },
             },
 
             // Spacing إضافي

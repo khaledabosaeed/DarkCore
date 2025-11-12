@@ -3,7 +3,9 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { shareholdersContent } from "./content"
-import { Award, Clock, TrendingUp, ArrowRight } from "lucide-react"
+import { Award, Clock, TrendingUp, ArrowRight, Info } from "lucide-react"
+import { Accordion } from "@/components/ui/accordion"
+import { InvestmentBackground, AnimatedColorGradient } from "@/components/ui/investment-shapes"
 
 export function ShareholdersSection() {
     const [language, setLanguage] = useState<"en" | "ar">("ar")
@@ -41,18 +43,43 @@ export function ShareholdersSection() {
         >
             {/* Background decorative elements */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div
-                    className="absolute top-1/4 right-0 w-[500px] h-[500px] opacity-10"
+                <motion.div
+                    className="absolute top-1/4 right-0 w-[500px] h-[500px] opacity-15"
                     style={{
-                        background: "radial-gradient(circle, rgba(78, 205, 196, 0.3) 0%, transparent 70%)"
+                        background: "radial-gradient(circle, rgba(78, 205, 196, 0.25) 0%, transparent 70%)"
+                    }}
+                    animate={{
+                        scale: [1, 1.1, 1],
+                        opacity: [0.1, 0.2, 0.1]
+                    }}
+                    transition={{
+                        duration: 8,
+                        repeat: Infinity,
+                        ease: "easeInOut"
                     }}
                 />
-                <div
-                    className="absolute bottom-1/4 left-0 w-[500px] h-[500px] opacity-10"
+                <motion.div
+                    className="absolute bottom-1/4 left-0 w-[500px] h-[500px] opacity-15"
                     style={{
-                        background: "radial-gradient(circle, rgba(91, 181, 162, 0.3) 0%, transparent 70%)"
+                        background: "radial-gradient(circle, rgba(91, 181, 162, 0.25) 0%, transparent 70%)"
+                    }}
+                    animate={{
+                        scale: [1.1, 1, 1.1],
+                        opacity: [0.1, 0.2, 0.1]
+                    }}
+                    transition={{
+                        duration: 10,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 3
                     }}
                 />
+                
+                {/* Investment Background Shapes */}
+                <InvestmentBackground variant="orbs" intensity="medium" />
+                
+                {/* Animated Color Gradient */}
+                <AnimatedColorGradient />
             </div>
 
             <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 relative z-10">
@@ -188,7 +215,7 @@ export function ShareholdersSection() {
                     })}
                 </div>
 
-                {/* Philosophy Section */}
+                {/* Philosophy Section - Using Accordion */}
                 <motion.div
                     className="max-w-5xl mx-auto mb-16 sm:mb-20"
                     initial={{ opacity: 0, y: 30 }}
@@ -196,37 +223,20 @@ export function ShareholdersSection() {
                     transition={{ delay: 0.9, duration: 0.8 }}
                     viewport={{ once: true }}
                 >
-                    <div
-                        className="p-8 sm:p-10 md:p-12 rounded-2xl border border-white/10"
-                        style={{
-                            background: "rgba(20, 20, 28, 0.5)",
-                            backdropFilter: "blur(20px)"
-                        }}
-                    >
-                        <h3
-                            className={`text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 text-center ${
-                                isRTL ? "font-almarai" : "font-poppins"
-                            }`}
-                        >
-                            {currentContent.philosophy.title}
-                        </h3>
-
-                        <p
-                            className={`text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed mb-4 text-center ${
-                                isRTL ? "font-almarai" : "font-poppins"
-                            }`}
-                        >
-                            {currentContent.philosophy.description}
-                        </p>
-
-                        <p
-                            className={`text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed text-center ${
-                                isRTL ? "font-almarai" : "font-poppins"
-                            }`}
-                        >
-                            {currentContent.philosophy.subdescription}
-                        </p>
-                    </div>
+                    <Accordion
+                        items={[
+                            {
+                                title: currentContent.philosophy.title,
+                                content: [
+                                    currentContent.philosophy.description,
+                                    currentContent.philosophy.subdescription
+                                ],
+                                icon: Info
+                            }
+                        ]}
+                        isRTL={isRTL}
+                        defaultOpen={0}
+                    />
                 </motion.div>
 
                 {/* CTA Section */}
