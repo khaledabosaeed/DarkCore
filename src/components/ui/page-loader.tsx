@@ -68,22 +68,13 @@ export function PageLoader() {
 
                     {/* Loading Text */}
                     <motion.h2
-                        className="text-3xl md:text-4xl font-bold text-white mb-2 font-poppins tracking-wider"
+                        className="text-3xl md:text-4xl font-bold text-white mb-8 font-poppins tracking-wider"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
                     >
                         DARK CORE
                     </motion.h2>
-
-                    <motion.p
-                        className="text-sm md:text-base text-[#4ECDC4] mb-6 font-poppins"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.4 }}
-                    >
-                        Cityscape Global
-                    </motion.p>
 
                     {/* Progress Bar */}
                     <div className="w-64 md:w-80 h-1.5 bg-white/10 rounded-full overflow-hidden">
