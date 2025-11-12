@@ -11,6 +11,9 @@ import { InsightsSection } from "@/components/sections/insights-section/Insights
 import { PartnershipsSection } from "@/components/sections/partnerships-section/PartnershipsSection";
 import { ContactSection } from "@/components/sections/contact-section/ContactSection";
 import { Navbar } from "@/components/ui/navbar";
+import { WhatsAppButton } from "@/components/ui/whatsapp-button";
+import { PageLoader } from "@/components/ui/page-loader";
+import { PartnersMarquee } from "@/components/ui/partners-marquee";
 
 export default function Home() {
   useEffect(() => {
@@ -58,14 +61,21 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[#0a0a0f] overflow-x-hidden">
-      {/* Navigation */}
-      <Navbar />
+    <>
+      {/* Page Loader */}
+      <PageLoader />
+
+      <main className="min-h-screen bg-[#0a0a0f] overflow-x-hidden">
+        {/* Navigation */}
+        <Navbar />
 
       {/* Hero Section */}
       <section id="home" className="mb-0">
         <HeroSection />
       </section>
+
+      {/* Partners Marquee */}
+      <PartnersMarquee />
 
       {/* About Section */}
       <AboutSection />
@@ -93,6 +103,12 @@ export default function Home() {
         <Footer />
       </footer>
 
+      {/* WhatsApp Floating Button */}
+      <WhatsAppButton
+        phoneNumber="966500000000"
+        message="Hello! I'm interested in learning more about Cityscape Global investment opportunities."
+      />
+
       {/* Progress Indicator */}
       <div className="fixed top-0 left-0 w-full h-1 bg-neutral-200 z-50">
         <div
@@ -119,6 +135,7 @@ export default function Home() {
           `,
         }}
       />
-    </main>
+      </main>
+    </>
   );
 }

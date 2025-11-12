@@ -3,8 +3,10 @@
 import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import { heroContent } from "./content"
-import { TrendingUp, Globe, Zap, ArrowRight } from "lucide-react"
+import { ArrowRight, Download } from "lucide-react"
 import { FloatingInvestmentIcons, InvestmentWaves } from "@/components/ui/investment-animations"
+import { AnimatedCounter } from "@/components/ui/animated-counter"
+import { ScrollIndicator } from "@/components/ui/scroll-indicator"
 
 export function HeroSection() {
     const [language, setLanguage] = useState<"en" | "ar">("ar")
@@ -45,9 +47,6 @@ export function HeroSection() {
     const currentContent = heroContent[language]
     const isRTL = language === "ar"
 
-    // Icon mapping for features
-    const featureIcons = [TrendingUp, Globe, Zap]
-
     return (
         <section
             ref={sectionRef}
@@ -62,6 +61,8 @@ export function HeroSection() {
                     loop
                     muted
                     playsInline
+                    preload="metadata"
+                    poster="/hero-poster.jpg"
                     aria-hidden="true"
                 />
 
@@ -226,7 +227,7 @@ export function HeroSection() {
 
                         {/* CTA Buttons */}
                         <motion.div
-                            className={`flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 sm:mb-20 ${
+                            className={`flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 ${
                                 isRTL ? "sm:flex-row-reverse" : ""
                             }`}
                             initial={{ opacity: 0, y: 20 }}
@@ -234,91 +235,84 @@ export function HeroSection() {
                             transition={{ delay: 1.0, duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            {/* Primary Button */}
+                            {/* Primary Button - Bigger and more prominent */}
                             <motion.a
                                 href="#contact"
-                                className={`group px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg text-[#0a0a0f] bg-[#4ECDC4] hover:bg-[#5bb5a2] transition-all duration-300 shadow-lg hover:shadow-[#4ECDC4]/50 flex items-center gap-2 ${
+                                className={`group px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-bold text-lg sm:text-xl text-[#0a0a0f] bg-[#4ECDC4] hover:bg-[#5bb5a2] transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-[#4ECDC4]/50 flex items-center gap-3 ${
                                     isRTL ? "flex-row-reverse font-almarai" : "font-poppins"
                                 }`}
-                                whileHover={{ scale: 1.05, y: -2 }}
+                                whileHover={{ scale: 1.08, y: -3 }}
                                 whileTap={{ scale: 0.95 }}
                             >
                                 {currentContent.primaryButton}
                                 <ArrowRight
-                                    className={`w-5 h-5 group-hover:translate-x-1 transition-transform ${
+                                    className={`w-6 h-6 group-hover:translate-x-1 transition-transform ${
                                         isRTL ? "rotate-180" : ""
                                     }`}
                                 />
                             </motion.a>
 
-                            {/* Secondary Button */}
-                            <motion.a
-                                href="#contact"
-                                className={`px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg text-white border-2 border-[#4ECDC4] hover:bg-[#4ECDC4]/10 transition-all duration-300 ${
-                                    isRTL ? "font-almarai" : "font-poppins"
+                            {/* Download Button */}
+                            {/* <motion.a
+                                href="/company-profile.pdf"
+                                download
+                                className={`group px-6 sm:px-8 py-4 sm:py-5 rounded-xl font-semibold text-base sm:text-lg text-white border-2 border-[#4ECDC4] hover:bg-[#4ECDC4]/20 transition-all duration-300 flex items-center gap-2 ${
+                                    isRTL ? "flex-row-reverse font-almarai" : "font-poppins"
                                 }`}
                                 whileHover={{ scale: 1.05, y: -2 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                {currentContent.secondaryButton}
-                            </motion.a>
+                                <Download className="w-5 h-5 group-hover:animate-bounce" />
+                                {currentContent.downloadButton}
+                            </motion.a> */}
                         </motion.div>
 
-                        {/* Features */}
+                        {/* Statistics Section - Simplified inline style */}
                         <motion.div
-                            className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto"
+                            className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16 mt-16"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: 1.2, duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            {currentContent.features.map((feature, index) => {
-                                const Icon = featureIcons[index]
-                                return (
-                                    <motion.div
-                                        key={index}
-                                        className="text-center p-6 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-[#4ECDC4]/50 transition-all duration-300"
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        transition={{ delay: 1.4 + index * 0.2, duration: 0.6 }}
-                                        viewport={{ once: true }}
-                                        whileHover={{
-                                            y: -5,
-                                            boxShadow: "0 20px 40px rgba(78, 205, 196, 0.2)"
-                                        }}
-                                    >
-                                        {/* Icon */}
-                                        <motion.div
-                                            className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#4ECDC4]/10 mb-4"
-                                            whileHover={{ scale: 1.1, rotate: 5 }}
-                                        >
-                                            <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-[#4ECDC4]" />
-                                        </motion.div>
-
-                                        {/* Title */}
-                                        <h3
-                                            className={`text-lg sm:text-xl font-bold text-white mb-2 ${
-                                                isRTL ? "font-almarai" : "font-poppins"
-                                            }`}
-                                        >
-                                            {feature.title}
-                                        </h3>
-
-                                        {/* Description */}
-                                        <p
-                                            className={`text-sm sm:text-base text-gray-400 ${
-                                                isRTL ? "font-almarai" : "font-poppins"
-                                            }`}
-                                        >
-                                            {feature.description}
-                                        </p>
-                                    </motion.div>
-                                )
-                            })}
+                            {currentContent.stats.map((stat, index) => (
+                                <motion.div
+                                    key={index}
+                                    className="flex flex-col items-center"
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    transition={{ delay: 1.3 + index * 0.1, duration: 0.5 }}
+                                    viewport={{ once: true }}
+                                >
+                                    <div className={`text-4xl sm:text-5xl md:text-6xl font-bold mb-2 ${
+                                        isRTL ? "font-almarai" : "font-poppins"
+                                    }`}
+                                    style={{
+                                        background: "linear-gradient(to right, #4ECDC4 0%, #5bb5a2 100%)",
+                                        WebkitBackgroundClip: "text",
+                                        WebkitTextFillColor: "transparent",
+                                        backgroundClip: "text",
+                                    }}>
+                                        <AnimatedCounter
+                                            value={stat.value}
+                                            suffix={stat.suffix}
+                                            duration={2.5}
+                                        />
+                                    </div>
+                                    <div className={`text-xs sm:text-sm text-gray-400 text-center max-w-[120px] ${
+                                        isRTL ? "font-almarai" : "font-poppins"
+                                    }`}>
+                                        {stat.label}
+                                    </div>
+                                </motion.div>
+                            ))}
                         </motion.div>
                     </div>
                 </div>
             </motion.div>
+
+            {/* Scroll Indicator */}
+            <ScrollIndicator />
         </section>
     )
 }
