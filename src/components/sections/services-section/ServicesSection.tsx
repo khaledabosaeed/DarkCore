@@ -144,7 +144,6 @@ export function ServicesSection() {
                     {currentContent.services.map((service, index) => {
                         const Icon = serviceIcons[index]
                         const isOpen = openIndex === index
-
                         return (
                             <motion.div
                                 key={index}
@@ -203,11 +202,9 @@ export function ServicesSection() {
                                                 isRTL ? "font-almarai" : "font-poppins"
                                             }`}
                                             style={{
-                                                background: isOpen
-                                                    ? "linear-gradient(135deg, #000000 0%, #2d2d2d 50%, #4a4a4a 100%)"
-                                                    : "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%)",
+                                                background:  "",
                                                 WebkitBackgroundClip: "text",
-                                                WebkitTextFillColor: "transparent",
+                                                // WebkitTextFillColor: "transparent",
                                                 backgroundClip: "text",
                                             }}
                                         >

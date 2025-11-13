@@ -182,7 +182,7 @@ export function AboutSection() {
                                 className="group relative p-6 sm:p-8 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
                                 style={{
                                     border: "2px solid transparent",
-                                    backgroundImage: "linear-gradient(white, white), linear-gradient(135deg, rgba(0,0,0,0.08) 0%, rgba(64,64,64,0.12) 50%, rgba(26,26,26,0.08) 100%)",
+                                    // backgroundImage: "linear-gradient(white, white), linear-gradient(135deg, rgba(0,0,0,0.08) 0%, rgba(64,64,64,0.12) 50%, rgba(26,26,26,0.08) 100%)",
                                     backgroundOrigin: "border-box",
                                     backgroundClip: "padding-box, border-box",
                                 }}
@@ -199,10 +199,10 @@ export function AboutSection() {
                                 {/* Gradient Border Effect on Hover */}
                                 <motion.div
                                     className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                                    style={{
-                                        background: "linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(64, 64, 64, 0.2) 100%)",
-                                        padding: "2px"
-                                    }}
+                                    // style={{
+                                    //     background: "linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(64, 64, 64, 0.2) 100%)",
+                                    //     padding: "2px"
+                                    // }}
                                 />
 
                                 {/* Icon */}
