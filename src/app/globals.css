@@ -548,11 +548,26 @@ input[type="reset"] {
     -webkit-backdrop-filter: none !important;
   }
 
-  /* Keep backgrounds but simplify them for performance */
+  /* Disable animated backgrounds on mobile - they cause flickering */
   [style*="radial-gradient"].blur-3xl,
-  [style*="linear-gradient"].blur-3xl {
-    opacity: 0.3 !important;
+  [style*="linear-gradient"].blur-3xl,
+  .blur-3xl {
+    animation: none !important;
+    opacity: 0.1 !important;
     filter: none !important;
+  }
+
+  /* Stop pulsing/flickering animations on decorative backgrounds ONLY */
+  .absolute[style*="radial-gradient"],
+  .absolute[style*="linear-gradient"] {
+    animation: none !important;
+  }
+
+  /* Disable pointer-events animations that cause repaints */
+  .pointer-events-none[style*="background"],
+  [class*="absolute"][class*="inset-0"]:not(:has(button)):not(:has(a)) {
+    animation: none !important;
+    will-change: auto !important;
   }
 
   /* Ensure text and numbers are always visible */

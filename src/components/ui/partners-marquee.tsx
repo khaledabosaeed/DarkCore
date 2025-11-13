@@ -46,6 +46,9 @@ export function PartnersMarquee() {
     const partners = partnersData[language]
     const isRTL = language === "ar"
 
+    // Duplicate partners array multiple times for seamless infinite scroll
+    const duplicatedPartners = [...partners, ...partners, ...partners, ...partners]
+
     return (
         <div className="relative w-full overflow-hidden py-16" style={{
             background: "linear-gradient(180deg, rgba(10, 10, 15, 0.98) 0%, rgba(13, 17, 23, 0.95) 30%, rgba(15, 20, 30, 0.92) 70%, rgba(10, 10, 15, 0.98) 100%)"
@@ -93,106 +96,56 @@ export function PartnersMarquee() {
                 background: "linear-gradient(to left, rgba(10, 10, 15, 0.98), transparent)"
             }} />
 
-            {/* Marquee Content */}
-            <div className="flex">
-                {/* First Set */}
-                <motion.div
-                    className="flex gap-8 md:gap-12 pr-8 md:pr-12"
-                    animate={{
-                        x: [0, -1000]
-                    }}
-                    transition={{
-                        duration: 20,
-                        repeat: Infinity,
-                        ease: "linear"
-                    }}
-                >
-                    {[...partners, ...partners].map((partner, index) => {
-                        const Icon = partner.icon
-                        return (
+            {/* Marquee Content - Infinite Seamless Scroll */}
+            <motion.div
+                className="flex gap-8 md:gap-12"
+                animate={{
+                    x: isRTL ? [0, "50%"] : [0, "-50%"]
+                }}
+                transition={{
+                    duration: 30,
+                    repeat: Infinity,
+                    ease: "linear",
+                    repeatType: "loop"
+                }}
+            >
+                {/* Render duplicated partners */}
+                {duplicatedPartners.map((partner, index) => {
+                    const Icon = partner.icon
+                    return (
+                        <motion.div
+                            key={`partner-${index}`}
+                            className="flex items-center gap-3 px-8 py-4 rounded-xl whitespace-nowrap min-w-fit border transition-all duration-300"
+                            style={{
+                                background: "linear-gradient(135deg, rgba(26, 26, 36, 0.8) 0%, rgba(20, 40, 160, 0.12) 50%, rgba(20, 20, 28, 0.7) 100%)",
+                                backdropFilter: "blur(12px)",
+                                borderColor: "rgba(78, 205, 196, 0.2)",
+                                boxShadow: "0 4px 16px rgba(0, 0, 0, 0.3)"
+                            }}
+                            whileHover={{
+                                scale: 1.08,
+                                borderColor: "rgba(78, 205, 196, 0.6)",
+                                boxShadow: "0 8px 24px rgba(78, 205, 196, 0.2)"
+                            }}
+                        >
                             <motion.div
-                                key={`first-${index}`}
-                                className="flex items-center gap-3 px-8 py-4 rounded-xl whitespace-nowrap min-w-fit border transition-all duration-300"
+                                className="inline-flex items-center justify-center w-10 h-10 rounded-full"
                                 style={{
-                                    background: "linear-gradient(135deg, rgba(26, 26, 36, 0.8) 0%, rgba(20, 40, 160, 0.12) 50%, rgba(20, 20, 28, 0.7) 100%)",
-                                    backdropFilter: "blur(12px)",
-                                    borderColor: "rgba(78, 205, 196, 0.2)",
-                                    boxShadow: "0 4px 16px rgba(0, 0, 0, 0.3)"
+                                    background: "linear-gradient(135deg, rgba(78, 205, 196, 0.25) 0%, rgba(91, 181, 162, 0.15) 100%)"
                                 }}
-                                whileHover={{
-                                    scale: 1.08,
-                                    borderColor: "rgba(78, 205, 196, 0.6)",
-                                    boxShadow: "0 8px 24px rgba(78, 205, 196, 0.2)"
-                                }}
+                                whileHover={{ scale: 1.15, rotate: 5 }}
                             >
-                                <motion.div
-                                    className="inline-flex items-center justify-center w-10 h-10 rounded-full"
-                                    style={{
-                                        background: "linear-gradient(135deg, rgba(78, 205, 196, 0.25) 0%, rgba(91, 181, 162, 0.15) 100%)"
-                                    }}
-                                    whileHover={{ scale: 1.15, rotate: 5 }}
-                                >
-                                    <Icon className="w-5 h-5 text-[#4ECDC4]" />
-                                </motion.div>
-                                <span className={`text-white font-semibold text-sm md:text-base ${
-                                    isRTL ? "font-almarai" : "font-poppins"
-                                }`}>
-                                    {partner.name}
-                                </span>
+                                <Icon className="w-5 h-5 text-[#4ECDC4]" />
                             </motion.div>
-                        )
-                    })}
-                </motion.div>
-
-                {/* Second Set (for seamless loop) */}
-                <motion.div
-                    className="flex gap-8 md:gap-12 pr-8 md:pr-12"
-                    animate={{
-                        x: [0, -1000]
-                    }}
-                    transition={{
-                        duration: 20,
-                        repeat: Infinity,
-                        ease: "linear"
-                    }}
-                >
-                    {[...partners, ...partners].map((partner, index) => {
-                        const Icon = partner.icon
-                        return (
-                            <motion.div
-                                key={`second-${index}`}
-                                className="flex items-center gap-3 px-8 py-4 rounded-xl whitespace-nowrap min-w-fit border transition-all duration-300"
-                                style={{
-                                    background: "linear-gradient(135deg, rgba(26, 26, 36, 0.8) 0%, rgba(20, 40, 160, 0.12) 50%, rgba(20, 20, 28, 0.7) 100%)",
-                                    backdropFilter: "blur(12px)",
-                                    borderColor: "rgba(78, 205, 196, 0.2)",
-                                    boxShadow: "0 4px 16px rgba(0, 0, 0, 0.3)"
-                                }}
-                                whileHover={{
-                                    scale: 1.08,
-                                    borderColor: "rgba(78, 205, 196, 0.6)",
-                                    boxShadow: "0 8px 24px rgba(78, 205, 196, 0.2)"
-                                }}
-                            >
-                                <motion.div
-                                    className="inline-flex items-center justify-center w-10 h-10 rounded-full"
-                                    style={{
-                                        background: "linear-gradient(135deg, rgba(78, 205, 196, 0.25) 0%, rgba(91, 181, 162, 0.15) 100%)"
-                                    }}
-                                    whileHover={{ scale: 1.15, rotate: 5 }}
-                                >
-                                    <Icon className="w-5 h-5 text-[#4ECDC4]" />
-                                </motion.div>
-                                <span className={`text-white font-semibold text-sm md:text-base ${
-                                    isRTL ? "font-almarai" : "font-poppins"
-                                }`}>
-                                    {partner.name}
-                                </span>
-                            </motion.div>
-                        )
-                    })}
-                </motion.div>
-            </div>
+                            <span className={`text-white font-semibold text-sm md:text-base ${
+                                isRTL ? "font-almarai" : "font-poppins"
+                            }`}>
+                                {partner.name}
+                            </span>
+                        </motion.div>
+                    )
+                })}
+            </motion.div>
         </div>
     )
 }
