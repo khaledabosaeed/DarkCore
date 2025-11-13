@@ -1,19 +1,50 @@
 "use client";
 
 import { useEffect } from "react";
-import { Footer } from "@/components/sections/footer";
-import { HeroSection } from "@/components/sections/hero-section";
-import { AboutSection } from "@/components/sections/about-section/AboutSection";
-import { ServicesSection } from "@/components/sections/services-section/ServicesSection";
-import { CriteriaSection } from "@/components/sections/criteria-section/CriteriaSection";
-import { ShareholdersSection } from "@/components/sections/shareholders-section/ShareholdersSection";
-import { InsightsSection } from "@/components/sections/insights-section/InsightsSection";
-import { PartnershipsSection } from "@/components/sections/partnerships-section/PartnershipsSection";
-import { ContactSection } from "@/components/sections/contact-section/ContactSection";
+import dynamic from "next/dynamic";
 import { Navbar } from "@/components/ui/navbar";
-import { WhatsAppButton } from "@/components/ui/whatsapp-button";
 import { PageLoader } from "@/components/ui/page-loader";
+
+// Critical components - load immediately
+import { HeroSection } from "@/components/sections/hero-section";
 import { PartnersMarquee } from "@/components/ui/partners-marquee";
+
+// Lazy load below-the-fold sections
+const AboutSection = dynamic(() => import("@/components/sections/about-section/AboutSection").then(mod => ({ default: mod.AboutSection })), {
+  loading: () => <div className="min-h-screen" />,
+});
+
+const ServicesSection = dynamic(() => import("@/components/sections/services-section/ServicesSection").then(mod => ({ default: mod.ServicesSection })), {
+  loading: () => <div className="min-h-screen" />,
+});
+
+const CriteriaSection = dynamic(() => import("@/components/sections/criteria-section/CriteriaSection").then(mod => ({ default: mod.CriteriaSection })), {
+  loading: () => <div className="min-h-screen" />,
+});
+
+const ShareholdersSection = dynamic(() => import("@/components/sections/shareholders-section/ShareholdersSection").then(mod => ({ default: mod.ShareholdersSection })), {
+  loading: () => <div className="min-h-screen" />,
+});
+
+const InsightsSection = dynamic(() => import("@/components/sections/insights-section/InsightsSection").then(mod => ({ default: mod.InsightsSection })), {
+  loading: () => <div className="min-h-screen" />,
+});
+
+const PartnershipsSection = dynamic(() => import("@/components/sections/partnerships-section/PartnershipsSection").then(mod => ({ default: mod.PartnershipsSection })), {
+  loading: () => <div className="min-h-screen" />,
+});
+
+const ContactSection = dynamic(() => import("@/components/sections/contact-section/ContactSection").then(mod => ({ default: mod.ContactSection })), {
+  loading: () => <div className="min-h-[600px]" />,
+});
+
+const Footer = dynamic(() => import("@/components/sections/footer").then(mod => ({ default: mod.Footer })), {
+  loading: () => <div className="min-h-[400px]" />,
+});
+
+const WhatsAppButton = dynamic(() => import("@/components/ui/whatsapp-button").then(mod => ({ default: mod.WhatsAppButton })), {
+  ssr: false,
+});
 
 export default function Home() {
   useEffect(() => {
@@ -40,17 +71,39 @@ export default function Home() {
       }
     });
 
-    // Navbar scroll effect is handled by the Navbar component itself
+    // Throttled scroll handler for better performance
+    let ticking = false;
+    let lastScrollY = 0;
 
     const handleScroll = () => {
-      const scrolled = window.pageYOffset;
-      const parallaxElements = document.querySelectorAll(".float");
+      lastScrollY = window.pageYOffset;
 
-      parallaxElements.forEach((element, index) => {
-        const speed = 0.5 + index * 0.1;
-        const yPos = -(scrolled * speed);
-        (element as HTMLElement).style.transform = `translateY(${yPos}px)`;
-      });
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          // Progress bar
+          const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const progress = (lastScrollY / totalHeight) * 100;
+          const progressBar = document.getElementById('progress-bar');
+          if (progressBar) {
+            progressBar.style.width = progress + '%';
+          }
+
+          // Parallax effect (only if elements exist and reduced motion is not preferred)
+          const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if (!prefersReducedMotion) {
+            const parallaxElements = document.querySelectorAll(".float");
+            parallaxElements.forEach((element, index) => {
+              const speed = 0.5 + index * 0.1;
+              const yPos = -(lastScrollY * speed);
+              (element as HTMLElement).style.transform = `translateY(${yPos}px)`;
+            });
+          }
+
+          ticking = false;
+        });
+
+        ticking = true;
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -117,24 +170,6 @@ export default function Home() {
           style={{ width: "0%" }}
         />
       </div>
-
-      {/* Initialize Progress Bar */}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            if (typeof window !== 'undefined') {
-              window.addEventListener('scroll', () => {
-                const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const progress = (window.pageYOffset / totalHeight) * 100;
-                const progressBar = document.getElementById('progress-bar');
-                if (progressBar) {
-                  progressBar.style.width = progress + '%';
-                }
-              });
-            }
-          `,
-        }}
-      />
       </main>
     </>
   );

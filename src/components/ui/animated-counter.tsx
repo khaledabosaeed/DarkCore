@@ -14,7 +14,6 @@ interface AnimatedCounterProps {
 
 export function AnimatedCounter({
     value,
-    duration = 2,
     suffix = "",
     prefix = "",
     decimals = 0,
@@ -25,9 +24,8 @@ export function AnimatedCounter({
     const springValue = useSpring(motionValue, {
         damping: 60,
         stiffness: 100,
-        duration: duration * 1000
     })
-    const isInView = useInView(ref, { once: true, margin: "-100px" })
+    const isInView = useInView(ref, { once: true, amount: 0.3 })
     const [displayValue, setDisplayValue] = useState(0)
 
     useEffect(() => {
@@ -37,9 +35,11 @@ export function AnimatedCounter({
     }, [motionValue, isInView, value])
 
     useEffect(() => {
-        springValue.on("change", (latest) => {
+        const unsubscribe = springValue.on("change", (latest) => {
             setDisplayValue(latest)
         })
+
+        return unsubscribe
     }, [springValue])
 
     return (

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { aboutContent } from "./content"
-import { Target, Shield, Eye, Users, Award, TrendingUp, Building2, CheckCircle2, BarChart3 } from "lucide-react"
+import { TrendingUp, Building2, CheckCircle2, BarChart3 } from "lucide-react"
 import { InvestmentBackground, AnimatedColorGradient } from "@/components/ui/investment-shapes"
 import { AnimatedCounter } from "@/components/ui/animated-counter"
 import { InvestmentPatterns } from "@/components/ui/geometric-patterns"
@@ -30,9 +30,6 @@ export function AboutSection() {
 
     const currentContent = aboutContent[language]
     const isRTL = language === "ar"
-
-    // Icon mapping for values
-    const valueIcons = [Target, Shield, Eye, Users, Award]
 
     // Icon mapping for stats
     const statIcons = [TrendingUp, Building2, CheckCircle2, BarChart3]

@@ -1,28 +1,38 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { TrendingUp, TrendingDown, BarChart3, LineChart, PieChart, ArrowUpRight, DollarSign, Activity } from "lucide-react"
+import { useMemo } from "react"
+import { TrendingUp, BarChart3, LineChart, PieChart, ArrowUpRight, Activity } from "lucide-react"
 
 // Investment Chart Lines - Fixed when in view
 export function InvestmentChartLines() {
-    // Generate random chart data
-    const generateChartPath = (points: number, direction: "up" | "down") => {
+    // Generate deterministic chart data (no Math.random for SSR compatibility)
+    const generateChartPath = (points: number, direction: "up" | "down", seed: number) => {
         const path = []
         for (let i = 0; i <= points; i++) {
             const x = (i / points) * 100
-            const y = direction === "up" 
-                ? 80 - (i / points) * 40 - Math.random() * 10
-                : 40 + (i / points) * 40 + Math.random() * 10
+            // Use deterministic wave pattern instead of random
+            const wave = Math.sin((i + seed) * 0.5) * 5
+            const y = direction === "up"
+                ? 80 - (i / points) * 40 + wave
+                : 40 + (i / points) * 40 + wave
             path.push(`${i === 0 ? 'M' : 'L'} ${x} ${y}`)
         }
         return path.join(' ')
     }
 
+    // Memoize paths to ensure consistency between server and client
+    const chartPaths = useMemo(() => [
+        generateChartPath(20, "up", 0),
+        generateChartPath(20, "down", 5),
+        generateChartPath(20, "up", 10)
+    ], [])
+
     return (
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {/* Chart Lines */}
             <svg className="absolute inset-0 w-full h-full" style={{ overflow: 'visible' }}>
-                {[...Array(3)].map((_, i) => (
+                {chartPaths.map((path, i) => (
                     <motion.g
                         key={i}
                         initial={{ opacity: 0, x: i * 150, y: 0 }}
@@ -35,7 +45,7 @@ export function InvestmentChartLines() {
                         }}
                     >
                         <motion.path
-                            d={generateChartPath(20, i % 2 === 0 ? "up" : "down")}
+                            d={path}
                             fill="none"
                             stroke="#4ECDC4"
                             strokeWidth="2"

@@ -535,11 +535,50 @@ input[type="reset"] {
     padding-bottom: 3rem !important;
   }
 
-  /* Optimize Mobile Animations */
+  /* Optimize Mobile Animations - Reduce motion complexity */
   @media (prefers-reduced-motion: no-preference) {
     * {
       animation-duration: 0.5s !important;
     }
+  }
+
+  /* Disable expensive backdrop-blur on mobile */
+  [style*="backdrop-filter: blur"] {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Keep backgrounds but simplify them for performance */
+  [style*="radial-gradient"].blur-3xl,
+  [style*="linear-gradient"].blur-3xl {
+    opacity: 0.3 !important;
+    filter: none !important;
+  }
+
+  /* Ensure text and numbers are always visible */
+  span, p, h1, h2, h3, h4, h5, h6, div[class*="text"] {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Fix gradient text on mobile - fallback to solid color */
+  span[style*="WebkitTextFillColor: transparent"],
+  span[style*="-webkit-text-fill-color: transparent"] {
+    -webkit-text-fill-color: #4ECDC4 !important;
+    color: #4ECDC4 !important;
+    background: none !important;
+  }
+
+  /* Ensure stat cards and counters are visible */
+  [class*="stat"], [class*="counter"], [class*="number"] {
+    display: block !important;
+    opacity: 1 !important;
+  }
+
+  /* Ensure animated counters show properly */
+  [class*="font-almarai"] span,
+  [class*="font-poppins"] span {
+    color: inherit !important;
   }
 }
 
