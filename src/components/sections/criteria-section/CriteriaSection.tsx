@@ -105,52 +105,86 @@ export function CriteriaSection() {
                     </motion.p>
                 </motion.div>
 
-                {/* Criteria Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto mb-12 sm:mb-16">
+                {/* Zigzag Timeline */}
+                <div className="max-w-6xl mx-auto mb-12 sm:mb-16 relative">
+                    {/* Center line */}
+                    <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-transparent via-[#4ECDC4]/30 to-transparent hidden md:block" />
+
                     {currentContent.criteria.map((criterion, index) => {
                         const Icon = criteriaIcons[index]
+                        const isEven = index % 2 === 0
+
                         return (
                             <motion.div
                                 key={index}
-                                className="group p-6 sm:p-8 rounded-xl border border-[#4ECDC4]/20 hover:border-[#4ECDC4]/50 transition-all duration-300"
-                                style={{
-                                    background: "rgba(26, 26, 36, 0.4)",
-                                    backdropFilter: "blur(10px)"
-                                }}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.4 + index * 0.1, duration: 0.6 }}
+                                className={`relative flex items-center gap-8 mb-16 last:mb-0 ${
+                                    isEven ? "md:flex-row" : "md:flex-row-reverse"
+                                }`}
+                                initial={{ opacity: 0, x: isEven ? -50 : 50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ delay: index * 0.2, duration: 0.8 }}
                                 viewport={{ once: true }}
-                                whileHover={{
-                                    y: -5,
-                                    boxShadow: "0 20px 40px rgba(78, 205, 196, 0.15)"
-                                }}
                             >
-                                {/* Icon */}
+                                {/* Content Card */}
                                 <motion.div
-                                    className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#4ECDC4]/10 mb-6 group-hover:bg-[#4ECDC4]/20 transition-all duration-300"
-                                    whileHover={{ scale: 1.1, rotate: 5 }}
+                                    className="group relative flex-1 p-6 sm:p-8 rounded-2xl border border-[#4ECDC4]/20 hover:border-[#4ECDC4]/50 transition-all duration-300"
+                                    style={{
+                                        background: "linear-gradient(135deg, rgba(26, 26, 36, 0.6) 0%, rgba(20, 40, 160, 0.1) 50%, rgba(20, 20, 28, 0.5) 100%)",
+                                        backdropFilter: "blur(10px)"
+                                    }}
+                                    whileHover={{
+                                        y: -8,
+                                        boxShadow: "0 25px 50px rgba(78, 205, 196, 0.2)"
+                                    }}
                                 >
-                                    <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-[#4ECDC4]" />
+                                    {/* Number Badge */}
+                                    <div className={`absolute -top-4 ${isEven ? "left-6" : "right-6"} w-8 h-8 rounded-full bg-[#4ECDC4] flex items-center justify-center text-[#0a0a0f] font-bold text-sm`}>
+                                        {index + 1}
+                                    </div>
+
+                                    {/* Icon */}
+                                    <motion.div
+                                        className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full mb-6"
+                                        style={{
+                                            background: "linear-gradient(135deg, rgba(78, 205, 196, 0.2) 0%, rgba(91, 181, 162, 0.15) 100%)"
+                                        }}
+                                        whileHover={{ scale: 1.15, rotate: 10 }}
+                                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                                    >
+                                        <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-[#4ECDC4]" />
+                                    </motion.div>
+
+                                    {/* Title */}
+                                    <h3
+                                        className={`text-2xl sm:text-3xl font-bold text-white mb-4 group-hover:text-[#4ECDC4] transition-colors ${
+                                            isRTL ? "font-almarai" : "font-poppins"
+                                        }`}
+                                    >
+                                        {criterion.title}
+                                    </h3>
+
+                                    {/* Description */}
+                                    <p
+                                        className={`text-base sm:text-lg text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors ${
+                                            isRTL ? "font-almarai" : "font-poppins"
+                                        }`}
+                                    >
+                                        {criterion.description}
+                                    </p>
+
+                                    {/* Decorative arrow */}
+                                    <div className={`absolute top-1/2 ${isEven ? "-right-4" : "-left-4"} hidden md:block`}>
+                                        <motion.div
+                                            className="w-8 h-8 rounded-full bg-[#4ECDC4]/20 border-2 border-[#4ECDC4] flex items-center justify-center"
+                                            whileHover={{ scale: 1.2 }}
+                                        >
+                                            <div className="w-2 h-2 rounded-full bg-[#4ECDC4]" />
+                                        </motion.div>
+                                    </div>
                                 </motion.div>
 
-                                {/* Title */}
-                                <h3
-                                    className={`text-xl sm:text-2xl font-bold text-white mb-3 ${
-                                        isRTL ? "font-almarai" : "font-poppins"
-                                    }`}
-                                >
-                                    {criterion.title}
-                                </h3>
-
-                                {/* Description */}
-                                <p
-                                    className={`text-sm sm:text-base text-gray-400 leading-relaxed ${
-                                        isRTL ? "font-almarai" : "font-poppins"
-                                    }`}
-                                >
-                                    {criterion.description}
-                                </p>
+                                {/* Spacer for desktop */}
+                                <div className="hidden md:block flex-1" />
                             </motion.div>
                         )
                     })}

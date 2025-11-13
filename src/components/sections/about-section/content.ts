@@ -2,15 +2,30 @@ export const aboutContent = {
     ar: {
         title: "نستثمر بوعي استراتيجي",
         highlightedTitle: "وأثر يسابق الزمن",
-        description1: "تُعد دارك كور شركة استثمارية سعودية تسعى إلى تشكيل مستقبل الحياة الحضرية والطاقة والبنية التحتية الذكية",
-        description2: "نحن لا نلاحق الفرص، بل نختارها بعناية. كل استثمار نقوم به هو خطوة مدروسة تجمع بين الفحص الدقيق والتمويل الاستراتيجي",
-        features: [
-            "أنظمة مجربة وابتكارية بالتعاون مع مؤسسين ومطورين ومبتكرين",
-            "تسريع تنفيذ المشاريع التي تعيد تعريف طريقة عيش الناس وبنائهم وتواصلهم",
-            "الفحص الدقيق والتمويل الاستراتيجي والانضباط التشغيلي",
-            "خبرة مالية عميقة وتجربة تنفيذ ميدانية عبر قطاعات متنوعة",
-            "من الطاقة المتجددة والتطوير العقاري إلى الذكاء الاصطناعي والبنية الرقمية",
-            "رأس مال استراتيجي ذو هدف واضح لضمان أثرٍ مستدام ونموٍ قابل للقياس"
+        description1: "شركة استثمار سعودية تركز على الحياة الحضرية والطاقة والبنية التحتية الذكية.",
+        description2: "نختار الفرص بعناية عبر فحص دقيق وتمويل استراتيجي وتنفيذ منضبط.",
+        stats: [
+            {
+                value: 15,
+                suffix: "+",
+                label: "سنوات من الخبرة"
+            },
+            {
+                value: 2.5,
+                suffix: "B+",
+                label: "قيمة الأصول المدارة",
+                decimals: 1
+            },
+            {
+                value: 50,
+                suffix: "+",
+                label: "مشروع ناجح"
+            },
+            {
+                value: 18,
+                suffix: "%+",
+                label: "معدل العائد السنوي"
+            }
         ],
         valuesTitle: "قيمنا الأساسية",
         values: [
@@ -39,15 +54,30 @@ export const aboutContent = {
     en: {
         title: "Where disciplined capital",
         highlightedTitle: "meets transformative vision",
-        description1: "Dark Core is a specialised investment firm dedicated to shaping the future of urban living, energy, and intelligent infrastructure",
-        description2: "We don't chase opportunities, we curate them. Every investment is a deliberate move, combining rigorous due diligence and strategic financing",
-        features: [
-            "Partner with forward-thinking founders, developers and innovators",
-            "Accelerate projects that redefine how people live, build, and connect",
-            "Rigorous due diligence, strategic financing, and operational excellence",
-            "Deep financial expertise with on-the-ground execution experience",
-            "Across diverse sectors — from renewable energy to AI and digital infrastructure",
-            "Strategic capital with a purpose to ensure lasting impact and measurable growth"
+        description1: "A specialised investment firm focused on urban living, energy, and intelligent infrastructure.",
+        description2: "We curate opportunities through rigorous diligence, strategic financing, and disciplined execution.",
+        stats: [
+            {
+                value: 15,
+                suffix: "+",
+                label: "Years of Experience"
+            },
+            {
+                value: 2.5,
+                suffix: "B+",
+                label: "Assets Under Management",
+                decimals: 1
+            },
+            {
+                value: 50,
+                suffix: "+",
+                label: "Successful Projects"
+            },
+            {
+                value: 18,
+                suffix: "%+",
+                label: "Annual Return Rate"
+            }
         ],
         valuesTitle: "Our Core Principles",
         values: [

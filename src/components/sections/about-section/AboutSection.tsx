@@ -3,14 +3,13 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { aboutContent } from "./content"
-import { Target, Shield, Eye, Users, Award, Zap, Globe, TrendingUp, Lightbulb, Building2 } from "lucide-react"
-import { useLanguage } from "@/context/LanguageContext"
-import { FeatureList } from "@/components/ui/feature-list"
+import { Target, Shield, Eye, Users, Award, TrendingUp, Building2, CheckCircle2, BarChart3 } from "lucide-react"
 import { InvestmentBackground, AnimatedColorGradient } from "@/components/ui/investment-shapes"
+import { AnimatedCounter } from "@/components/ui/animated-counter"
+import { InvestmentPatterns } from "@/components/ui/geometric-patterns"
 
 export function AboutSection() {
     const [language, setLanguage] = useState<"en" | "ar">("ar")
-    const { disableAnimations } = useLanguage()
 
     useEffect(() => {
         const handleLanguageChange = () => {
@@ -32,14 +31,11 @@ export function AboutSection() {
     const currentContent = aboutContent[language]
     const isRTL = language === "ar"
 
-    // تعطيل animations عند تغيير اللغة
-    const animateProps = disableAnimations ? { initial: false, whileInView: undefined, viewport: undefined } : {}
-
     // Icon mapping for values
     const valueIcons = [Target, Shield, Eye, Users, Award]
-    
-    // Icon mapping for features
-    const featureIcons = [Zap, Globe, TrendingUp, Lightbulb, Building2, Target]
+
+    // Icon mapping for stats
+    const statIcons = [TrendingUp, Building2, CheckCircle2, BarChart3]
 
     return (
         <section
@@ -92,9 +88,12 @@ export function AboutSection() {
                 
                 {/* Investment Background Shapes */}
                 <InvestmentBackground variant="all" intensity="medium" />
-                
+
                 {/* Animated Color Gradient */}
                 <AnimatedColorGradient />
+
+                {/* Geometric Patterns */}
+                <InvestmentPatterns variant="mesh" />
             </div>
 
             <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 relative z-10">
@@ -149,37 +148,98 @@ export function AboutSection() {
                     </motion.p>
                 </motion.div>
 
-                {/* Features List - Visual Bullet Points */}
-                {currentContent.features && (
-                    <motion.div
-                        className="max-w-5xl mx-auto mb-12 sm:mb-16"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.5, duration: 0.8 }}
-                        viewport={{ once: true }}
-                    >
-                        <div
-                            className="p-8 sm:p-10 rounded-2xl border border-white/10"
-                            style={{
-                                background: "linear-gradient(135deg, rgba(26, 26, 36, 0.6) 0%, rgba(20, 40, 160, 0.1) 50%, rgba(20, 20, 28, 0.5) 100%)",
-                                backdropFilter: "blur(10px)",
-                                boxShadow: "0 8px 32px rgba(78, 205, 196, 0.1)"
-                            }}
-                        >
-                            <FeatureList
-                                features={currentContent.features.map((feature, index) => ({
-                                    icon: featureIcons[index],
-                                    text: feature
-                                }))}
-                                isRTL={isRTL}
-                                delay={0.6}
-                            />
-                        </div>
-                    </motion.div>
-                )}
+                {/* Stats Section */}
+                <motion.div
+                    className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16 sm:mb-20"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4, duration: 0.8 }}
+                    viewport={{ once: true }}
+                >
+                    {currentContent.stats.map((stat, index) => {
+                        const Icon = statIcons[index]
+                        return (
+                            <motion.div
+                                key={index}
+                                className="group relative p-6 sm:p-8 rounded-2xl overflow-hidden"
+                                style={{
+                                    background: "linear-gradient(135deg, rgba(26, 26, 36, 0.8) 0%, rgba(20, 40, 160, 0.1) 50%, rgba(20, 20, 28, 0.7) 100%)",
+                                    backdropFilter: "blur(10px)",
+                                    border: "1px solid rgba(255, 255, 255, 0.1)"
+                                }}
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: 0.5 + index * 0.1, duration: 0.5 }}
+                                viewport={{ once: true }}
+                                whileHover={{
+                                    y: -10,
+                                    scale: 1.05,
+                                    boxShadow: "0 25px 50px rgba(78, 205, 196, 0.25)"
+                                }}
+                            >
+                                {/* Gradient Border Effect on Hover */}
+                                <motion.div
+                                    className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                                    style={{
+                                        background: "linear-gradient(135deg, rgba(78, 205, 196, 0.3) 0%, rgba(91, 181, 162, 0.2) 100%)",
+                                        padding: "2px"
+                                    }}
+                                />
+
+                                {/* Icon */}
+                                <motion.div
+                                    className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full mb-4 relative z-10"
+                                    style={{
+                                        background: "linear-gradient(135deg, rgba(78, 205, 196, 0.2) 0%, rgba(91, 181, 162, 0.15) 100%)"
+                                    }}
+                                    whileHover={{ rotate: 360, scale: 1.2 }}
+                                    transition={{ duration: 0.6 }}
+                                >
+                                    <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#4ECDC4]" />
+                                </motion.div>
+
+                                {/* Number */}
+                                <div className={`text-4xl sm:text-5xl font-bold mb-2 relative z-10 ${
+                                    isRTL ? "font-almarai" : "font-poppins"
+                                }`}>
+                                    <span
+                                        style={{
+                                            background: "linear-gradient(to right, #4ECDC4 0%, #5bb5a2 100%)",
+                                            WebkitBackgroundClip: "text",
+                                            WebkitTextFillColor: "transparent",
+                                            backgroundClip: "text"
+                                        }}
+                                    >
+                                        <AnimatedCounter
+                                            value={stat.value}
+                                            suffix={stat.suffix}
+                                            decimals={stat.decimals || 0}
+                                            duration={2.5}
+                                        />
+                                    </span>
+                                </div>
+
+                                {/* Label */}
+                                <p className={`text-sm sm:text-base text-gray-300 relative z-10 ${
+                                    isRTL ? "font-almarai" : "font-poppins"
+                                }`}>
+                                    {stat.label}
+                                </p>
+
+                                {/* Background Pattern */}
+                                <div
+                                    className="absolute bottom-0 right-0 w-20 h-20 opacity-5 pointer-events-none"
+                                    style={{
+                                        background: "radial-gradient(circle, rgba(78, 205, 196, 0.4) 0%, transparent 70%)"
+                                    }}
+                                />
+                            </motion.div>
+                        )
+                    })}
+                </motion.div>
 
                 {/* Core Values Section */}
-                <motion.div
+                {/* <motion.div
                     className="mt-16 sm:mt-20"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -200,50 +260,69 @@ export function AboutSection() {
                             return (
                                 <motion.div
                                     key={index}
-                                    className="group p-6 sm:p-8 rounded-xl border border-white/10 hover:border-[#4ECDC4]/50 transition-all duration-300"
+                                    className="group relative p-6 sm:p-8 rounded-xl overflow-hidden"
                                     style={{
                                         background: "linear-gradient(135deg, rgba(26, 26, 36, 0.6) 0%, rgba(20, 40, 160, 0.08) 50%, rgba(20, 20, 28, 0.5) 100%)",
-                                        backdropFilter: "blur(10px)"
+                                        backdropFilter: "blur(10px)",
+                                        border: "1px solid rgba(255, 255, 255, 0.1)"
                                     }}
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.8 + index * 0.1, duration: 0.6 }}
                                     viewport={{ once: true }}
                                     whileHover={{
-                                        y: -8,
-                                        boxShadow: "0 20px 40px rgba(78, 205, 196, 0.15)"
+                                        y: -12,
+                                        scale: 1.03,
+                                        boxShadow: "0 25px 50px rgba(78, 205, 196, 0.25)",
+                                        transition: { duration: 0.3 }
                                     }}
                                 >
-                                    {/* Icon */}
                                     <motion.div
-                                        className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#4ECDC4]/10 mb-6 group-hover:bg-[#4ECDC4]/20 transition-all duration-300"
-                                        whileHover={{ scale: 1.1, rotate: 5 }}
+                                        className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                                        style={{
+                                            background: "linear-gradient(135deg, rgba(78, 205, 196, 0.2) 0%, rgba(91, 181, 162, 0.15) 100%)",
+                                            padding: "1px"
+                                        }}
+                                    />
+
+                                    <motion.div
+                                        className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full mb-6 relative z-10"
+                                        style={{
+                                            background: "linear-gradient(135deg, rgba(78, 205, 196, 0.15) 0%, rgba(91, 181, 162, 0.1) 100%)"
+                                        }}
+                                        whileHover={{ scale: 1.15, rotate: 10 }}
+                                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
                                     >
-                                        <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-[#4ECDC4]" />
+                                        <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-[#4ECDC4] group-hover:text-[#5bb5a2] transition-colors duration-300" />
                                     </motion.div>
 
-                                    {/* Title */}
                                     <h4
-                                        className={`text-xl sm:text-2xl font-bold text-white mb-3 ${
+                                        className={`text-xl sm:text-2xl font-bold text-white mb-3 relative z-10 group-hover:text-[#4ECDC4] transition-colors duration-300 ${
                                             isRTL ? "font-almarai" : "font-poppins"
                                         }`}
                                     >
                                         {value.title}
                                     </h4>
 
-                                    {/* Description */}
                                     <p
-                                        className={`text-sm sm:text-base text-gray-400 leading-relaxed ${
+                                        className={`text-sm sm:text-base text-gray-400 leading-relaxed relative z-10 group-hover:text-gray-300 transition-colors duration-300 ${
                                             isRTL ? "font-almarai" : "font-poppins"
                                         }`}
                                     >
                                         {value.description}
                                     </p>
+
+                                    <motion.div
+                                        className="absolute -bottom-10 -right-10 w-32 h-32 rounded-full opacity-0 group-hover:opacity-10 pointer-events-none transition-opacity duration-500"
+                                        style={{
+                                            background: "radial-gradient(circle, rgba(78, 205, 196, 0.6) 0%, transparent 70%)"
+                                        }}
+                                    />
                                 </motion.div>
                             )
                         })}
                     </div>
-                </motion.div>
+                </motion.div> */}
             </div>
         </section>
     )

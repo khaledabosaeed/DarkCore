@@ -124,32 +124,38 @@ export function ShareholdersSection() {
                     </motion.p>
                 </motion.div>
 
-                {/* Main Feature Box */}
-                <motion.div
-                    className="max-w-4xl mx-auto mb-16 sm:mb-20"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4, duration: 0.8 }}
-                    viewport={{ once: true }}
-                >
-                    <div
-                        className="p-8 sm:p-10 md:p-12 rounded-2xl border border-[#4ECDC4]/30"
-                        style={{
-                            background: "rgba(78, 205, 196, 0.05)",
-                            backdropFilter: "blur(20px)"
-                        }}
+                {/* Split Screen Layout */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16 sm:mb-20">
+                    {/* Left Side - Main Feature with Visual */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.4, duration: 0.8 }}
+                        viewport={{ once: true }}
+                        className="relative"
                     >
-                        <div className="flex flex-col items-center text-center">
-                            {/* Icon */}
+                        <div
+                            className="relative p-8 sm:p-10 rounded-3xl overflow-hidden h-full"
+                            style={{
+                                background: "linear-gradient(135deg, rgba(78, 205, 196, 0.1) 0%, rgba(20, 40, 160, 0.15) 50%, rgba(26, 26, 36, 0.8) 100%)",
+                                backdropFilter: "blur(20px)",
+                                border: "1px solid rgba(78, 205, 196, 0.3)"
+                            }}
+                        >
+                            {/* Large Icon */}
                             <motion.div
-                                className="inline-flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#4ECDC4]/10 mb-6"
-                                whileHover={{ scale: 1.1, rotate: 5 }}
+                                className="inline-flex items-center justify-center w-24 h-24 sm:w-32 sm:h-32 rounded-full mb-8"
+                                style={{
+                                    background: "linear-gradient(135deg, rgba(78, 205, 196, 0.3) 0%, rgba(91, 181, 162, 0.2) 100%)"
+                                }}
+                                whileHover={{ scale: 1.1, rotate: 360 }}
+                                transition={{ duration: 0.8 }}
                             >
-                                <Award className="w-10 h-10 sm:w-12 sm:h-12 text-[#4ECDC4]" />
+                                <Award className="w-14 h-14 sm:w-18 sm:h-18 text-[#4ECDC4]" />
                             </motion.div>
 
                             <h3
-                                className={`text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 ${
+                                className={`text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight ${
                                     isRTL ? "font-almarai" : "font-poppins"
                                 }`}
                             >
@@ -157,62 +163,91 @@ export function ShareholdersSection() {
                             </h3>
 
                             <p
-                                className={`text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl ${
+                                className={`text-lg sm:text-xl text-gray-300 leading-relaxed ${
                                     isRTL ? "font-almarai" : "font-poppins"
                                 }`}
                             >
                                 {currentContent.mainFeature.description}
                             </p>
+
+                            {/* Decorative elements */}
+                            <div className="absolute -bottom-10 -right-10 w-40 h-40 rounded-full bg-[#4ECDC4]/10 blur-3xl" />
+                            <div className="absolute -top-10 -left-10 w-32 h-32 rounded-full bg-[#5bb5a2]/10 blur-3xl" />
                         </div>
-                    </div>
-                </motion.div>
+                    </motion.div>
 
-                {/* Benefits Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto mb-16 sm:mb-20">
-                    {currentContent.benefits.map((benefit, index) => {
-                        const Icon = benefitIcons[index]
-                        return (
-                            <motion.div
-                                key={index}
-                                className="p-6 sm:p-8 rounded-xl border border-white/10 hover:border-[#4ECDC4]/50 transition-all duration-300"
-                                style={{
-                                    background: "rgba(26, 26, 36, 0.4)",
-                                    backdropFilter: "blur(10px)"
-                                }}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.6 + index * 0.1, duration: 0.6 }}
-                                viewport={{ once: true }}
-                                whileHover={{
-                                    y: -8,
-                                    boxShadow: "0 20px 40px rgba(78, 205, 196, 0.15)"
-                                }}
-                            >
+                    {/* Right Side - Benefits List */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.6, duration: 0.8 }}
+                        viewport={{ once: true }}
+                        className="space-y-6"
+                    >
+                        {currentContent.benefits.map((benefit, index) => {
+                            const Icon = benefitIcons[index]
+                            return (
                                 <motion.div
-                                    className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#4ECDC4]/10 mb-6"
-                                    whileHover={{ scale: 1.1, rotate: 5 }}
+                                    key={index}
+                                    className="group relative flex items-start gap-4 sm:gap-6 p-6 rounded-2xl border border-white/10 hover:border-[#4ECDC4]/50 transition-all duration-300"
+                                    style={{
+                                        background: "rgba(26, 26, 36, 0.5)",
+                                        backdropFilter: "blur(10px)"
+                                    }}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.8 + index * 0.15, duration: 0.5 }}
+                                    viewport={{ once: true }}
+                                    whileHover={{
+                                        x: 10,
+                                        boxShadow: "0 20px 40px rgba(78, 205, 196, 0.15)"
+                                    }}
                                 >
-                                    <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-[#4ECDC4]" />
+                                    {/* Icon with Number */}
+                                    <div className="flex-shrink-0 relative">
+                                        <motion.div
+                                            className="w-16 h-16 rounded-xl flex items-center justify-center"
+                                            style={{
+                                                background: "linear-gradient(135deg, rgba(78, 205, 196, 0.2) 0%, rgba(91, 181, 162, 0.15) 100%)"
+                                            }}
+                                            whileHover={{ scale: 1.1, rotate: 5 }}
+                                        >
+                                            <Icon className="w-8 h-8 text-[#4ECDC4]" />
+                                        </motion.div>
+                                        <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-[#4ECDC4] flex items-center justify-center text-[#0a0a0f] text-xs font-bold">
+                                            {index + 1}
+                                        </div>
+                                    </div>
+
+                                    {/* Content */}
+                                    <div className="flex-1">
+                                        <h4
+                                            className={`text-xl sm:text-2xl font-bold text-white mb-2 group-hover:text-[#4ECDC4] transition-colors ${
+                                                isRTL ? "font-almarai" : "font-poppins"
+                                            }`}
+                                        >
+                                            {benefit.title}
+                                        </h4>
+                                        <p
+                                            className={`text-sm sm:text-base text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors ${
+                                                isRTL ? "font-almarai" : "font-poppins"
+                                            }`}
+                                        >
+                                            {benefit.description}
+                                        </p>
+                                    </div>
+
+                                    {/* Arrow indicator */}
+                                    <motion.div
+                                        className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity"
+                                        whileHover={{ x: 5 }}
+                                    >
+                                        <ArrowRight className={`w-5 h-5 text-[#4ECDC4] ${isRTL ? "rotate-180" : ""}`} />
+                                    </motion.div>
                                 </motion.div>
-
-                                <h4
-                                    className={`text-xl sm:text-2xl font-bold text-white mb-3 ${
-                                        isRTL ? "font-almarai" : "font-poppins"
-                                    }`}
-                                >
-                                    {benefit.title}
-                                </h4>
-
-                                <p
-                                    className={`text-sm sm:text-base text-gray-400 leading-relaxed ${
-                                        isRTL ? "font-almarai" : "font-poppins"
-                                    }`}
-                                >
-                                    {benefit.description}
-                                </p>
-                            </motion.div>
-                        )
-                    })}
+                            )
+                        })}
+                    </motion.div>
                 </div>
 
                 {/* Philosophy Section - Using Accordion */}
