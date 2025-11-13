@@ -22,9 +22,9 @@ export function StatisticsCard({
 }: StatisticsCardProps) {
     return (
         <motion.div
-            className="group p-6 sm:p-8 rounded-xl border border-white/10 hover:border-[#4ECDC4]/50 transition-all duration-300 relative overflow-hidden"
+            className="group p-6 sm:p-8 rounded-xl border border-gray-200 hover:border-[#000000]/50 transition-all duration-300 relative overflow-hidden"
             style={{
-                background: "rgba(26, 26, 36, 0.5)",
+                background: "rgba(250, 250, 250, 0.5)",
                 backdropFilter: "blur(10px)"
             }}
             initial={{ opacity: 0, y: 30 }}
@@ -33,18 +33,18 @@ export function StatisticsCard({
             viewport={{ once: true }}
             whileHover={{
                 y: -8,
-                boxShadow: "0 20px 40px rgba(78, 205, 196, 0.2)"
+                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.2)"
             }}
         >
             {/* Background Glow Effect */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#4ECDC4]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#000000]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
             {/* Icon */}
             <motion.div
-                className="relative z-10 inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#4ECDC4]/10 mb-4 group-hover:bg-[#4ECDC4]/20 transition-all duration-300"
+                className="relative z-10 inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#000000]/10 mb-4 group-hover:bg-[#000000]/20 transition-all duration-300"
                 whileHover={{ scale: 1.1, rotate: 5 }}
             >
-                <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-[#4ECDC4]" />
+                <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-[#000000]" />
             </motion.div>
 
             {/* Value */}
@@ -55,14 +55,14 @@ export function StatisticsCard({
                 transition={{ delay: index * 0.1 + 0.2, duration: 0.5 }}
             >
                 <div
-                    className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-[#4ECDC4] to-[#5bb5a2] bg-clip-text text-transparent ${
+                    className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-[#000000] to-[#404040] bg-clip-text text-transparent ${
                         isRTL ? "font-almarai" : "font-poppins"
                     }`}
                 >
                     {value}
                 </div>
                 <h3
-                    className={`text-lg sm:text-xl font-bold text-white mb-2 ${
+                    className={`text-lg sm:text-xl font-bold text-black mb-2 ${
                         isRTL ? "font-almarai" : "font-poppins"
                     }`}
                 >
@@ -70,7 +70,7 @@ export function StatisticsCard({
                 </h3>
                 {description && (
                     <p
-                        className={`text-sm sm:text-base text-gray-400 leading-relaxed ${
+                        className={`text-sm sm:text-base text-gray-700 leading-relaxed ${
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
                     >

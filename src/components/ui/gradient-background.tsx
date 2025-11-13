@@ -17,24 +17,24 @@ export function GradientBackground({
 }: GradientBackgroundProps) {
     const variants = {
         default: {
-            gradient: "linear-gradient(135deg, rgba(10, 10, 15, 0.95) 0%, rgba(26, 26, 36, 0.9) 50%, rgba(13, 17, 23, 0.95) 100%)",
-            overlay: "radial-gradient(circle at 50% 50%, rgba(78, 205, 196, 0.1) 0%, transparent 70%)"
+            gradient: "linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 250, 250, 0.9) 50%, rgba(245, 245, 245, 0.95) 100%)",
+            overlay: "radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.1) 0%, transparent 70%)"
         },
         investment: {
-            gradient: "linear-gradient(135deg, rgba(20, 40, 160, 0.1) 0%, rgba(78, 205, 196, 0.05) 50%, rgba(91, 181, 162, 0.1) 100%)",
-            overlay: "radial-gradient(ellipse at center, rgba(78, 205, 196, 0.15) 0%, transparent 70%)"
+            gradient: "linear-gradient(135deg, rgba(245, 245, 245, 0.1) 0%, rgba(0, 0, 0, 0.05) 50%, rgba(64, 64, 64, 0.1) 100%)",
+            overlay: "radial-gradient(ellipse at center, rgba(0, 0, 0, 0.15) 0%, transparent 70%)"
         },
         hero: {
-            gradient: "linear-gradient(135deg, rgba(10, 10, 15, 0.8) 0%, rgba(26, 26, 36, 0.7) 35%, rgba(20, 40, 160, 0.1) 100%)",
-            overlay: "radial-gradient(circle at 30% 50%, rgba(78, 205, 196, 0.2) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(91, 181, 162, 0.15) 0%, transparent 50%)"
+            gradient: "linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(250, 250, 250, 0.7) 35%, rgba(245, 245, 245, 0.1) 100%)",
+            overlay: "radial-gradient(circle at 30% 50%, rgba(0, 0, 0, 0.2) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(64, 64, 64, 0.15) 0%, transparent 50%)"
         },
         section: {
-            gradient: "linear-gradient(180deg, rgba(10, 10, 15, 0.95) 0%, rgba(15, 15, 20, 0.9) 50%, rgba(10, 10, 15, 0.95) 100%)",
-            overlay: "radial-gradient(circle at top, rgba(78, 205, 196, 0.08) 0%, transparent 60%)"
+            gradient: "linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 250, 250, 0.9) 50%, rgba(255, 255, 255, 0.95) 100%)",
+            overlay: "radial-gradient(circle at top, rgba(0, 0, 0, 0.08) 0%, transparent 60%)"
         },
         card: {
-            gradient: "linear-gradient(135deg, rgba(26, 26, 36, 0.6) 0%, rgba(20, 20, 28, 0.5) 100%)",
-            overlay: "radial-gradient(circle at top right, rgba(78, 205, 196, 0.1) 0%, transparent 70%)"
+            gradient: "linear-gradient(135deg, rgba(250, 250, 250, 0.6) 0%, rgba(245, 245, 245, 0.5) 100%)",
+            overlay: "radial-gradient(circle at top right, rgba(0, 0, 0, 0.1) 0%, transparent 70%)"
         }
     }
 
@@ -140,7 +140,7 @@ export function GradientBorder({ children, className = "", animated = false }: G
         <div
             className={`relative rounded-xl overflow-hidden ${className}`}
             style={{
-                background: "linear-gradient(135deg, rgba(78, 205, 196, 0.2) 0%, rgba(91, 181, 162, 0.1) 100%)",
+                background: "linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(64, 64, 64, 0.1) 100%)",
                 padding: "2px"
             }}
         >
@@ -148,7 +148,7 @@ export function GradientBorder({ children, className = "", animated = false }: G
                 <motion.div
                     className="absolute inset-0 rounded-xl"
                     style={{
-                        background: "linear-gradient(135deg, rgba(78, 205, 196, 0.4) 0%, rgba(91, 181, 162, 0.3) 100%)"
+                        background: "linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(64, 64, 64, 0.3) 100%)"
                     }}
                     animate={{
                         opacity: [0.3, 0.6, 0.3]
@@ -160,7 +160,7 @@ export function GradientBorder({ children, className = "", animated = false }: G
                     }}
                 />
             )}
-            <div className="relative bg-[#0a0a0f] rounded-xl">{children}</div>
+            <div className="relative bg-[#ffffff] rounded-xl">{children}</div>
         </div>
     )
 }

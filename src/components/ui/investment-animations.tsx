@@ -58,7 +58,7 @@ export function InvestmentWaves() {
                     key={i}
                     className="absolute bottom-0 left-0 right-0 h-32"
                     style={{
-                        background: `linear-gradient(to top, rgba(78, 205, 196, ${0.1 * (i + 1)}) 0%, transparent 100%)`,
+                        background: `linear-gradient(to top, rgba(0, 0, 0, ${0.1 * (i + 1)}) 0%, transparent 100%)`,
                         transform: `translateY(${i * 20}px)`
                     }}
                     animate={{
@@ -84,7 +84,7 @@ interface AnimatedChartProps {
     height?: number
 }
 
-export function AnimatedChart({ data, color = "#4ECDC4", height = 100 }: AnimatedChartProps) {
+export function AnimatedChart({ data, color = "#000000", height = 100 }: AnimatedChartProps) {
     const maxValue = Math.max(...data)
     const points = data.map((value, index) => ({
         x: (index / (data.length - 1)) * 100,
@@ -154,7 +154,7 @@ export function MoneyFlow() {
                     }}
                 >
                     <DollarSign
-                        className="w-6 h-6 text-[#4ECDC4] opacity-30"
+                        className="w-6 h-6 text-[#000000] opacity-30"
                         style={{
                             transform: `rotate(${Math.random() * 360}deg)`
                         }}
@@ -190,10 +190,10 @@ export function GrowthIndicator({ percentage, isRTL = false }: GrowthIndicatorPr
                     ease: "easeInOut"
                 }}
             >
-                <TrendingUp className="w-5 h-5 text-[#4ECDC4]" />
+                <TrendingUp className="w-5 h-5 text-[#000000]" />
             </motion.div>
             <motion.span
-                className="text-[#4ECDC4] font-bold"
+                className="text-[#000000] font-bold"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.3 }}
@@ -211,7 +211,7 @@ export function PulsingInvestmentCircle() {
             {[...Array(3)].map((_, i) => (
                 <motion.div
                     key={i}
-                    className="absolute inset-0 rounded-full border-2 border-[#4ECDC4]"
+                    className="absolute inset-0 rounded-full border-2 border-[#000000]"
                     style={{
                         opacity: 0.3 - i * 0.1
                     }}
@@ -228,7 +228,7 @@ export function PulsingInvestmentCircle() {
                 />
             ))}
             <div className="absolute inset-0 flex items-center justify-center">
-                <PieChart className="w-12 h-12 text-[#4ECDC4]" />
+                <PieChart className="w-12 h-12 text-[#000000]" />
             </div>
         </div>
     )
@@ -247,7 +247,7 @@ export function AnimatedProgressBar({
     value,
     max = 100,
     label,
-    color = "#4ECDC4",
+    color = "#000000",
     isRTL = false
 }: AnimatedProgressBarProps) {
     const percentage = (value / max) * 100
@@ -256,8 +256,8 @@ export function AnimatedProgressBar({
         <div className="w-full">
             {label && (
                 <div className={`flex justify-between mb-2 ${isRTL ? "flex-row-reverse" : ""}`}>
-                    <span className="text-sm text-gray-300">{label}</span>
-                    <span className="text-sm text-[#4ECDC4] font-bold">{percentage.toFixed(0)}%</span>
+                    <span className="text-sm text-gray-700">{label}</span>
+                    <span className="text-sm text-[#000000] font-bold">{percentage.toFixed(0)}%</span>
                 </div>
             )}
             <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
@@ -302,7 +302,7 @@ export function FloatingInvestmentIcons() {
                         delay: index * 0.3
                     }}
                 >
-                    <Icon className="w-8 h-8 text-[#4ECDC4] opacity-20" />
+                    <Icon className="w-8 h-8 text-[#000000] opacity-20" />
                 </motion.div>
             ))}
         </div>

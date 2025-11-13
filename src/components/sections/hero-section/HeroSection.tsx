@@ -66,22 +66,22 @@ export function HeroSection() {
                     aria-hidden="true"
                 />
 
-                {/* Main gradient background with investment theme */}
+                {/* Main gradient background - solid white overlay */}
                 <div
-                    className="absolute inset-0 opacity-75"
+                    className="absolute inset-0"
                     style={{
-                        background: "linear-gradient(135deg, rgba(10, 10, 15, 0.95) 0%, rgba(20, 40, 160, 0.08) 35%, rgba(26, 26, 36, 0.9) 65%, rgba(13, 17, 23, 0.95) 100%)"
+                        background: "linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(250, 250, 250, 0.97) 50%, rgba(255, 255, 255, 0.98) 100%)"
                     }}
                 />
 
-                {/* Animated Accent gradient overlays */}
+                {/* Animated Accent gradient overlays - very subtle */}
                 <motion.div
-                    className="absolute inset-0 opacity-25"
+                    className="absolute inset-0 opacity-10"
                     style={{
-                        background: "radial-gradient(circle at 20% 50%, rgba(78, 205, 196, 0.2) 0%, transparent 50%)"
+                        background: "radial-gradient(circle at 20% 50%, rgba(0, 0, 0, 0.05) 0%, transparent 50%)"
                     }}
                     animate={{
-                        opacity: [0.15, 0.25, 0.15],
+                        opacity: [0.05, 0.1, 0.05],
                         scale: [1, 1.1, 1]
                     }}
                     transition={{
@@ -91,12 +91,12 @@ export function HeroSection() {
                     }}
                 />
                 <motion.div
-                    className="absolute inset-0 opacity-20"
+                    className="absolute inset-0 opacity-10"
                     style={{
-                        background: "radial-gradient(circle at 80% 50%, rgba(91, 181, 162, 0.15) 0%, transparent 50%)"
+                        background: "radial-gradient(circle at 80% 50%, rgba(64, 64, 64, 0.05) 0%, transparent 50%)"
                     }}
                     animate={{
-                        opacity: [0.12, 0.2, 0.12],
+                        opacity: [0.05, 0.1, 0.05],
                         scale: [1.1, 1, 1.1]
                     }}
                     transition={{
@@ -106,33 +106,18 @@ export function HeroSection() {
                         delay: 2
                     }}
                 />
-                {/* Additional investment gradient overlay */}
-                <motion.div
-                    className="absolute inset-0 opacity-15"
-                    style={{
-                        background: "radial-gradient(ellipse at center, rgba(78, 205, 196, 0.1) 0%, transparent 60%)"
-                    }}
-                    animate={{
-                        opacity: [0.1, 0.15, 0.1]
-                    }}
-                    transition={{
-                        duration: 10,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                    }}
-                />
             </div>
 
-            {/* Animated Background Elements with Investment Theme */}
+            {/* Animated Background Elements - very subtle */}
             <div className="absolute inset-0 pointer-events-none z-10">
                 <motion.div
-                    className="absolute top-20 left-10 w-32 h-32 rounded-full blur-3xl"
+                    className="absolute top-20 left-10 w-32 h-32 rounded-full blur-3xl opacity-0 md:opacity-100"
                     style={{
-                        background: "radial-gradient(circle, rgba(78, 205, 196, 0.15) 0%, transparent 70%)"
+                        background: "radial-gradient(circle, rgba(0, 0, 0, 0.03) 0%, transparent 70%)"
                     }}
                     animate={{
                         scale: [1, 1.3, 1],
-                        opacity: [0.2, 0.4, 0.2],
+                        opacity: [0.1, 0.15, 0.1],
                         x: [0, 20, 0],
                         y: [0, -20, 0]
                     }}
@@ -143,13 +128,13 @@ export function HeroSection() {
                     }}
                 />
                 <motion.div
-                    className="absolute bottom-20 right-10 w-48 h-48 rounded-full blur-3xl"
+                    className="absolute bottom-20 right-10 w-48 h-48 rounded-full blur-3xl opacity-0 md:opacity-100"
                     style={{
-                        background: "radial-gradient(circle, rgba(91, 181, 162, 0.12) 0%, transparent 70%)"
+                        background: "radial-gradient(circle, rgba(64, 64, 64, 0.03) 0%, transparent 70%)"
                     }}
                     animate={{
                         scale: [1.2, 1, 1.2],
-                        opacity: [0.15, 0.35, 0.15],
+                        opacity: [0.1, 0.15, 0.1],
                         x: [0, -30, 0],
                         y: [0, 30, 0]
                     }}
@@ -160,10 +145,6 @@ export function HeroSection() {
                         delay: 2,
                     }}
                 />
-                {/* Investment Waves */}
-                <InvestmentWaves />
-                {/* Floating Investment Icons */}
-                <FloatingInvestmentIcons />
             </div>
 
             {/* Main Content */}
@@ -186,7 +167,13 @@ export function HeroSection() {
                                 }`}
                             >
                                 <motion.span
-                                    className="inline-block text-white"
+                                    className="inline-block"
+                                    style={{
+                                        background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%)",
+                                        WebkitBackgroundClip: "text",
+                                        WebkitTextFillColor: "transparent",
+                                        backgroundClip: "text",
+                                    }}
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.4, duration: 0.8 }}
@@ -197,7 +184,7 @@ export function HeroSection() {
                                 <motion.span
                                     className="inline-block"
                                     style={{
-                                        background: "linear-gradient(to right, #4ECDC4 0%, #5bb5a2 100%)",
+                                        background: "linear-gradient(135deg, #000000 0%, #2d2d2d 50%, #4a4a4a 100%)",
                                         WebkitBackgroundClip: "text",
                                         WebkitTextFillColor: "transparent",
                                         backgroundClip: "text",
@@ -213,9 +200,15 @@ export function HeroSection() {
 
                             {/* Description */}
                             <motion.p
-                                className={`text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed ${
+                                className={`text-base sm:text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed ${
                                     isRTL ? "font-almarai" : "font-poppins"
                                 }`}
+                                style={{
+                                    background: "linear-gradient(135deg, #2d2d2d 0%, #4a4a4a 50%, #5a5a5a 100%)",
+                                    WebkitBackgroundClip: "text",
+                                    WebkitTextFillColor: "transparent",
+                                    backgroundClip: "text",
+                                }}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.8, duration: 0.8 }}
@@ -235,13 +228,20 @@ export function HeroSection() {
                             transition={{ delay: 1.0, duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            {/* Primary Button - Bigger and more prominent */}
+                            {/* Primary Button - Bigger and more prominent with gradient */}
                             <motion.a
                                 href="#contact"
-                                className={` group px-8 sm:px-10 py-4 sm:py-5 flex-row-reverse rounded-xl font-bold text-lg sm:text-xl text-[#0a0a0f] bg-[#4ECDC4] hover:bg-[#5bb5a2] transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-[#4ECDC4]/50 flex items-center gap-3 ${
+                                className={`group px-8 sm:px-10 py-4 sm:py-5 flex-row-reverse rounded-xl font-bold text-lg sm:text-xl text-white transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center gap-3 ${
                                     isRTL ? " font-almarai " : "font-poppins "
                                 }`}
-                                whileHover={{ scale: 1.08, y: -3 }}
+                                style={{
+                                    background: "linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2d2d2d 100%)",
+                                }}
+                                whileHover={{
+                                    scale: 1.08,
+                                    y: -3,
+                                    background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%)",
+                                }}
                                 whileTap={{ scale: 0.95 }}
                             >
                                      <ArrowRight
@@ -250,14 +250,14 @@ export function HeroSection() {
                                     }`}
                                 />
                                 {currentContent.primaryButton}
-                           
+
                             </motion.a>
 
                             {/* Download Button */}
                             {/* <motion.a
                                 href="/company-profile.pdf"
                                 download
-                                className={`group px-6 sm:px-8 py-4 sm:py-5 rounded-xl font-semibold text-base sm:text-lg text-white border-2 border-[#4ECDC4] hover:bg-[#4ECDC4]/20 transition-all duration-300 flex items-center gap-2 ${
+                                className={`group px-6 sm:px-8 py-4 sm:py-5 rounded-xl font-semibold text-base sm:text-lg text-black border-2 border-[#000000] hover:bg-[#000000]/20 transition-all duration-300 flex items-center gap-2 ${
                                     isRTL ? "flex-row-reverse font-almarai" : "font-poppins"
                                 }`}
                                 whileHover={{ scale: 1.05, y: -2 }}
@@ -279,12 +279,13 @@ export function HeroSection() {
                             {currentContent.stats.map((stat, index) => (
                                 <motion.div
                                     key={index}
-                                    className="flex flex-col items-center p-6 sm:p-8 rounded-2xl border transition-all duration-300"
+                                    className="flex flex-col items-center p-6 sm:p-8 rounded-2xl transition-all duration-300 bg-white relative overflow-hidden"
                                     style={{
-                                        background: "linear-gradient(135deg, rgba(26, 26, 36, 0.6) 0%, rgba(20, 40, 160, 0.15) 50%, rgba(20, 20, 28, 0.5) 100%)",
-                                        backdropFilter: "blur(16px)",
-                                        borderColor: "rgba(78, 205, 196, 0.25)",
-                                        boxShadow: "0 8px 32px rgba(0, 0, 0, 0.4)"
+                                        border: "2px solid transparent",
+                                        backgroundImage: "linear-gradient(white, white), linear-gradient(135deg, rgba(0,0,0,0.08) 0%, rgba(64,64,64,0.12) 50%, rgba(26,26,26,0.08) 100%)",
+                                        backgroundOrigin: "border-box",
+                                        backgroundClip: "padding-box, border-box",
+                                        boxShadow: "0 4px 16px rgba(0, 0, 0, 0.1)"
                                     }}
                                     initial={{ opacity: 0, scale: 0.8 }}
                                     whileInView={{ opacity: 1, scale: 1 }}
@@ -292,15 +293,14 @@ export function HeroSection() {
                                     viewport={{ once: true }}
                                     whileHover={{
                                         y: -8,
-                                        borderColor: "rgba(78, 205, 196, 0.6)",
-                                        boxShadow: "0 12px 40px rgba(78, 205, 196, 0.25)"
+                                        boxShadow: "0 12px 32px rgba(0, 0, 0, 0.2)"
                                     }}
                                 >
                                     <div className={`text-4xl sm:text-5xl md:text-6xl font-bold mb-3 ${
                                         isRTL ? "font-almarai" : "font-poppins"
                                     }`}
                                     style={{
-                                        background: "linear-gradient(to right, #4ECDC4 0%, #5bb5a2 100%)",
+                                        background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%)",
                                         WebkitBackgroundClip: "text",
                                         WebkitTextFillColor: "transparent",
                                         backgroundClip: "text",
@@ -311,7 +311,7 @@ export function HeroSection() {
                                             duration={2.5}
                                         />
                                     </div>
-                                    <div className={`text-xs sm:text-sm text-gray-300 text-center leading-tight ${
+                                    <div className={`text-xs sm:text-sm text-gray-700 text-center leading-tight ${
                                         isRTL ? "font-almarai" : "font-poppins"
                                     }`}>
                                         {stat.label}

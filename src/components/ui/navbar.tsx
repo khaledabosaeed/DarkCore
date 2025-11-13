@@ -59,11 +59,11 @@ export function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 w-full z-[100] transition-all duration-500 ease-in-out ${
         isScrolled
-          ? "bg-[#1a1a24]/95 backdrop-blur-xl shadow-2xl border-b border-[#4ECDC4]/20"
-          : "bg-[#0a0a0f]/30 backdrop-blur-md border-b border-white/5"
+          ? "bg-white/95 backdrop-blur-xl shadow-lg border-b border-black/10"
+          : "bg-white/80 backdrop-blur-md border-b border-black/5"
       } ${isRTL ? "rtl" : "ltr"}`}
       style={{
-        backgroundColor: isScrolled ? "rgba(26, 26, 36, 0.95)" : "rgba(10, 10, 15, 0.3)",
+        backgroundColor: isScrolled ? "rgba(255, 255, 255, 0.95)" : "rgba(255, 255, 255, 0.8)",
         position: 'fixed',
         top: 0,
         left: 0,
@@ -78,14 +78,15 @@ export function Navbar() {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
             onClick={() => scrollToSection("home")}
-          >                                                                                                                                                                 
-            <Image                                                                      
-              src="/Asset 1.svg"  
+          >
+            <Image
+              src="/Asset 1.svg"
               alt="Logo"
               width={180}
               height={60}
               priority
-              className="h-12 w-auto sm:h-14"
+              className="h-12 w-auto sm:h-14 brightness-0"
+              style={{ filter: 'brightness(0)' }}
             />
           </motion.div>
 
@@ -99,19 +100,19 @@ export function Navbar() {
               <motion.a
                 key={index}
                 href={`#${item.id}`}
-                className={`font-medium text-sm xl:text-base transition-all duration-300 py-2 px-3 xl:px-4 rounded-lg relative text-center text-white ${
+                className={`font-medium text-sm xl:text-base transition-all duration-300 py-2 px-3 xl:px-4 rounded-lg relative text-center text-black ${
                   isRTL ? "font-almarai" : "font-poppins"
                 }`}
                 whileHover={{
                   scale: 1.05,
-                  color: "#4ECDC4",
+                  color: "#525252",
                 }}
                 whileTap={{ scale: 0.95 }}
               >
                 {item.label}
                 {/* Active indicator */}
                 <motion.div
-                  className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 rounded-full bg-[#4ECDC4]"
+                  className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 rounded-full bg-black"
                   whileHover={{ width: "80%" }}
                   transition={{ duration: 0.2 }}
                 />
@@ -128,13 +129,13 @@ export function Navbar() {
           <motion.button
             className="lg:hidden transition-colors duration-300 p-2 rounded-lg"
             style={{
-              color: isScrolled ? "#4ECDC4" : "#ffffff",
+              color: "#000000",
             }}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             whileHover={{
               scale: 1.1,
-              color: "#4ECDC4",
-              backgroundColor: "rgba(78, 205, 196, 0.1)",
+              color: "#525252",
+              backgroundColor: "rgba(0, 0, 0, 0.05)",
             }}
             whileTap={{ scale: 0.9 }}
           >
@@ -172,9 +173,9 @@ export function Navbar() {
               animate={{ opacity: 1, height: "auto", y: 0 }}
               exit={{ opacity: 0, height: 0, y: -20 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
-              className="lg:hidden border-t backdrop-blur-xl bg-[#0a0a0f]/95"
+              className="lg:hidden border-t backdrop-blur-xl bg-white/95"
               style={{
-                borderTopColor: "rgba(78, 205, 196, 0.2)",
+                borderTopColor: "rgba(0, 0, 0, 0.1)",
               }}
             >
               <div className="p-4 space-y-4">
@@ -184,7 +185,7 @@ export function Navbar() {
                     <motion.button
                       key={index}
                       onClick={() => scrollToSection(item.id)}
-                      className={`w-full py-3 px-4 rounded-lg transition-all duration-300 text-white hover:text-[#4ECDC4] hover:bg-[#4ECDC4]/10 ${
+                      className={`w-full py-3 px-4 rounded-lg transition-all duration-300 text-black hover:text-neutral-700 hover:bg-black/5 ${
                         isRTL ? "text-right font-almarai" : "text-left font-poppins"
                       }`}
                       initial={{ opacity: 0, x: isRTL ? 20 : -20 }}
@@ -203,7 +204,7 @@ export function Navbar() {
                 <div
                   className="pt-4 flex justify-center"
                   style={{
-                    borderTopColor: "rgba(78, 205, 196, 0.2)",
+                    borderTopColor: "rgba(0, 0, 0, 0.1)",
                     borderTopWidth: "1px",
                     borderTopStyle: "solid",
                   }}

@@ -101,7 +101,7 @@ export function Loading() {
                         <motion.h2
                             key={`${language}-${currentTextIndex}`}    
                             className={`
-                                text-white font-bold text-center leading-tight font-arabic
+                                text-black font-bold text-center leading-tight font-arabic
                                 ${currentTextIndex === 0
                                     ? "text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
                                     : "text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl"

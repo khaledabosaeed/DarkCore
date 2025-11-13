@@ -37,7 +37,7 @@ export function CriteriaSection() {
             id="criteria"
             className="relative py-20 sm:py-24 md:py-28 lg:py-32 overflow-hidden"
             style={{
-                background: "#0a0a0f"
+                background: "#ffffff"
             }}
         >
             {/* Background decorative elements */}
@@ -45,7 +45,7 @@ export function CriteriaSection() {
                 <motion.div
                     className="absolute top-1/3 left-1/4 w-96 h-96 opacity-15"
                     style={{
-                        background: "radial-gradient(circle, rgba(78, 205, 196, 0.2) 0%, transparent 70%)"
+                        background: "radial-gradient(circle, rgba(0, 0, 0, 0.2) 0%, transparent 70%)"
                     }}
                     animate={{
                         scale: [1, 1.2, 1],
@@ -79,10 +79,10 @@ export function CriteriaSection() {
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
                     >
-                        <span className="text-white">{currentContent.title} </span>
+                        <span className="text-black">{currentContent.title} </span>
                         <span
                             style={{
-                                background: "linear-gradient(to right, #4ECDC4 0%, #5bb5a2 100%)",
+                                background: "linear-gradient(to right, #000000 0%, #404040 100%)",
                                 WebkitBackgroundClip: "text",
                                 WebkitTextFillColor: "transparent",
                                 backgroundClip: "text",
@@ -93,7 +93,7 @@ export function CriteriaSection() {
                     </h2>
 
                     <motion.p
-                        className={`text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed ${
+                        className={`text-base sm:text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed ${
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
                         initial={{ opacity: 0, y: 20 }}
@@ -108,7 +108,7 @@ export function CriteriaSection() {
                 {/* Zigzag Timeline */}
                 <div className="max-w-6xl mx-auto mb-12 sm:mb-16 relative">
                     {/* Center line */}
-                    <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-transparent via-[#4ECDC4]/30 to-transparent hidden md:block" />
+                    <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-transparent via-[#000000]/30 to-transparent hidden md:block" />
 
                     {currentContent.criteria.map((criterion, index) => {
                         const Icon = criteriaIcons[index]
@@ -127,18 +127,14 @@ export function CriteriaSection() {
                             >
                                 {/* Content Card */}
                                 <motion.div
-                                    className="group relative flex-1 p-6 sm:p-8 rounded-2xl border border-[#4ECDC4]/20 hover:border-[#4ECDC4]/50 transition-all duration-300"
-                                    style={{
-                                        background: "linear-gradient(135deg, rgba(26, 26, 36, 0.6) 0%, rgba(20, 40, 160, 0.1) 50%, rgba(20, 20, 28, 0.5) 100%)",
-                                        backdropFilter: "blur(10px)"
-                                    }}
+                                    className="group relative flex-1 p-6 sm:p-8 rounded-2xl border border-gray-200 hover:border-gray-300 transition-all duration-300 bg-white shadow-md hover:shadow-lg"
                                     whileHover={{
                                         y: -8,
-                                        boxShadow: "0 25px 50px rgba(78, 205, 196, 0.2)"
+                                        boxShadow: "0 25px 50px rgba(0, 0, 0, 0.2)"
                                     }}
                                 >
                                     {/* Number Badge */}
-                                    <div className={`absolute -top-4 ${isEven ? "left-6" : "right-6"} w-8 h-8 rounded-full bg-[#4ECDC4] flex items-center justify-center text-[#0a0a0f] font-bold text-sm`}>
+                                    <div className={`absolute -top-4 ${isEven ? "left-6" : "right-6"} w-8 h-8 rounded-full bg-[#000000] flex items-center justify-center text-[#ffffff] font-bold text-sm`}>
                                         {index + 1}
                                     </div>
 
@@ -146,17 +142,17 @@ export function CriteriaSection() {
                                     <motion.div
                                         className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full mb-6"
                                         style={{
-                                            background: "linear-gradient(135deg, rgba(78, 205, 196, 0.2) 0%, rgba(91, 181, 162, 0.15) 100%)"
+                                            background: "linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(64, 64, 64, 0.15) 100%)"
                                         }}
                                         whileHover={{ scale: 1.15, rotate: 10 }}
                                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                                     >
-                                        <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-[#4ECDC4]" />
+                                        <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-[#000000]" />
                                     </motion.div>
 
                                     {/* Title */}
                                     <h3
-                                        className={`text-2xl sm:text-3xl font-bold text-white mb-4 group-hover:text-[#4ECDC4] transition-colors ${
+                                        className={`text-2xl sm:text-3xl font-bold text-black mb-4 group-hover:text-[#000000] transition-colors ${
                                             isRTL ? "font-almarai" : "font-poppins"
                                         }`}
                                     >
@@ -165,7 +161,7 @@ export function CriteriaSection() {
 
                                     {/* Description */}
                                     <p
-                                        className={`text-base sm:text-lg text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors ${
+                                        className={`text-base sm:text-lg text-gray-700 leading-relaxed group-hover:text-gray-700 transition-colors ${
                                             isRTL ? "font-almarai" : "font-poppins"
                                         }`}
                                     >
@@ -175,10 +171,10 @@ export function CriteriaSection() {
                                     {/* Decorative arrow */}
                                     <div className={`absolute top-1/2 ${isEven ? "-right-4" : "-left-4"} hidden md:block`}>
                                         <motion.div
-                                            className="w-8 h-8 rounded-full bg-[#4ECDC4]/20 border-2 border-[#4ECDC4] flex items-center justify-center"
+                                            className="w-8 h-8 rounded-full bg-[#000000]/20 border-2 border-[#000000] flex items-center justify-center"
                                             whileHover={{ scale: 1.2 }}
                                         >
-                                            <div className="w-2 h-2 rounded-full bg-[#4ECDC4]" />
+                                            <div className="w-2 h-2 rounded-full bg-[#000000]" />
                                         </motion.div>
                                     </div>
                                 </motion.div>
@@ -199,14 +195,10 @@ export function CriteriaSection() {
                     viewport={{ once: true }}
                 >
                     <div
-                        className="p-6 sm:p-8 rounded-xl border border-[#4ECDC4]/30"
-                        style={{
-                            background: "rgba(78, 205, 196, 0.05)",
-                            backdropFilter: "blur(10px)"
-                        }}
+                        className="p-6 sm:p-8 rounded-xl border border-gray-300 bg-gray-50 shadow-md"
                     >
                         <p
-                            className={`text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed text-center ${
+                            className={`text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed text-center ${
                                 isRTL ? "font-almarai" : "font-poppins"
                             }`}
                         >

@@ -32,24 +32,24 @@ export function FeatureList({ features, isRTL = false, delay = 0 }: FeatureListP
                     <div className="flex-shrink-0 mt-1">
                         {feature.icon ? (
                             <motion.div
-                                className="w-6 h-6 rounded-full bg-[#4ECDC4]/10 flex items-center justify-center"
+                                className="w-6 h-6 rounded-full bg-[#000000]/10 flex items-center justify-center"
                                 whileHover={{ scale: 1.1, rotate: 5 }}
                             >
-                                <feature.icon className="w-4 h-4 text-[#4ECDC4]" />
+                                <feature.icon className="w-4 h-4 text-[#000000]" />
                             </motion.div>
                         ) : (
                             <motion.div
-                                className="w-6 h-6 rounded-full bg-[#4ECDC4]/20 flex items-center justify-center"
+                                className="w-6 h-6 rounded-full bg-[#000000]/20 flex items-center justify-center"
                                 whileHover={{ scale: 1.1 }}
                             >
-                                <Check className="w-4 h-4 text-[#4ECDC4]" />
+                                <Check className="w-4 h-4 text-[#000000]" />
                             </motion.div>
                         )}
                     </div>
 
                     {/* Text */}
                     <p
-                        className={`flex-1 text-base sm:text-lg text-gray-300 leading-relaxed ${
+                        className={`flex-1 text-base sm:text-lg text-gray-700 leading-relaxed ${
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
                     >

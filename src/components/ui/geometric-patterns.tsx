@@ -12,7 +12,7 @@ export function HexagonPattern() {
                         <motion.path
                             d="M40 0 L60 17.5 L60 52.5 L40 70 L20 52.5 L20 17.5 Z"
                             fill="none"
-                            stroke="rgba(78, 205, 196, 0.3)"
+                            stroke="rgba(0, 0, 0, 0.3)"
                             strokeWidth="1"
                             initial={{ pathLength: 0, opacity: 0 }}
                             whileInView={{ pathLength: 1, opacity: 1 }}
@@ -40,7 +40,7 @@ export function AnimatedGridLines() {
                         y1="0%"
                         x2={`${(i + 1) * 12.5}%`}
                         y2="100%"
-                        stroke="rgba(78, 205, 196, 0.08)"
+                        stroke="rgba(0, 0, 0, 0.08)"
                         strokeWidth="1"
                         initial={{ pathLength: 0, opacity: 0 }}
                         whileInView={{ pathLength: 1, opacity: 1 }}
@@ -57,7 +57,7 @@ export function AnimatedGridLines() {
                         y1={`${(i + 1) * 16.66}%`}
                         x2="100%"
                         y2={`${(i + 1) * 16.66}%`}
-                        stroke="rgba(78, 205, 196, 0.08)"
+                        stroke="rgba(0, 0, 0, 0.08)"
                         strokeWidth="1"
                         initial={{ pathLength: 0, opacity: 0 }}
                         whileInView={{ pathLength: 1, opacity: 1 }}
@@ -104,17 +104,17 @@ export function FloatingShapes() {
                     viewport={{ once: false }}
                 >
                     {shape.type === "circle" && (
-                        <div className="w-full h-full rounded-full border-2 border-[#4ECDC4]" />
+                        <div className="w-full h-full rounded-full border-2 border-[#000000]" />
                     )}
                     {shape.type === "square" && (
-                        <div className="w-full h-full border-2 border-[#5bb5a2] rotate-45" />
+                        <div className="w-full h-full border-2 border-[#404040] rotate-45" />
                     )}
                     {shape.type === "triangle" && (
                         <svg viewBox="0 0 100 100" className="w-full h-full">
                             <polygon
                                 points="50,10 90,90 10,90"
                                 fill="none"
-                                stroke="#4ECDC4"
+                                stroke="#000000"
                                 strokeWidth="2"
                             />
                         </svg>
@@ -133,7 +133,7 @@ export function CircuitPattern() {
                 {/* Horizontal connections */}
                 <motion.path
                     d="M 0 100 L 200 100"
-                    stroke="rgba(78, 205, 196, 0.4)"
+                    stroke="rgba(0, 0, 0, 0.4)"
                     strokeWidth="2"
                     fill="none"
                     initial={{ pathLength: 0 }}
@@ -143,7 +143,7 @@ export function CircuitPattern() {
                 />
                 <motion.path
                     d="M 300 200 L 500 200"
-                    stroke="rgba(78, 205, 196, 0.4)"
+                    stroke="rgba(0, 0, 0, 0.4)"
                     strokeWidth="2"
                     fill="none"
                     initial={{ pathLength: 0 }}
@@ -164,7 +164,7 @@ export function CircuitPattern() {
                         cx={node.cx}
                         cy={node.cy}
                         r="4"
-                        fill="#4ECDC4"
+                        fill="#000000"
                         initial={{ scale: 0 }}
                         whileInView={{ scale: 1 }}
                         transition={{ delay: 0.5 + i * 0.1 }}
@@ -183,7 +183,7 @@ export function GradientMesh() {
             <motion.div
                 className="absolute w-[500px] h-[500px] rounded-full blur-3xl"
                 style={{
-                    background: "radial-gradient(circle, rgba(78, 205, 196, 0.15) 0%, transparent 70%)",
+                    background: "radial-gradient(circle, rgba(0, 0, 0, 0.15) 0%, transparent 70%)",
                     top: "10%",
                     left: "5%"
                 }}
@@ -201,7 +201,7 @@ export function GradientMesh() {
             <motion.div
                 className="absolute w-[600px] h-[600px] rounded-full blur-3xl"
                 style={{
-                    background: "radial-gradient(circle, rgba(91, 181, 162, 0.12) 0%, transparent 70%)",
+                    background: "radial-gradient(circle, rgba(64, 64, 64, 0.12) 0%, transparent 70%)",
                     bottom: "10%",
                     right: "5%"
                 }}
@@ -220,7 +220,7 @@ export function GradientMesh() {
             <motion.div
                 className="absolute w-[400px] h-[400px] rounded-full blur-3xl"
                 style={{
-                    background: "radial-gradient(circle, rgba(78, 205, 196, 0.1) 0%, transparent 70%)",
+                    background: "radial-gradient(circle, rgba(0, 0, 0, 0.1) 0%, transparent 70%)",
                     top: "50%",
                     left: "50%",
                     transform: "translate(-50%, -50%)"

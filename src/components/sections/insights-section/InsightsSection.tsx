@@ -58,7 +58,7 @@ export function InsightsSection() {
             id="insights"
             className="relative py-20 sm:py-24 md:py-28 lg:py-32 overflow-hidden"
             style={{
-                background: "linear-gradient(135deg, rgba(10, 10, 15, 0.98) 0%, rgba(20, 40, 160, 0.05) 50%, rgba(10, 10, 15, 0.98) 100%)"
+                background: "#ffffff"
             }}
         >
             {/* Background decorative elements */}
@@ -66,7 +66,7 @@ export function InsightsSection() {
                 <motion.div
                     className="absolute top-1/4 left-1/4 w-96 h-96 opacity-15"
                     style={{
-                        background: "radial-gradient(circle, rgba(78, 205, 196, 0.2) 0%, transparent 70%)"
+                        background: "radial-gradient(circle, rgba(0, 0, 0, 0.2) 0%, transparent 70%)"
                     }}
                     animate={{
                         scale: [1, 1.2, 1],
@@ -103,11 +103,11 @@ export function InsightsSection() {
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
                     >
-                        <span className="text-white">{currentContent.title} </span>
+                        <span className="text-black">{currentContent.title} </span>
                         {currentContent.highlightedTitle && (
                             <span
                                 style={{
-                                    background: "linear-gradient(to right, #4ECDC4 0%, #5bb5a2 100%)",
+                                    background: "linear-gradient(to right, #000000 0%, #404040 100%)",
                                     WebkitBackgroundClip: "text",
                                     WebkitTextFillColor: "transparent",
                                     backgroundClip: "text",
@@ -119,7 +119,7 @@ export function InsightsSection() {
                     </h2>
 
                     <motion.p
-                        className={`text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed ${
+                        className={`text-base sm:text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed ${
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
                         initial={{ opacity: 0, y: 20 }}
@@ -140,23 +140,18 @@ export function InsightsSection() {
                     viewport={{ once: true }}
                 >
                     <div
-                        className="relative p-8 sm:p-12 rounded-2xl"
-                        style={{
-                            background: "linear-gradient(135deg, rgba(26, 26, 36, 0.7) 0%, rgba(20, 40, 160, 0.1) 50%, rgba(20, 20, 28, 0.6) 100%)",
-                            backdropFilter: "blur(10px)",
-                            border: "1px solid rgba(255, 255, 255, 0.1)"
-                        }}
+                        className="relative p-8 sm:p-12 rounded-2xl bg-white border border-gray-200 shadow-md"
                     >
                         <div className="text-center mb-12">
                             <h3
-                                className={`text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 ${
+                                className={`text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-4 ${
                                     isRTL ? "font-almarai" : "font-poppins"
                                 }`}
                             >
                                 {currentContent.portfolioTitle}
                             </h3>
                             <p
-                                className={`text-base sm:text-lg text-gray-400 ${
+                                className={`text-base sm:text-lg text-gray-700 ${
                                     isRTL ? "font-almarai" : "font-poppins"
                                 }`}
                             >
@@ -188,23 +183,18 @@ export function InsightsSection() {
                             >
                                 {/* Card */}
                                 <div
-                                    className="relative p-6 sm:p-8 h-full"
-                                    style={{
-                                        background: "linear-gradient(135deg, rgba(26, 26, 36, 0.7) 0%, rgba(20, 40, 160, 0.1) 50%, rgba(20, 20, 28, 0.6) 100%)",
-                                        backdropFilter: "blur(10px)",
-                                        border: "1px solid rgba(255, 255, 255, 0.1)"
-                                    }}
+                                    className="relative p-6 sm:p-8 h-full bg-white border border-gray-200 rounded-2xl shadow-md"
                                 >
                                     {/* Icon Section */}
                                     <motion.div
                                         className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-2xl mb-6"
                                         style={{
-                                            background: "linear-gradient(135deg, rgba(78, 205, 196, 0.2) 0%, rgba(91, 181, 162, 0.15) 100%)"
+                                            background: "linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(64, 64, 64, 0.15) 100%)"
                                         }}
                                         whileHover={{ rotate: 10, scale: 1.1 }}
                                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                                     >
-                                        <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-[#4ECDC4]" />
+                                        <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-[#000000]" />
                                     </motion.div>
 
                                     {/* Category Badge */}
@@ -214,8 +204,8 @@ export function InsightsSection() {
                                                 isRTL ? "font-almarai" : "font-poppins"
                                             }`}
                                             style={{
-                                                background: "rgba(78, 205, 196, 0.15)",
-                                                color: "#4ECDC4"
+                                                background: "rgba(0, 0, 0, 0.15)",
+                                                color: "#000000"
                                             }}
                                         >
                                             {article.category}
@@ -224,7 +214,7 @@ export function InsightsSection() {
 
                                     {/* Title */}
                                     <h3
-                                        className={`text-xl sm:text-2xl font-bold text-white mb-4 group-hover:text-[#4ECDC4] transition-colors duration-300 ${
+                                        className={`text-xl sm:text-2xl font-bold text-black mb-4 group-hover:text-[#000000] transition-colors duration-300 ${
                                             isRTL ? "font-almarai" : "font-poppins"
                                         }`}
                                     >
@@ -233,7 +223,7 @@ export function InsightsSection() {
 
                                     {/* Description */}
                                     <p
-                                        className={`text-sm sm:text-base text-gray-400 leading-relaxed mb-6 ${
+                                        className={`text-sm sm:text-base text-gray-700 leading-relaxed mb-6 ${
                                             isRTL ? "font-almarai" : "font-poppins"
                                         }`}
                                     >
@@ -241,14 +231,14 @@ export function InsightsSection() {
                                     </p>
 
                                     {/* Stats Row */}
-                                    <div className="flex items-center justify-between gap-4 pt-4 border-t border-white/10">
+                                    <div className="flex items-center justify-between gap-4 pt-4 border-t border-gray-200">
                                         {/* Growth Rate */}
                                         <div className="flex items-center gap-2">
                                             <div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-500/10">
                                                 <TrendingUp className="w-4 h-4 text-green-400" />
                                             </div>
                                             <div>
-                                                <p className="text-xs text-gray-500">
+                                                <p className="text-xs text-gray-600">
                                                     {isRTL ? "النمو المتوقع" : "Growth"}
                                                 </p>
                                                 <p className="text-sm font-bold text-green-400">
@@ -259,14 +249,14 @@ export function InsightsSection() {
 
                                         {/* Investment Size */}
                                         <div className="flex items-center gap-2">
-                                            <div className="flex items-center justify-center w-8 h-8 rounded-full bg-[#4ECDC4]/10">
-                                                <DollarSign className="w-4 h-4 text-[#4ECDC4]" />
+                                            <div className="flex items-center justify-center w-8 h-8 rounded-full bg-[#000000]/10">
+                                                <DollarSign className="w-4 h-4 text-[#000000]" />
                                             </div>
                                             <div className={isRTL ? "text-right" : ""}>
-                                                <p className="text-xs text-gray-500">
+                                                <p className="text-xs text-gray-600">
                                                     {isRTL ? "حجم الاستثمار" : "Investment"}
                                                 </p>
-                                                <p className="text-sm font-bold text-[#4ECDC4]">
+                                                <p className="text-sm font-bold text-[#000000]">
                                                     {article.investmentSize}
                                                 </p>
                                             </div>
@@ -275,7 +265,7 @@ export function InsightsSection() {
 
                                     {/* Learn More Link */}
                                     <motion.button
-                                        className={`mt-6 w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-white bg-white/5 hover:bg-[#4ECDC4]/20 border border-white/10 hover:border-[#4ECDC4]/50 transition-all duration-300 ${
+                                        className={`mt-6 w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-black bg-black/5 hover:bg-[#000000]/20 border border-gray-200 hover:border-[#000000]/50 transition-all duration-300 ${
                                             isRTL ? "flex-row-reverse font-almarai" : "font-poppins"
                                         }`}
                                         whileHover={{ scale: 1.02 }}
@@ -293,7 +283,7 @@ export function InsightsSection() {
                                     <motion.div
                                         className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                                         style={{
-                                            background: "linear-gradient(135deg, rgba(78, 205, 196, 0.1) 0%, transparent 50%)"
+                                            background: "linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0%, transparent 50%)"
                                         }}
                                     />
 
@@ -301,7 +291,7 @@ export function InsightsSection() {
                                     <div
                                         className="absolute -bottom-10 -right-10 w-40 h-40 rounded-full opacity-5 pointer-events-none"
                                         style={{
-                                            background: "radial-gradient(circle, rgba(78, 205, 196, 0.6) 0%, transparent 70%)"
+                                            background: "radial-gradient(circle, rgba(0, 0, 0, 0.6) 0%, transparent 70%)"
                                         }}
                                     />
                                 </div>
@@ -318,7 +308,7 @@ export function InsightsSection() {
                     viewport={{ once: true }}
                 >
                     <h3
-                        className={`text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12 sm:mb-16 text-white ${
+                        className={`text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12 sm:mb-16 text-black ${
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
                     >
@@ -331,9 +321,9 @@ export function InsightsSection() {
                             return (
                                 <motion.div
                                     key={index}
-                                    className="p-6 sm:p-8 rounded-xl border border-white/10 hover:border-[#4ECDC4]/50 transition-all duration-300"
+                                    className="p-6 sm:p-8 rounded-xl border border-gray-200 hover:border-[#000000]/50 transition-all duration-300"
                                     style={{
-                                        background: "rgba(20, 20, 28, 0.6)",
+                                        background: "rgba(245, 245, 245, 0.6)",
                                         backdropFilter: "blur(10px)"
                                     }}
                                     initial={{ opacity: 0, y: 30 }}
@@ -342,18 +332,18 @@ export function InsightsSection() {
                                     viewport={{ once: true }}
                                     whileHover={{
                                         y: -5,
-                                        boxShadow: "0 20px 40px rgba(78, 205, 196, 0.15)"
+                                        boxShadow: "0 20px 40px rgba(0, 0, 0, 0.15)"
                                     }}
                                 >
                                     <motion.div
-                                        className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#4ECDC4]/10 mb-6"
+                                        className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#000000]/10 mb-6"
                                         whileHover={{ scale: 1.1, rotate: 5 }}
                                     >
-                                        <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-[#4ECDC4]" />
+                                        <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-[#000000]" />
                                     </motion.div>
 
                                     <h4
-                                        className={`text-xl sm:text-2xl font-bold text-white mb-3 ${
+                                        className={`text-xl sm:text-2xl font-bold text-black mb-3 ${
                                             isRTL ? "font-almarai" : "font-poppins"
                                         }`}
                                     >
@@ -361,7 +351,7 @@ export function InsightsSection() {
                                     </h4>
 
                                     <p
-                                        className={`text-sm sm:text-base text-gray-400 leading-relaxed mb-6 ${
+                                        className={`text-sm sm:text-base text-gray-700 leading-relaxed mb-6 ${
                                             isRTL ? "font-almarai" : "font-poppins"
                                         }`}
                                     >
@@ -370,7 +360,7 @@ export function InsightsSection() {
 
                                     <motion.a
                                         href={report.link}
-                                        className={`inline-flex items-center gap-2 text-[#4ECDC4] font-semibold hover:gap-3 transition-all duration-300 ${
+                                        className={`inline-flex items-center gap-2 text-[#000000] font-semibold hover:gap-3 transition-all duration-300 ${
                                             isRTL ? "flex-row-reverse font-almarai" : "font-poppins"
                                         }`}
                                         whileHover={{ x: isRTL ? -5 : 5 }}
@@ -393,22 +383,22 @@ export function InsightsSection() {
                     viewport={{ once: true }}
                 >
                     <div
-                        className="max-w-4xl mx-auto p-8 sm:p-10 md:p-12 rounded-2xl border border-white/10"
+                        className="max-w-4xl mx-auto p-8 sm:p-10 md:p-12 rounded-2xl border border-gray-200"
                         style={{
-                            background: "rgba(20, 20, 28, 0.5)",
+                            background: "rgba(245, 245, 245, 0.5)",
                             backdropFilter: "blur(20px)"
                         }}
                     >
                         <div className="text-center mb-8">
                             <h3
-                                className={`text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 ${
+                                className={`text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-4 ${
                                     isRTL ? "font-almarai" : "font-poppins"
                                 }`}
                             >
                                 {currentContent.subscribe.title}
                             </h3>
                             <p
-                                className={`text-base sm:text-lg text-gray-300 ${
+                                className={`text-base sm:text-lg text-gray-700 ${
                                     isRTL ? "font-almarai" : "font-poppins"
                                 }`}
                             >
@@ -420,12 +410,12 @@ export function InsightsSection() {
                             <input
                                 type="email"
                                 placeholder={currentContent.subscribe.placeholder}
-                                className={`flex-1 px-6 py-4 rounded-lg bg-[#0a0a0f] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#4ECDC4] transition-all duration-300 ${
+                                className={`flex-1 px-6 py-4 rounded-lg bg-[#ffffff] border border-gray-200 text-black placeholder-gray-500 focus:outline-none focus:border-[#000000] transition-all duration-300 ${
                                     isRTL ? "text-right font-almarai" : "text-left font-poppins"
                                 }`}
                             />
                             <motion.button
-                                className={`px-8 py-4 rounded-lg font-semibold text-[#0a0a0f] bg-[#4ECDC4] hover:bg-[#5bb5a2] transition-all duration-300 shadow-lg hover:shadow-[#4ECDC4]/50 ${
+                                className={`px-8 py-4 rounded-lg font-semibold text-[#ffffff] bg-[#000000] hover:bg-[#404040] transition-all duration-300 shadow-lg hover:shadow-[#000000]/50 ${
                                     isRTL ? "font-almarai" : "font-poppins"
                                 }`}
                                 whileHover={{ scale: 1.05 }}

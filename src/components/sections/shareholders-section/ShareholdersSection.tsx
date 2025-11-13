@@ -38,7 +38,7 @@ export function ShareholdersSection() {
             id="shareholders"
             className="relative py-24 sm:py-28 md:py-32 lg:py-40 overflow-hidden"
             style={{
-                background: "linear-gradient(180deg, #0a0a0f 0%, #0f0f14 50%, #0a0a0f 100%)"
+                background: "linear-gradient(180deg, #ffffff 0%, #fafafa 50%, #ffffff 100%)"
             }}
         >
             {/* Background decorative elements */}
@@ -46,7 +46,7 @@ export function ShareholdersSection() {
                 <motion.div
                     className="absolute top-1/4 right-0 w-[500px] h-[500px] opacity-15"
                     style={{
-                        background: "radial-gradient(circle, rgba(78, 205, 196, 0.25) 0%, transparent 70%)"
+                        background: "radial-gradient(circle, rgba(0, 0, 0, 0.25) 0%, transparent 70%)"
                     }}
                     animate={{
                         scale: [1, 1.1, 1],
@@ -61,7 +61,7 @@ export function ShareholdersSection() {
                 <motion.div
                     className="absolute bottom-1/4 left-0 w-[500px] h-[500px] opacity-15"
                     style={{
-                        background: "radial-gradient(circle, rgba(91, 181, 162, 0.25) 0%, transparent 70%)"
+                        background: "radial-gradient(circle, rgba(64, 64, 64, 0.25) 0%, transparent 70%)"
                     }}
                     animate={{
                         scale: [1.1, 1, 1.1],
@@ -96,11 +96,11 @@ export function ShareholdersSection() {
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
                     >
-                        <span className="text-white">{currentContent.preTitle} </span>
+                        <span className="text-black">{currentContent.preTitle} </span>
                         {currentContent.title && (
                             <span
                                 style={{
-                                    background: "linear-gradient(to right, #4ECDC4 0%, #5bb5a2 100%)",
+                                    background: "linear-gradient(to right, #000000 0%, #404040 100%)",
                                     WebkitBackgroundClip: "text",
                                     WebkitTextFillColor: "transparent",
                                     backgroundClip: "text",
@@ -112,7 +112,7 @@ export function ShareholdersSection() {
                     </h2>
 
                     <motion.p
-                        className={`text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed ${
+                        className={`text-base sm:text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed ${
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
                         initial={{ opacity: 0, y: 20 }}
@@ -135,27 +135,22 @@ export function ShareholdersSection() {
                         className="relative"
                     >
                         <div
-                            className="relative p-8 sm:p-10 rounded-3xl overflow-hidden h-full"
-                            style={{
-                                background: "linear-gradient(135deg, rgba(78, 205, 196, 0.1) 0%, rgba(20, 40, 160, 0.15) 50%, rgba(26, 26, 36, 0.8) 100%)",
-                                backdropFilter: "blur(20px)",
-                                border: "1px solid rgba(78, 205, 196, 0.3)"
-                            }}
+                            className="relative p-8 sm:p-10 rounded-3xl overflow-hidden h-full bg-white border border-gray-300 shadow-lg"
                         >
                             {/* Large Icon */}
                             <motion.div
                                 className="inline-flex items-center justify-center w-24 h-24 sm:w-32 sm:h-32 rounded-full mb-8"
                                 style={{
-                                    background: "linear-gradient(135deg, rgba(78, 205, 196, 0.3) 0%, rgba(91, 181, 162, 0.2) 100%)"
+                                    background: "linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(64, 64, 64, 0.2) 100%)"
                                 }}
                                 whileHover={{ scale: 1.1, rotate: 360 }}
                                 transition={{ duration: 0.8 }}
                             >
-                                <Award className="w-14 h-14 sm:w-18 sm:h-18 text-[#4ECDC4]" />
+                                <Award className="w-14 h-14 sm:w-18 sm:h-18 text-[#000000]" />
                             </motion.div>
 
                             <h3
-                                className={`text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight ${
+                                className={`text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6 leading-tight ${
                                     isRTL ? "font-almarai" : "font-poppins"
                                 }`}
                             >
@@ -163,7 +158,7 @@ export function ShareholdersSection() {
                             </h3>
 
                             <p
-                                className={`text-lg sm:text-xl text-gray-300 leading-relaxed ${
+                                className={`text-lg sm:text-xl text-gray-700 leading-relaxed ${
                                     isRTL ? "font-almarai" : "font-poppins"
                                 }`}
                             >
@@ -171,8 +166,8 @@ export function ShareholdersSection() {
                             </p>
 
                             {/* Decorative elements */}
-                            <div className="absolute -bottom-10 -right-10 w-40 h-40 rounded-full bg-[#4ECDC4]/10 blur-3xl" />
-                            <div className="absolute -top-10 -left-10 w-32 h-32 rounded-full bg-[#5bb5a2]/10 blur-3xl" />
+                            <div className="absolute -bottom-10 -right-10 w-40 h-40 rounded-full bg-[#000000]/10 blur-3xl" />
+                            <div className="absolute -top-10 -left-10 w-32 h-32 rounded-full bg-[#404040]/10 blur-3xl" />
                         </div>
                     </motion.div>
 
@@ -189,18 +184,14 @@ export function ShareholdersSection() {
                             return (
                                 <motion.div
                                     key={index}
-                                    className="group relative flex items-start gap-4 sm:gap-6 p-6 rounded-2xl border border-white/10 hover:border-[#4ECDC4]/50 transition-all duration-300"
-                                    style={{
-                                        background: "rgba(26, 26, 36, 0.5)",
-                                        backdropFilter: "blur(10px)"
-                                    }}
+                                    className="group relative flex items-start gap-4 sm:gap-6 p-6 rounded-2xl border border-gray-200 hover:border-gray-300 transition-all duration-300 bg-white shadow-md hover:shadow-lg"
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.8 + index * 0.15, duration: 0.5 }}
                                     viewport={{ once: true }}
                                     whileHover={{
                                         x: 10,
-                                        boxShadow: "0 20px 40px rgba(78, 205, 196, 0.15)"
+                                        boxShadow: "0 20px 40px rgba(0, 0, 0, 0.15)"
                                     }}
                                 >
                                     {/* Icon with Number */}
@@ -208,13 +199,13 @@ export function ShareholdersSection() {
                                         <motion.div
                                             className="w-16 h-16 rounded-xl flex items-center justify-center"
                                             style={{
-                                                background: "linear-gradient(135deg, rgba(78, 205, 196, 0.2) 0%, rgba(91, 181, 162, 0.15) 100%)"
+                                                background: "linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(64, 64, 64, 0.15) 100%)"
                                             }}
                                             whileHover={{ scale: 1.1, rotate: 5 }}
                                         >
-                                            <Icon className="w-8 h-8 text-[#4ECDC4]" />
+                                            <Icon className="w-8 h-8 text-[#000000]" />
                                         </motion.div>
-                                        <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-[#4ECDC4] flex items-center justify-center text-[#0a0a0f] text-xs font-bold">
+                                        <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-[#000000] flex items-center justify-center text-[#ffffff] text-xs font-bold">
                                             {index + 1}
                                         </div>
                                     </div>
@@ -222,14 +213,14 @@ export function ShareholdersSection() {
                                     {/* Content */}
                                     <div className="flex-1">
                                         <h4
-                                            className={`text-xl sm:text-2xl font-bold text-white mb-2 group-hover:text-[#4ECDC4] transition-colors ${
+                                            className={`text-xl sm:text-2xl font-bold text-black mb-2 group-hover:text-[#000000] transition-colors ${
                                                 isRTL ? "font-almarai" : "font-poppins"
                                             }`}
                                         >
                                             {benefit.title}
                                         </h4>
                                         <p
-                                            className={`text-sm sm:text-base text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors ${
+                                            className={`text-sm sm:text-base text-gray-700 leading-relaxed group-hover:text-gray-700 transition-colors ${
                                                 isRTL ? "font-almarai" : "font-poppins"
                                             }`}
                                         >
@@ -242,7 +233,7 @@ export function ShareholdersSection() {
                                         className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity"
                                         whileHover={{ x: 5 }}
                                     >
-                                        <ArrowRight className={`w-5 h-5 text-[#4ECDC4] ${isRTL ? "rotate-180" : ""}`} />
+                                        <ArrowRight className={`w-5 h-5 text-[#000000] ${isRTL ? "rotate-180" : ""}`} />
                                     </motion.div>
                                 </motion.div>
                             )
@@ -283,7 +274,7 @@ export function ShareholdersSection() {
                     viewport={{ once: true }}
                 >
                     <h4
-                        className={`text-xl sm:text-2xl md:text-3xl font-bold text-white mb-6 ${
+                        className={`text-xl sm:text-2xl md:text-3xl font-bold text-black mb-6 ${
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
                     >
@@ -291,7 +282,7 @@ export function ShareholdersSection() {
                     </h4>
 
                     <motion.button
-                        className={`group px-8 sm:px-10  py-4 sm:py-5 flex-row-reverse rounded-lg font-semibold text-base sm:text-lg text-[#0a0a0f] bg-[#4ECDC4] hover:bg-[#5bb5a2] transition-all duration-300 shadow-lg hover:shadow-[#4ECDC4]/50 flex items-center gap-3 mx-auto ${
+                        className={`group px-8 sm:px-10  py-4 sm:py-5 flex-row-reverse rounded-lg font-semibold text-base sm:text-lg text-[#ffffff] bg-[#000000] hover:bg-[#404040] transition-all duration-300 shadow-lg hover:shadow-[#000000]/50 flex items-center gap-3 mx-auto ${
                             isRTL ? " font-almarai " : "font-poppins  "
                         }`}
                         whileHover={{ scale: 1.05, y: -2 }}
@@ -307,7 +298,7 @@ export function ShareholdersSection() {
                     </motion.button>
 
                     <motion.p
-                        className={`text-sm sm:text-base text-gray-500 mt-6 ${
+                        className={`text-sm sm:text-base text-gray-600 mt-6 ${
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
                         initial={{ opacity: 0 }}

@@ -46,7 +46,7 @@ export function PortfolioChart({ data, isRTL = false }: PortfolioChartProps) {
             <div className="relative">
                 <svg width="240" height="240" viewBox="0 0 240 240" className="transform rotate-0">
                     {/* Center circle background */}
-                    <circle cx="120" cy="120" r="70" fill="rgba(10, 10, 15, 0.9)" />
+                    <circle cx="120" cy="120" r="70" fill="rgba(255, 255, 255, 0.9)" />
 
                     {/* Pie segments */}
                     {data.map((item, index) => {
@@ -81,17 +81,17 @@ export function PortfolioChart({ data, isRTL = false }: PortfolioChartProps) {
                         cy="120"
                         r="70"
                         fill="none"
-                        stroke="rgba(78, 205, 196, 0.2)"
+                        stroke="rgba(0, 0, 0, 0.2)"
                         strokeWidth="2"
                     />
                 </svg>
 
                 {/* Center text */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <p className={`text-sm text-gray-400 mb-1 ${isRTL ? "font-almarai" : "font-poppins"}`}>
+                    <p className={`text-sm text-gray-700 mb-1 ${isRTL ? "font-almarai" : "font-poppins"}`}>
                         {isRTL ? "إجمالي المحفظة" : "Total Portfolio"}
                     </p>
-                    <p className={`text-2xl font-bold text-white ${isRTL ? "font-almarai" : "font-poppins"}`}>
+                    <p className={`text-2xl font-bold text-black ${isRTL ? "font-almarai" : "font-poppins"}`}>
                         100%
                     </p>
                 </div>
@@ -127,7 +127,7 @@ export function PortfolioChart({ data, isRTL = false }: PortfolioChartProps) {
                         {/* Text */}
                         <div className={isRTL ? "text-right" : ""}>
                             <p className={`text-sm font-semibold ${
-                                hoveredIndex === index ? "text-white" : "text-gray-300"
+                                hoveredIndex === index ? "text-black" : "text-gray-700"
                             } transition-colors ${isRTL ? "font-almarai" : "font-poppins"}`}>
                                 {item.sector}
                             </p>
@@ -136,7 +136,7 @@ export function PortfolioChart({ data, isRTL = false }: PortfolioChartProps) {
                                     style={{ color: item.color }}>
                                     {item.percentage}%
                                 </p>
-                                <p className="text-xs text-gray-500">
+                                <p className="text-xs text-gray-600">
                                     {item.amount}
                                 </p>
                             </div>

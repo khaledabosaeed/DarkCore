@@ -43,7 +43,7 @@ export function ScrollIndicator() {
         >
             {/* Mouse Icon */}
             <motion.div
-                className="w-7 h-11 border-2 border-[#4ECDC4] rounded-full p-1 flex justify-center"
+                className="w-7 h-11 border-2 border-[#000000] rounded-full p-1 flex justify-center"
                 whileHover={{ scale: 1.1 }}
                 animate={{
                     y: [0, 10, 0]
@@ -55,7 +55,7 @@ export function ScrollIndicator() {
                 }}
             >
                 <motion.div
-                    className="w-1.5 h-1.5 bg-[#4ECDC4] rounded-full"
+                    className="w-1.5 h-1.5 bg-[#000000] rounded-full"
                     animate={{
                         y: [0, 8, 0],
                         opacity: [1, 0.3, 1]
@@ -70,7 +70,7 @@ export function ScrollIndicator() {
 
             {/* Text */}
             <motion.p
-                className={`text-[#4ECDC4] text-sm mt-2 text-center ${
+                className={`text-[#000000] text-sm mt-2 text-center ${
                     isRTL ? "font-almarai" : "font-poppins"
                 }`}
                 animate={{

@@ -64,25 +64,25 @@ interface StatCardProps {
 export function StatCard({ value, suffix, prefix, label, icon, delay = 0, decimals = 0 }: StatCardProps) {
     return (
         <motion.div
-            className="flex flex-col items-center justify-center p-6 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-[#4ECDC4]/50 transition-all duration-300"
+            className="flex flex-col items-center justify-center p-6 rounded-xl bg-black/5 backdrop-blur-md border border-gray-200 hover:border-[#000000]/50 transition-all duration-300"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay, duration: 0.5 }}
             viewport={{ once: true }}
             whileHover={{
                 y: -5,
-                boxShadow: "0 20px 40px rgba(78, 205, 196, 0.2)"
+                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.2)"
             }}
         >
             {icon && (
                 <motion.div
-                    className="mb-4 text-[#4ECDC4]"
+                    className="mb-4 text-[#000000]"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                 >
                     {icon}
                 </motion.div>
             )}
-            <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+            <div className="text-4xl md:text-5xl font-bold text-black mb-2">
                 <AnimatedCounter
                     value={value}
                     suffix={suffix}
@@ -90,7 +90,7 @@ export function StatCard({ value, suffix, prefix, label, icon, delay = 0, decima
                     decimals={decimals}
                 />
             </div>
-            <div className="text-sm md:text-base text-gray-400 text-center">
+            <div className="text-sm md:text-base text-gray-700 text-center">
                 {label}
             </div>
         </motion.div>

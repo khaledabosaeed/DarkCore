@@ -9,13 +9,13 @@ export const insightsContent = {
             {
                 sector: "الطاقة المتجددة",
                 percentage: 35,
-                color: "#4ECDC4",
+                color: "#000000",
                 amount: "SAR 800M"
             },
             {
                 sector: "التطوير العقاري",
                 percentage: 42,
-                color: "#5bb5a2",
+                color: "#404040",
                 amount: "SAR 1.2B"
             },
             {
@@ -144,13 +144,13 @@ export const insightsContent = {
             {
                 sector: "Renewable Energy",
                 percentage: 35,
-                color: "#4ECDC4",
+                color: "#000000",
                 amount: "SAR 800M"
             },
             {
                 sector: "Real Estate Development",
                 percentage: 42,
-                color: "#5bb5a2",
+                color: "#404040",
                 amount: "SAR 1.2B"
             },
             {

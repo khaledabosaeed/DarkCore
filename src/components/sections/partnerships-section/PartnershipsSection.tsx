@@ -38,7 +38,7 @@ export function PartnershipsSection() {
             id="partnerships"
             className="relative py-20 sm:py-24 md:py-28 lg:py-32 overflow-hidden"
             style={{
-                background: "linear-gradient(180deg, #0a0a0f 0%, #0f0f14 50%, #0a0a0f 100%)"
+                background: "linear-gradient(180deg, #ffffff 0%, #fafafa 50%, #ffffff 100%)"
             }}
         >
             {/* Background decorative elements */}
@@ -46,7 +46,7 @@ export function PartnershipsSection() {
                 <motion.div
                     className="absolute top-1/4 left-0 w-[600px] h-[600px] opacity-15"
                     style={{
-                        background: "radial-gradient(circle, rgba(78, 205, 196, 0.25) 0%, transparent 70%)"
+                        background: "radial-gradient(circle, rgba(0, 0, 0, 0.25) 0%, transparent 70%)"
                     }}
                     animate={{
                         scale: [1, 1.15, 1],
@@ -61,7 +61,7 @@ export function PartnershipsSection() {
                 <motion.div
                     className="absolute bottom-1/4 right-0 w-[600px] h-[600px] opacity-15"
                     style={{
-                        background: "radial-gradient(circle, rgba(91, 181, 162, 0.25) 0%, transparent 70%)"
+                        background: "radial-gradient(circle, rgba(64, 64, 64, 0.25) 0%, transparent 70%)"
                     }}
                     animate={{
                         scale: [1.15, 1, 1.15],
@@ -96,10 +96,10 @@ export function PartnershipsSection() {
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
                     >
-                        <span className="text-white">{currentContent.title} </span>
+                        <span className="text-black">{currentContent.title} </span>
                         <span
                             style={{
-                                background: "linear-gradient(to right, #4ECDC4 0%, #5bb5a2 100%)",
+                                background: "linear-gradient(to right, #000000 0%, #404040 100%)",
                                 WebkitBackgroundClip: "text",
                                 WebkitTextFillColor: "transparent",
                                 backgroundClip: "text",
@@ -110,7 +110,7 @@ export function PartnershipsSection() {
                     </h2>
 
                     <motion.p
-                        className={`text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-6 ${
+                        className={`text-base sm:text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-6 ${
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
                         initial={{ opacity: 0, y: 20 }}
@@ -133,24 +133,20 @@ export function PartnershipsSection() {
                         viewport={{ once: true }}
                     >
                         <div
-                            className="relative rounded-2xl overflow-hidden border border-[#4ECDC4]/30"
-                            style={{
-                                background: "rgba(78, 205, 196, 0.05)",
-                                backdropFilter: "blur(20px)"
-                            }}
+                            className="relative rounded-2xl overflow-hidden border border-gray-300 bg-gray-50 shadow-md"
                         >
                             {/* Placeholder for image - user will add */}
-                            <div className="aspect-[4/3] bg-gradient-to-br from-[#4ECDC4]/20 to-[#5bb5a2]/20 flex items-center justify-center">
+                            <div className="aspect-[4/3] bg-gradient-to-br from-[#000000]/20 to-[#404040]/20 flex items-center justify-center">
                                 <div className="text-center p-8">
-                                    <HandshakeIcon className="w-20 h-20 sm:w-24 sm:h-24 text-[#4ECDC4] mx-auto mb-4 opacity-50" />
-                                    <p className={`text-gray-400 text-sm sm:text-base ${isRTL ? "font-almarai" : "font-poppins"}`}>
+                                    <HandshakeIcon className="w-20 h-20 sm:w-24 sm:h-24 text-[#000000] mx-auto mb-4 opacity-50" />
+                                    <p className={`text-gray-700 text-sm sm:text-base ${isRTL ? "font-almarai" : "font-poppins"}`}>
                                         {isRTL ? "سيتم إضافة الصورة هنا" : "Image will be added here"}
                                     </p>
                                 </div>
                             </div>
 
                             {/* Decorative overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f]/50 to-transparent pointer-events-none" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#ffffff]/50 to-transparent pointer-events-none" />
                         </div>
                     </motion.div>
 
@@ -162,25 +158,21 @@ export function PartnershipsSection() {
                         viewport={{ once: true }}
                     >
                         <div
-                            className="h-full p-8 sm:p-10 rounded-2xl border border-white/10 flex flex-col items-center justify-around "
-                            style={{
-                                background: "rgba(26, 26, 36, 0.4)",
-                                backdropFilter: "blur(10px)"
-                            }}
+                            className="h-full p-8 sm:p-10 rounded-2xl border border-gray-200 flex flex-col items-center justify-around bg-white shadow-md"
                         >
                             {/* Split description into visual sections */}
                             <div className="space-y-6 ">
                                 {/* Vision Section */}
                                 <div>
                                     <h4
-                                        className={`text-xl sm:text-2xl font-bold text-[#4ECDC4] mb-3 ${
+                                        className={`text-xl sm:text-2xl font-bold text-[#000000] mb-3 ${
                                             isRTL ? "font-almarai text-right" : "font-poppins"
                                         }`}
                                     >
                                         {isRTL ? "رؤيتنا" : "Our Vision"}
                                     </h4>
                                     <p
-                                        className={`text-base sm:text-lg text-gray-300 leading-relaxed ${
+                                        className={`text-base sm:text-lg text-gray-700 leading-relaxed ${
                                             isRTL ? "font-almarai text-right" : "font-poppins"
                                         }`}
                                     >
@@ -189,19 +181,19 @@ export function PartnershipsSection() {
                                 </div>
 
                                 {/* Divider */}
-                                <div className="h-px bg-gradient-to-r from-transparent via-[#4ECDC4]/30 to-transparent" />
+                                <div className="h-px bg-gradient-to-r from-transparent via-[#000000]/30 to-transparent" />
 
                                 {/* Mission Section */}
                                 <div>
                                     <h4
-                                        className={`text-xl sm:text-2xl font-bold text-[#4ECDC4] mb-3 ${
+                                        className={`text-xl sm:text-2xl font-bold text-[#000000] mb-3 ${
                                             isRTL ? "font-almarai text-right" : "font-poppins"
                                         }`}
                                     >
                                         {isRTL ? "رسالتنا" : "Our Mission"}
                                     </h4>
                                     <p
-                                        className={`text-base sm:text-lg text-gray-300 leading-relaxed ${
+                                        className={`text-base sm:text-lg text-gray-700 leading-relaxed ${
                                             isRTL ? "font-almarai text-right" : "font-poppins"
                                         }`}
                                     >
@@ -220,29 +212,25 @@ export function PartnershipsSection() {
                         return (
                             <motion.div
                                 key={index}
-                                className="p-6 sm:p-8 rounded-xl border border-[#4ECDC4]/20 hover:border-[#4ECDC4]/50 transition-all duration-300"
-                                style={{
-                                    background: "rgba(26, 26, 36, 0.4)",
-                                    backdropFilter: "blur(10px)"
-                                }}
+                                className="p-6 sm:p-8 rounded-xl border border-gray-200 hover:border-gray-300 transition-all duration-300 bg-white shadow-md hover:shadow-lg"
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.4 + index * 0.1, duration: 0.6 }}
                                 viewport={{ once: true }}
                                 whileHover={{
                                     y: -8,
-                                    boxShadow: "0 20px 40px rgba(78, 205, 196, 0.15)"
+                                    boxShadow: "0 20px 40px rgba(0, 0, 0, 0.15)"
                                 }}
                             >
                                 <motion.div
-                                    className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#4ECDC4]/10 mb-6"
+                                    className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#000000]/10 mb-6"
                                     whileHover={{ scale: 1.1, rotate: 5 }}
                                 >
-                                    <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-[#4ECDC4]" />
+                                    <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-[#000000]" />
                                 </motion.div>
 
                                 <h3
-                                    className={`text-xl sm:text-2xl font-bold text-white mb-3 ${
+                                    className={`text-xl sm:text-2xl font-bold text-black mb-3 ${
                                         isRTL ? "font-almarai" : "font-poppins"
                                     }`}
                                 >
@@ -250,7 +238,7 @@ export function PartnershipsSection() {
                                 </h3>
 
                                 <p
-                                    className={`text-sm sm:text-base text-gray-400 leading-relaxed ${
+                                    className={`text-sm sm:text-base text-gray-700 leading-relaxed ${
                                         isRTL ? "font-almarai" : "font-poppins"
                                     }`}
                                 >
@@ -270,7 +258,7 @@ export function PartnershipsSection() {
                     viewport={{ once: true }}
                 >
                     <h3
-                        className={`text-xl sm:text-2xl md:text-3xl font-bold text-white mb-6 ${
+                        className={`text-xl sm:text-2xl md:text-3xl font-bold text-black mb-6 ${
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
                     >
@@ -278,7 +266,7 @@ export function PartnershipsSection() {
                     </h3>
 
                     <motion.button
-                        className={`group px-8 sm:px-10 py-4 sm:py-5 rounded-lg font-semibold text-base sm:text-lg text-[#0a0a0f] bg-[#4ECDC4] hover:bg-[#5bb5a2] transition-all duration-300 shadow-lg hover:shadow-[#4ECDC4]/50 flex items-center gap-3 mx-auto ${
+                        className={`group px-8 sm:px-10 py-4 sm:py-5 rounded-lg font-semibold text-base sm:text-lg text-[#ffffff] bg-[#000000] hover:bg-[#404040] transition-all duration-300 shadow-lg hover:shadow-[#000000]/50 flex items-center gap-3 mx-auto ${
                             isRTL ? "flex-row-reverse font-almarai" : "font-poppins"
                         }`}
                         whileHover={{ scale: 1.05, y: -2 }}

@@ -39,7 +39,7 @@ export function AboutSection() {
             id="about"
             className="relative py-20 sm:py-24 md:py-28 lg:py-32 overflow-hidden"
             style={{
-                background: "linear-gradient(135deg, rgba(10, 10, 15, 0.98) 0%, rgba(20, 40, 160, 0.05) 50%, rgba(10, 10, 15, 0.98) 100%)"
+                background: "linear-gradient(180deg, #ffffff 0%, #fafafa 50%, #f5f5f5 100%)"
             }}
         >
             {/* Background decorative elements with gradients */}
@@ -47,7 +47,7 @@ export function AboutSection() {
                 <motion.div
                     className="absolute top-0 left-0 w-96 h-96 opacity-20"
                     style={{
-                        background: "radial-gradient(circle, rgba(78, 205, 196, 0.15) 0%, transparent 70%)"
+                        background: "radial-gradient(circle, rgba(0, 0, 0, 0.15) 0%, transparent 70%)"
                     }}
                     animate={{
                         scale: [1, 1.2, 1],
@@ -62,7 +62,7 @@ export function AboutSection() {
                 <motion.div
                     className="absolute bottom-0 right-0 w-96 h-96 opacity-20"
                     style={{
-                        background: "radial-gradient(circle, rgba(91, 181, 162, 0.12) 0%, transparent 70%)"
+                        background: "radial-gradient(circle, rgba(64, 64, 64, 0.12) 0%, transparent 70%)"
                     }}
                     animate={{
                         scale: [1.2, 1, 1.2],
@@ -79,7 +79,7 @@ export function AboutSection() {
                 <div
                     className="absolute inset-0 opacity-30"
                     style={{
-                        background: "radial-gradient(ellipse at center, rgba(78, 205, 196, 0.08) 0%, transparent 60%)"
+                        background: "radial-gradient(ellipse at center, rgba(0, 0, 0, 0.08) 0%, transparent 60%)"
                     }}
                 />
                 
@@ -107,10 +107,19 @@ export function AboutSection() {
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
                     >
-                        <span className="text-white">{currentContent.title} </span>
                         <span
                             style={{
-                                background: "linear-gradient(to right, #4ECDC4 0%, #5bb5a2 100%)",
+                                background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%)",
+                                WebkitBackgroundClip: "text",
+                                WebkitTextFillColor: "transparent",
+                                backgroundClip: "text",
+                            }}
+                        >
+                            {currentContent.title}{" "}
+                        </span>
+                        <span
+                            style={{
+                                background: "linear-gradient(135deg, #000000 0%, #2d2d2d 50%, #4a4a4a 100%)",
                                 WebkitBackgroundClip: "text",
                                 WebkitTextFillColor: "transparent",
                                 backgroundClip: "text",
@@ -121,9 +130,15 @@ export function AboutSection() {
                     </h2>
 
                     <motion.p
-                        className={`text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl mx-auto mb-4 leading-relaxed ${
+                        className={`text-base sm:text-lg md:text-xl max-w-4xl mx-auto mb-4 leading-relaxed ${
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
+                        style={{
+                            background: "linear-gradient(135deg, #2d2d2d 0%, #4a4a4a 50%, #5a5a5a 100%)",
+                            WebkitBackgroundClip: "text",
+                            WebkitTextFillColor: "transparent",
+                            backgroundClip: "text",
+                        }}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2, duration: 0.8 }}
@@ -133,9 +148,15 @@ export function AboutSection() {
                     </motion.p>
 
                     <motion.p
-                        className={`text-base sm:text-lg md:text-xl text-gray-400 max-w-4xl mx-auto mb-8 leading-relaxed ${
+                        className={`text-base sm:text-lg md:text-xl max-w-4xl mx-auto mb-8 leading-relaxed ${
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
+                        style={{
+                            background: "linear-gradient(135deg, #2d2d2d 0%, #4a4a4a 50%, #5a5a5a 100%)",
+                            WebkitBackgroundClip: "text",
+                            WebkitTextFillColor: "transparent",
+                            backgroundClip: "text",
+                        }}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3, duration: 0.8 }}
@@ -158,11 +179,12 @@ export function AboutSection() {
                         return (
                             <motion.div
                                 key={index}
-                                className="group relative p-6 sm:p-8 rounded-2xl overflow-hidden"
+                                className="group relative p-6 sm:p-8 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
                                 style={{
-                                    background: "linear-gradient(135deg, rgba(26, 26, 36, 0.8) 0%, rgba(20, 40, 160, 0.1) 50%, rgba(20, 20, 28, 0.7) 100%)",
-                                    backdropFilter: "blur(10px)",
-                                    border: "1px solid rgba(255, 255, 255, 0.1)"
+                                    border: "2px solid transparent",
+                                    backgroundImage: "linear-gradient(white, white), linear-gradient(135deg, rgba(0,0,0,0.08) 0%, rgba(64,64,64,0.12) 50%, rgba(26,26,26,0.08) 100%)",
+                                    backgroundOrigin: "border-box",
+                                    backgroundClip: "padding-box, border-box",
                                 }}
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
@@ -171,14 +193,14 @@ export function AboutSection() {
                                 whileHover={{
                                     y: -10,
                                     scale: 1.05,
-                                    boxShadow: "0 25px 50px rgba(78, 205, 196, 0.25)"
+                                    boxShadow: "0 25px 50px rgba(0, 0, 0, 0.2)"
                                 }}
                             >
                                 {/* Gradient Border Effect on Hover */}
                                 <motion.div
                                     className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                                     style={{
-                                        background: "linear-gradient(135deg, rgba(78, 205, 196, 0.3) 0%, rgba(91, 181, 162, 0.2) 100%)",
+                                        background: "linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(64, 64, 64, 0.2) 100%)",
                                         padding: "2px"
                                     }}
                                 />
@@ -187,12 +209,12 @@ export function AboutSection() {
                                 <motion.div
                                     className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full mb-4 relative z-10"
                                     style={{
-                                        background: "linear-gradient(135deg, rgba(78, 205, 196, 0.2) 0%, rgba(91, 181, 162, 0.15) 100%)"
+                                        background: "linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(64, 64, 64, 0.15) 100%)"
                                     }}
                                     whileHover={{ rotate: 360, scale: 1.2 }}
                                     transition={{ duration: 0.6 }}
                                 >
-                                    <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#4ECDC4]" />
+                                    <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#000000]" />
                                 </motion.div>
 
                                 {/* Number */}
@@ -201,7 +223,7 @@ export function AboutSection() {
                                 }`}>
                                     <span
                                         style={{
-                                            background: "linear-gradient(to right, #4ECDC4 0%, #5bb5a2 100%)",
+                                            background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%)",
                                             WebkitBackgroundClip: "text",
                                             WebkitTextFillColor: "transparent",
                                             backgroundClip: "text"
@@ -217,9 +239,17 @@ export function AboutSection() {
                                 </div>
 
                                 {/* Label */}
-                                <p className={`text-sm sm:text-base text-gray-300 relative z-10 ${
-                                    isRTL ? "font-almarai" : "font-poppins"
-                                }`}>
+                                <p
+                                    className={`text-sm sm:text-base relative z-10 ${
+                                        isRTL ? "font-almarai" : "font-poppins"
+                                    }`}
+                                    style={{
+                                        background: "linear-gradient(135deg, #2d2d2d 0%, #4a4a4a 50%, #5a5a5a 100%)",
+                                        WebkitBackgroundClip: "text",
+                                        WebkitTextFillColor: "transparent",
+                                        backgroundClip: "text",
+                                    }}
+                                >
                                     {stat.label}
                                 </p>
 
@@ -227,7 +257,7 @@ export function AboutSection() {
                                 <div
                                     className="absolute bottom-0 right-0 w-20 h-20 opacity-5 pointer-events-none"
                                     style={{
-                                        background: "radial-gradient(circle, rgba(78, 205, 196, 0.4) 0%, transparent 70%)"
+                                        background: "radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, transparent 70%)"
                                     }}
                                 />
                             </motion.div>
@@ -244,7 +274,7 @@ export function AboutSection() {
                     viewport={{ once: true }}
                 >
                     <h3
-                        className={`text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12 sm:mb-16 text-white ${
+                        className={`text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12 sm:mb-16 text-black ${
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
                     >
@@ -259,7 +289,7 @@ export function AboutSection() {
                                     key={index}
                                     className="group relative p-6 sm:p-8 rounded-xl overflow-hidden"
                                     style={{
-                                        background: "linear-gradient(135deg, rgba(26, 26, 36, 0.6) 0%, rgba(20, 40, 160, 0.08) 50%, rgba(20, 20, 28, 0.5) 100%)",
+                                        background: "linear-gradient(135deg, rgba(250, 250, 250, 0.6) 0%, rgba(245, 245, 245, 0.08) 50%, rgba(245, 245, 245, 0.5) 100%)",
                                         backdropFilter: "blur(10px)",
                                         border: "1px solid rgba(255, 255, 255, 0.1)"
                                     }}
@@ -270,14 +300,14 @@ export function AboutSection() {
                                     whileHover={{
                                         y: -12,
                                         scale: 1.03,
-                                        boxShadow: "0 25px 50px rgba(78, 205, 196, 0.25)",
+                                        boxShadow: "0 25px 50px rgba(0, 0, 0, 0.25)",
                                         transition: { duration: 0.3 }
                                     }}
                                 >
                                     <motion.div
                                         className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                                         style={{
-                                            background: "linear-gradient(135deg, rgba(78, 205, 196, 0.2) 0%, rgba(91, 181, 162, 0.15) 100%)",
+                                            background: "linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(64, 64, 64, 0.15) 100%)",
                                             padding: "1px"
                                         }}
                                     />
@@ -285,16 +315,16 @@ export function AboutSection() {
                                     <motion.div
                                         className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full mb-6 relative z-10"
                                         style={{
-                                            background: "linear-gradient(135deg, rgba(78, 205, 196, 0.15) 0%, rgba(91, 181, 162, 0.1) 100%)"
+                                            background: "linear-gradient(135deg, rgba(0, 0, 0, 0.15) 0%, rgba(64, 64, 64, 0.1) 100%)"
                                         }}
                                         whileHover={{ scale: 1.15, rotate: 10 }}
                                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                                     >
-                                        <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-[#4ECDC4] group-hover:text-[#5bb5a2] transition-colors duration-300" />
+                                        <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-[#000000] group-hover:text-[#404040] transition-colors duration-300" />
                                     </motion.div>
 
                                     <h4
-                                        className={`text-xl sm:text-2xl font-bold text-white mb-3 relative z-10 group-hover:text-[#4ECDC4] transition-colors duration-300 ${
+                                        className={`text-xl sm:text-2xl font-bold text-black mb-3 relative z-10 group-hover:text-[#000000] transition-colors duration-300 ${
                                             isRTL ? "font-almarai" : "font-poppins"
                                         }`}
                                     >
@@ -302,7 +332,7 @@ export function AboutSection() {
                                     </h4>
 
                                     <p
-                                        className={`text-sm sm:text-base text-gray-400 leading-relaxed relative z-10 group-hover:text-gray-300 transition-colors duration-300 ${
+                                        className={`text-sm sm:text-base text-gray-700 leading-relaxed relative z-10 group-hover:text-gray-700 transition-colors duration-300 ${
                                             isRTL ? "font-almarai" : "font-poppins"
                                         }`}
                                     >
@@ -312,7 +342,7 @@ export function AboutSection() {
                                     <motion.div
                                         className="absolute -bottom-10 -right-10 w-32 h-32 rounded-full opacity-0 group-hover:opacity-10 pointer-events-none transition-opacity duration-500"
                                         style={{
-                                            background: "radial-gradient(circle, rgba(78, 205, 196, 0.6) 0%, transparent 70%)"
+                                            background: "radial-gradient(circle, rgba(0, 0, 0, 0.6) 0%, transparent 70%)"
                                         }}
                                     />
                                 </motion.div>

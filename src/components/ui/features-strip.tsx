@@ -66,7 +66,7 @@ export function FeaturesStrip() {
 
     return (
         <div className="relative w-full py-16 mb-12" style={{
-            background: "linear-gradient(135deg, rgba(20, 40, 160, 0.08) 0%, rgba(20, 40, 160, 0.12) 50%, rgba(20, 40, 160, 0.08) 100%)"
+            background: "linear-gradient(135deg, rgba(245, 245, 245, 0.08) 0%, rgba(245, 245, 245, 0.12) 50%, rgba(245, 245, 245, 0.08) 100%)"
         }}>
             <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
@@ -77,9 +77,9 @@ export function FeaturesStrip() {
                                 key={index}
                                 className="text-center p-6 sm:p-8 rounded-xl border transition-all duration-300"
                                 style={{
-                                    background: "linear-gradient(135deg, rgba(26, 26, 36, 0.6) 0%, rgba(20, 40, 160, 0.1) 50%, rgba(20, 20, 28, 0.5) 100%)",
+                                    background: "linear-gradient(135deg, rgba(250, 250, 250, 0.6) 0%, rgba(245, 245, 245, 0.1) 50%, rgba(245, 245, 245, 0.5) 100%)",
                                     backdropFilter: "blur(10px)",
-                                    borderColor: "rgba(78, 205, 196, 0.15)"
+                                    borderColor: "rgba(0, 0, 0, 0.15)"
                                 }}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -87,24 +87,24 @@ export function FeaturesStrip() {
                                 viewport={{ once: true }}
                                 whileHover={{
                                     y: -5,
-                                    borderColor: "rgba(78, 205, 196, 0.5)",
-                                    boxShadow: "0 20px 40px rgba(78, 205, 196, 0.2)"
+                                    borderColor: "rgba(0, 0, 0, 0.5)",
+                                    boxShadow: "0 20px 40px rgba(0, 0, 0, 0.2)"
                                 }}
                             >
                                 {/* Icon */}
                                 <motion.div
                                     className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full mb-4"
                                     style={{
-                                        background: "linear-gradient(135deg, rgba(78, 205, 196, 0.2) 0%, rgba(91, 181, 162, 0.2) 100%)"
+                                        background: "linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(64, 64, 64, 0.2) 100%)"
                                     }}
                                     whileHover={{ scale: 1.1, rotate: 5 }}
                                 >
-                                    <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-[#4ECDC4]" />
+                                    <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-[#000000]" />
                                 </motion.div>
 
                                 {/* Title */}
                                 <h3
-                                    className={`text-lg sm:text-xl font-bold text-white mb-2 ${
+                                    className={`text-lg sm:text-xl font-bold text-black mb-2 ${
                                         isRTL ? "font-almarai" : "font-poppins"
                                     }`}
                                 >
@@ -113,7 +113,7 @@ export function FeaturesStrip() {
 
                                 {/* Description */}
                                 <p
-                                    className={`text-sm sm:text-base text-gray-400 ${
+                                    className={`text-sm sm:text-base text-gray-700 ${
                                         isRTL ? "font-almarai" : "font-poppins"
                                     }`}
                                 >

@@ -47,7 +47,7 @@ export function InvestmentChartLines() {
                         <motion.path
                             d={path}
                             fill="none"
-                            stroke="#4ECDC4"
+                            stroke="#000000"
                             strokeWidth="2"
                             strokeDasharray="5,5"
                             initial={{ pathLength: 0, opacity: 0 }}
@@ -69,12 +69,12 @@ export function InvestmentChartLines() {
 // Floating Stock Icons - Fixed when in view
 export function FloatingStockIcons() {
     const icons = [
-        { Icon: TrendingUp, color: "#4ECDC4", delay: 0, position: { left: "10%", top: "20%" } },
-        { Icon: BarChart3, color: "#5bb5a2", delay: 0.1, position: { left: "30%", top: "40%" } },
-        { Icon: LineChart, color: "#4ECDC4", delay: 0.2, position: { left: "60%", top: "15%" } },
-        { Icon: PieChart, color: "#5bb5a2", delay: 0.3, position: { left: "80%", top: "50%" } },
-        { Icon: Activity, color: "#4ECDC4", delay: 0.4, position: { left: "20%", top: "70%" } },
-        { Icon: ArrowUpRight, color: "#5bb5a2", delay: 0.5, position: { left: "70%", top: "80%" } }
+        { Icon: TrendingUp, color: "#000000", delay: 0, position: { left: "10%", top: "20%" } },
+        { Icon: BarChart3, color: "#404040", delay: 0.1, position: { left: "30%", top: "40%" } },
+        { Icon: LineChart, color: "#000000", delay: 0.2, position: { left: "60%", top: "15%" } },
+        { Icon: PieChart, color: "#404040", delay: 0.3, position: { left: "80%", top: "50%" } },
+        { Icon: Activity, color: "#000000", delay: 0.4, position: { left: "20%", top: "70%" } },
+        { Icon: ArrowUpRight, color: "#404040", delay: 0.5, position: { left: "70%", top: "80%" } }
     ]
 
     return (
@@ -123,8 +123,8 @@ export function InvestmentGridPattern() {
                 }}
                 style={{
                     backgroundImage: `
-                        linear-gradient(rgba(78, 205, 196, 0.08) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(78, 205, 196, 0.08) 1px, transparent 1px)
+                        linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px)
                     `,
                     backgroundSize: "50px 50px",
                     backgroundPosition: "0 0"
@@ -142,7 +142,7 @@ export function MovingGradientOrbs() {
             <motion.div
                 className="absolute top-20 left-10 w-64 h-64 rounded-full blur-3xl"
                 style={{
-                    background: "radial-gradient(circle, rgba(78, 205, 196, 0.15) 0%, transparent 70%)"
+                    background: "radial-gradient(circle, rgba(0, 0, 0, 0.15) 0%, transparent 70%)"
                 }}
                 initial={{ opacity: 0, scale: 0.8, x: -20 }}
                 whileInView={{ opacity: 0.2, scale: 1, x: 0 }}
@@ -158,7 +158,7 @@ export function MovingGradientOrbs() {
             <motion.div
                 className="absolute bottom-20 right-20 w-80 h-80 rounded-full blur-3xl"
                 style={{
-                    background: "radial-gradient(circle, rgba(91, 181, 162, 0.12) 0%, transparent 70%)"
+                    background: "radial-gradient(circle, rgba(64, 64, 64, 0.12) 0%, transparent 70%)"
                 }}
                 initial={{ opacity: 0, scale: 0.8, x: 20 }}
                 whileInView={{ opacity: 0.18, scale: 1, x: 0 }}
@@ -174,7 +174,7 @@ export function MovingGradientOrbs() {
             <motion.div
                 className="absolute top-1/2 left-1/2 w-72 h-72 rounded-full blur-3xl"
                 style={{
-                    background: "radial-gradient(circle, rgba(78, 205, 196, 0.1) 0%, transparent 70%)"
+                    background: "radial-gradient(circle, rgba(0, 0, 0, 0.1) 0%, transparent 70%)"
                 }}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 0.15, scale: 1 }}
@@ -211,7 +211,7 @@ export function DataPointsAnimation() {
                     style={{
                         left: pos.left,
                         top: pos.top,
-                        background: i % 2 === 0 ? "#4ECDC4" : "#5bb5a2"
+                        background: i % 2 === 0 ? "#000000" : "#404040"
                     }}
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{ opacity: 0.3, scale: 1 }}
@@ -266,11 +266,11 @@ export function AnimatedColorGradient() {
                     background: `
                         linear-gradient(
                             135deg,
-                            rgba(78, 205, 196, 0.12) 0%,
-                            rgba(91, 181, 162, 0.08) 25%,
-                            rgba(20, 40, 160, 0.06) 50%,
-                            rgba(78, 205, 196, 0.08) 75%,
-                            rgba(91, 181, 162, 0.12) 100%
+                            rgba(0, 0, 0, 0.12) 0%,
+                            rgba(64, 64, 64, 0.08) 25%,
+                            rgba(245, 245, 245, 0.06) 50%,
+                            rgba(0, 0, 0, 0.08) 75%,
+                            rgba(64, 64, 64, 0.12) 100%
                         )
                     `,
                     backgroundSize: "200% 200%",

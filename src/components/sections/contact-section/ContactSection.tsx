@@ -86,7 +86,7 @@ export function ContactSection() {
             id="contact"
             className="relative py-20 sm:py-24 md:py-28 lg:py-32 overflow-hidden"
             style={{
-                background: "#0a0a0f"
+                background: "linear-gradient(180deg, #ffffff 0%, #fafafa 50%, #f5f5f5 100%)"
             }}
         >
             {/* Background decorative elements */}
@@ -94,7 +94,7 @@ export function ContactSection() {
                 <div
                     className="absolute top-1/3 right-1/4 w-[500px] h-[500px] opacity-10"
                     style={{
-                        background: "radial-gradient(circle, rgba(78, 205, 196, 0.25) 0%, transparent 70%)"
+                        background: "radial-gradient(circle, rgba(0, 0, 0, 0.25) 0%, transparent 70%)"
                     }}
                 />
             </div>
@@ -113,10 +113,19 @@ export function ContactSection() {
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
                     >
-                        <span className="text-white">{currentContent.title} </span>
                         <span
                             style={{
-                                background: "linear-gradient(to right, #4ECDC4 0%, #5bb5a2 100%)",
+                                background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%)",
+                                WebkitBackgroundClip: "text",
+                                WebkitTextFillColor: "transparent",
+                                backgroundClip: "text",
+                            }}
+                        >
+                            {currentContent.title}{" "}
+                        </span>
+                        <span
+                            style={{
+                                background: "linear-gradient(135deg, #000000 0%, #2d2d2d 50%, #4a4a4a 100%)",
                                 WebkitBackgroundClip: "text",
                                 WebkitTextFillColor: "transparent",
                                 backgroundClip: "text",
@@ -127,9 +136,15 @@ export function ContactSection() {
                     </h2>
 
                     <motion.p
-                        className={`text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed ${
+                        className={`text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed ${
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
+                        style={{
+                            background: "linear-gradient(135deg, #2d2d2d 0%, #4a4a4a 50%, #5a5a5a 100%)",
+                            WebkitBackgroundClip: "text",
+                            WebkitTextFillColor: "transparent",
+                            backgroundClip: "text",
+                        }}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2, duration: 0.8 }}
@@ -149,16 +164,24 @@ export function ContactSection() {
                         viewport={{ once: true }}
                     >
                         <div
-                            className="p-8 sm:p-10 rounded-2xl border border-white/10"
+                            className="p-8 sm:p-10 rounded-2xl bg-white shadow-md"
                             style={{
-                                background: "rgba(26, 26, 36, 0.4)",
-                                backdropFilter: "blur(10px)"
+                                border: "2px solid transparent",
+                                backgroundImage: "linear-gradient(white, white), linear-gradient(135deg, rgba(0,0,0,0.08) 0%, rgba(64,64,64,0.12) 50%, rgba(26,26,26,0.08) 100%)",
+                                backgroundOrigin: "border-box",
+                                backgroundClip: "padding-box, border-box",
                             }}
                         >
                             <h3
-                                className={`text-2xl sm:text-3xl font-bold text-white mb-6 ${
+                                className={`text-2xl sm:text-3xl font-bold mb-6 ${
                                     isRTL ? "font-almarai" : "font-poppins"
                                 }`}
+                                style={{
+                                    background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%)",
+                                    WebkitBackgroundClip: "text",
+                                    WebkitTextFillColor: "transparent",
+                                    backgroundClip: "text",
+                                }}
                             >
                                 {currentContent.form.title}
                             </h3>
@@ -169,7 +192,7 @@ export function ContactSection() {
                                     <motion.div
                                         initial={{ opacity: 0, y: -10 }}
                                         animate={{ opacity: 1, y: 0 }}
-                                        className="p-4 rounded-lg bg-[#4ECDC4]/10 border border-[#4ECDC4]/30 text-[#4ECDC4] text-center"
+                                        className="p-4 rounded-lg bg-[#000000]/10 border border-[#000000]/30 text-[#000000] text-center"
                                     >
                                         {isRTL ? "تم إرسال رسالتك بنجاح! سنتواصل معك قريباً" : "Message sent successfully! We'll contact you soon"}
                                     </motion.div>
@@ -187,7 +210,7 @@ export function ContactSection() {
                                 {/* Name Field */}
                                 <div>
                                     <label
-                                        className={`block text-sm font-medium text-gray-300 mb-2 ${
+                                        className={`block text-sm font-medium text-gray-700 mb-2 ${
                                             isRTL ? "text-right font-almarai" : "text-left font-poppins"
                                         }`}
                                     >
@@ -200,7 +223,7 @@ export function ContactSection() {
                                         onChange={handleInputChange}
                                         required
                                         placeholder={currentContent.form.name.placeholder}
-                                        className={`w-full px-4 py-3 rounded-lg bg-[#0a0a0f] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#4ECDC4] transition-all duration-300 ${
+                                        className={`w-full px-4 py-3 rounded-lg bg-[#ffffff] border border-gray-200 text-black placeholder-gray-500 focus:outline-none focus:border-[#000000] transition-all duration-300 ${
                                             isRTL ? "text-right font-almarai" : "text-left font-poppins"
                                         }`}
                                     />
@@ -209,7 +232,7 @@ export function ContactSection() {
                                 {/* Email Field */}
                                 <div>
                                     <label
-                                        className={`block text-sm font-medium text-gray-300 mb-2 ${
+                                        className={`block text-sm font-medium text-gray-700 mb-2 ${
                                             isRTL ? "text-right font-almarai" : "text-left font-poppins"
                                         }`}
                                     >
@@ -222,7 +245,7 @@ export function ContactSection() {
                                         onChange={handleInputChange}
                                         required
                                         placeholder={currentContent.form.email.placeholder}
-                                        className={`w-full px-4 py-3 rounded-lg bg-[#0a0a0f] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#4ECDC4] transition-all duration-300 ${
+                                        className={`w-full px-4 py-3 rounded-lg bg-[#ffffff] border border-gray-200 text-black placeholder-gray-500 focus:outline-none focus:border-[#000000] transition-all duration-300 ${
                                             isRTL ? "text-right font-almarai" : "text-left font-poppins"
                                         }`}
                                     />
@@ -231,7 +254,7 @@ export function ContactSection() {
                                 {/* Phone Field */}
                                 <div>
                                     <label
-                                        className={`block text-sm font-medium text-gray-300 mb-2 ${
+                                        className={`block text-sm font-medium text-gray-700 mb-2 ${
                                             isRTL ? "text-right font-almarai" : "text-left font-poppins"
                                         }`}
                                     >
@@ -243,7 +266,7 @@ export function ContactSection() {
                                         value={formData.phone}
                                         onChange={handleInputChange}
                                         placeholder={currentContent.form.phone.placeholder}
-                                        className={`w-full px-4 py-3 rounded-lg bg-[#0a0a0f] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#4ECDC4] transition-all duration-300 ${
+                                        className={`w-full px-4 py-3 rounded-lg bg-[#ffffff] border border-gray-200 text-black placeholder-gray-500 focus:outline-none focus:border-[#000000] transition-all duration-300 ${
                                             isRTL ? "text-right font-almarai" : "text-left font-poppins"
                                         }`}
                                     />
@@ -252,7 +275,7 @@ export function ContactSection() {
                                 {/* Company Field */}
                                 <div>
                                     <label
-                                        className={`block text-sm font-medium text-gray-300 mb-2 ${
+                                        className={`block text-sm font-medium text-gray-700 mb-2 ${
                                             isRTL ? "text-right font-almarai" : "text-left font-poppins"
                                         }`}
                                     >
@@ -264,7 +287,7 @@ export function ContactSection() {
                                         value={formData.company}
                                         onChange={handleInputChange}
                                         placeholder={currentContent.form.company.placeholder}
-                                        className={`w-full px-4 py-3 rounded-lg bg-[#0a0a0f] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#4ECDC4] transition-all duration-300 ${
+                                        className={`w-full px-4 py-3 rounded-lg bg-[#ffffff] border border-gray-200 text-black placeholder-gray-500 focus:outline-none focus:border-[#000000] transition-all duration-300 ${
                                             isRTL ? "text-right font-almarai" : "text-left font-poppins"
                                         }`}
                                     />
@@ -273,7 +296,7 @@ export function ContactSection() {
                                 {/* Message Field */}
                                 <div>
                                     <label
-                                        className={`block text-sm font-medium text-gray-300 mb-2 ${
+                                        className={`block text-sm font-medium text-gray-700 mb-2 ${
                                             isRTL ? "text-right font-almarai" : "text-left font-poppins"
                                         }`}
                                     >
@@ -286,7 +309,7 @@ export function ContactSection() {
                                         onChange={handleInputChange}
                                         required
                                         placeholder={currentContent.form.message.placeholder}
-                                        className={`w-full px-4 py-3 rounded-lg bg-[#0a0a0f] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#4ECDC4] transition-all duration-300 resize-none ${
+                                        className={`w-full px-4 py-3 rounded-lg bg-[#ffffff] border border-gray-200 text-black placeholder-gray-500 focus:outline-none focus:border-[#000000] transition-all duration-300 resize-none ${
                                             isRTL ? "text-right font-almarai" : "text-left font-poppins"
                                         }`}
                                     />
@@ -296,10 +319,18 @@ export function ContactSection() {
                                 <motion.button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className={`w-full px-8 py-4 rounded-lg font-semibold text-[#0a0a0f] bg-[#4ECDC4] hover:bg-[#5bb5a2] transition-all duration-300 shadow-lg hover:shadow-[#4ECDC4]/50 disabled:opacity-50 disabled:cursor-not-allowed ${
+                                    className={`w-full px-8 py-4 rounded-lg font-semibold text-[#ffffff] transition-all duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed ${
                                         isRTL ? "font-almarai" : "font-poppins"
                                     }`}
-                                    whileHover={!isSubmitting ? { scale: 1.02 } : {}}
+                                    style={{
+                                        background: isSubmitting
+                                            ? "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%)"
+                                            : "linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2d2d2d 100%)"
+                                    }}
+                                    whileHover={!isSubmitting ? {
+                                        scale: 1.02,
+                                        background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%)"
+                                    } : {}}
                                     whileTap={!isSubmitting ? { scale: 0.98 } : {}}
                                 >
                                     {isSubmitting
@@ -322,11 +353,11 @@ export function ContactSection() {
                                     href="#"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-10 h-10 rounded-lg bg-white/5 hover:bg-[#4ECDC4]/10 border border-white/10 hover:border-[#4ECDC4]/30 flex items-center justify-center transition-all duration-300"
+                                    className="w-10 h-10 rounded-lg bg-black/5 hover:bg-[#000000]/10 border border-gray-200 hover:border-[#000000]/30 flex items-center justify-center transition-all duration-300"
                                     whileHover={{ scale: 1.1, y: -3 }}
                                     whileTap={{ scale: 0.95 }}
                                 >
-                                    <Linkedin className="w-5 h-5 text-gray-400 hover:text-[#4ECDC4]" />
+                                    <Linkedin className="w-5 h-5 text-gray-700 hover:text-[#000000]" />
                                 </motion.a>
 
                                 {/* Twitter/X */}
@@ -334,12 +365,12 @@ export function ContactSection() {
                                     href="#"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-10 h-10 rounded-lg bg-white/5 hover:bg-[#4ECDC4]/10 border border-white/10 hover:border-[#4ECDC4]/30 flex items-center justify-center transition-all duration-300"
+                                    className="w-10 h-10 rounded-lg bg-black/5 hover:bg-[#000000]/10 border border-gray-200 hover:border-[#000000]/30 flex items-center justify-center transition-all duration-300"
                                     whileHover={{ scale: 1.1, y: -3 }}
                                     whileTap={{ scale: 0.95 }}
                                 >
                                     <svg
-                                        className="w-4 h-4 text-gray-400 hover:text-[#4ECDC4]"
+                                        className="w-4 h-4 text-gray-700 hover:text-[#000000]"
                                         viewBox="0 0 24 24"
                                         fill="currentColor"
                                     >
@@ -352,11 +383,11 @@ export function ContactSection() {
                                     href="#"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-10 h-10 rounded-lg bg-white/5 hover:bg-[#4ECDC4]/10 border border-white/10 hover:border-[#4ECDC4]/30 flex items-center justify-center transition-all duration-300"
+                                    className="w-10 h-10 rounded-lg bg-black/5 hover:bg-[#000000]/10 border border-gray-200 hover:border-[#000000]/30 flex items-center justify-center transition-all duration-300"
                                     whileHover={{ scale: 1.1, y: -3 }}
                                     whileTap={{ scale: 0.95 }}
                                 >
-                                    <Youtube className="w-5 h-5 text-gray-400 hover:text-[#4ECDC4]" />
+                                    <Youtube className="w-5 h-5 text-gray-700 hover:text-[#000000]" />
                                 </motion.a>
                             </motion.div>
                         </div>
@@ -371,9 +402,15 @@ export function ContactSection() {
                     >
                         <div className="space-y-6">
                             <h3
-                                className={`text-2xl sm:text-3xl font-bold text-white mb-6 ${
+                                className={`text-2xl sm:text-3xl font-bold mb-6 ${
                                     isRTL ? "font-almarai" : "font-poppins"
                                 }`}
+                                style={{
+                                    background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%)",
+                                    WebkitBackgroundClip: "text",
+                                    WebkitTextFillColor: "transparent",
+                                    backgroundClip: "text",
+                                }}
                             >
                                 {currentContent.offices.title}
                             </h3>
@@ -383,10 +420,12 @@ export function ContactSection() {
                                 {currentContent.offices.locations.map((office, index) => (
                                     <motion.div
                                         key={index}
-                                        className="p-6 rounded-xl border border-white/10 hover:border-[#4ECDC4]/30 transition-all duration-300"
+                                        className="p-6 rounded-xl transition-all duration-300 bg-white shadow-md hover:shadow-lg"
                                         style={{
-                                            background: "rgba(26, 26, 36, 0.4)",
-                                            backdropFilter: "blur(10px)"
+                                            border: "2px solid transparent",
+                                            backgroundImage: "linear-gradient(white, white), linear-gradient(135deg, rgba(0,0,0,0.08) 0%, rgba(64,64,64,0.12) 50%, rgba(26,26,26,0.08) 100%)",
+                                            backgroundOrigin: "border-box",
+                                            backgroundClip: "padding-box, border-box",
                                         }}
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}
@@ -396,37 +435,55 @@ export function ContactSection() {
                                     >
                                         <div className="flex items-start gap-4">
                                             <div className="flex-shrink-0">
-                                                <div className="w-12 h-12 rounded-full bg-[#4ECDC4]/10 flex items-center justify-center">
-                                                    <MapPin className="w-6 h-6 text-[#4ECDC4]" />
+                                                <div className="w-12 h-12 rounded-full bg-[#000000]/10 flex items-center justify-center">
+                                                    <MapPin className="w-6 h-6 text-[#000000]" />
                                                 </div>
                                             </div>
                                             <div className={`flex-1 ${isRTL ? "text-right" : "text-left"}`}>
                                                 <h4
-                                                    className={`text-lg font-bold text-white mb-1 ${
+                                                    className={`text-lg font-bold mb-1 ${
                                                         isRTL ? "font-almarai" : "font-poppins"
                                                     }`}
+                                                    style={{
+                                                        background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%)",
+                                                        WebkitBackgroundClip: "text",
+                                                        WebkitTextFillColor: "transparent",
+                                                        backgroundClip: "text",
+                                                    }}
                                                 >
                                                     {office.city}
                                                 </h4>
                                                 <p
-                                                    className={`text-sm text-gray-400 mb-2 ${
+                                                    className={`text-sm mb-2 ${
                                                         isRTL ? "font-almarai" : "font-poppins"
                                                     }`}
+                                                    style={{
+                                                        background: "linear-gradient(135deg, #2d2d2d 0%, #4a4a4a 50%, #5a5a5a 100%)",
+                                                        WebkitBackgroundClip: "text",
+                                                        WebkitTextFillColor: "transparent",
+                                                        backgroundClip: "text",
+                                                    }}
                                                 >
                                                     {office.country}
                                                 </p>
                                                 <p
-                                                    className={`text-sm text-gray-300 mb-2 ${
+                                                    className={`text-sm mb-2 ${
                                                         isRTL ? "font-almarai" : "font-poppins"
                                                     }`}
+                                                    style={{
+                                                        background: "linear-gradient(135deg, #2d2d2d 0%, #4a4a4a 50%, #5a5a5a 100%)",
+                                                        WebkitBackgroundClip: "text",
+                                                        WebkitTextFillColor: "transparent",
+                                                        backgroundClip: "text",
+                                                    }}
                                                 >
                                                     {office.address}
                                                 </p>
                                                 <div className="flex items-center gap-2">
-                                                    <Phone className="w-4 h-4 text-[#4ECDC4]" />
+                                                    <Phone className="w-4 h-4 text-[#000000]" />
                                                     <a
                                                         href={`tel:${office.phone}`}
-                                                        className={`text-sm text-[#4ECDC4] hover:text-[#5bb5a2] transition-colors ${
+                                                        className={`text-sm text-[#000000] hover:text-[#404040] transition-colors ${
                                                             isRTL ? "font-almarai" : "font-poppins"
                                                         }`}
                                                     >
@@ -451,16 +508,24 @@ export function ContactSection() {
                     viewport={{ once: true }}
                 >
                     <div
-                        className="p-8 sm:p-10 rounded-2xl border border-[#4ECDC4]/30"
+                        className="p-8 sm:p-10 rounded-2xl bg-gray-50 shadow-md"
                         style={{
-                            background: "rgba(78, 205, 196, 0.05)",
-                            backdropFilter: "blur(20px)"
+                            border: "2px solid transparent",
+                            backgroundImage: "linear-gradient(#fafafa, #fafafa), linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(64,64,64,0.15) 50%, rgba(26,26,26,0.1) 100%)",
+                            backgroundOrigin: "border-box",
+                            backgroundClip: "padding-box, border-box",
                         }}
                     >
                         <h3
-                            className={`text-xl sm:text-2xl font-bold text-white mb-6 text-center ${
+                            className={`text-xl sm:text-2xl font-bold mb-6 text-center ${
                                 isRTL ? "font-almarai" : "font-poppins"
                             }`}
+                            style={{
+                                background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%)",
+                                WebkitBackgroundClip: "text",
+                                WebkitTextFillColor: "transparent",
+                                backgroundClip: "text",
+                            }}
                         >
                             {currentContent.generalInquiries.title}
                         </h3>
@@ -468,12 +533,12 @@ export function ContactSection() {
                         <div className={`flex flex-col sm:flex-row items-center justify-center gap-8 ${isRTL ? "sm:flex-row-reverse" : ""}`}>
                             {/* Email */}
                             <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-full bg-[#4ECDC4]/10 flex items-center justify-center">
-                                    <Mail className="w-5 h-5 text-[#4ECDC4]" />
+                                <div className="w-10 h-10 rounded-full bg-[#000000]/10 flex items-center justify-center">
+                                    <Mail className="w-5 h-5 text-[#000000]" />
                                 </div>
                                 <a
                                     href={`mailto:${currentContent.generalInquiries.email}`}
-                                    className={`text-base sm:text-lg text-[#4ECDC4] hover:text-[#5bb5a2] transition-colors ${
+                                    className={`text-base sm:text-lg text-[#000000] hover:text-[#404040] transition-colors ${
                                         isRTL ? "font-almarai" : "font-poppins"
                                     }`}
                                 >
@@ -483,12 +548,12 @@ export function ContactSection() {
 
                             {/* Phone */}
                             <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-full bg-[#4ECDC4]/10 flex items-center justify-center">
-                                    <Phone className="w-5 h-5 text-[#4ECDC4]" />
+                                <div className="w-10 h-10 rounded-full bg-[#000000]/10 flex items-center justify-center">
+                                    <Phone className="w-5 h-5 text-[#000000]" />
                                 </div>
                                 <a
                                     href={`tel:${currentContent.generalInquiries.phone}`}
-                                    className={`text-base sm:text-lg text-[#4ECDC4] hover:text-[#5bb5a2] transition-colors ${
+                                    className={`text-base sm:text-lg text-[#000000] hover:text-[#404040] transition-colors ${
                                         isRTL ? "font-almarai" : "font-poppins"
                                     }`}
                                 >

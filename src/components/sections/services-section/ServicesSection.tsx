@@ -38,7 +38,7 @@ export function ServicesSection() {
             id="services"
             className="relative py-20 sm:py-24 md:py-28 lg:py-32 overflow-hidden"
             style={{
-                background: "linear-gradient(135deg, rgba(15, 15, 20, 0.98) 0%, rgba(20, 40, 160, 0.06) 50%, rgba(15, 15, 20, 0.98) 100%)"
+                background: "linear-gradient(180deg, #fafafa 0%, #f5f5f5 50%, #ffffff 100%)"
             }}
         >
             {/* Background decorative elements with animated gradients */}
@@ -46,7 +46,7 @@ export function ServicesSection() {
                 <motion.div
                     className="absolute top-1/4 right-0 w-96 h-96 opacity-15"
                     style={{
-                        background: "radial-gradient(circle, rgba(78, 205, 196, 0.2) 0%, transparent 70%)"
+                        background: "radial-gradient(circle, rgba(0, 0, 0, 0.2) 0%, transparent 70%)"
                     }}
                     animate={{
                         scale: [1, 1.2, 1],
@@ -61,7 +61,7 @@ export function ServicesSection() {
                 <motion.div
                     className="absolute bottom-1/4 left-0 w-96 h-96 opacity-15"
                     style={{
-                        background: "radial-gradient(circle, rgba(91, 181, 162, 0.18) 0%, transparent 70%)"
+                        background: "radial-gradient(circle, rgba(64, 64, 64, 0.18) 0%, transparent 70%)"
                     }}
                     animate={{
                         scale: [1.2, 1, 1.2],
@@ -96,11 +96,20 @@ export function ServicesSection() {
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
                     >
-                        <span className="text-white">{currentContent.title} </span>
+                        <span
+                            style={{
+                                background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%)",
+                                WebkitBackgroundClip: "text",
+                                WebkitTextFillColor: "transparent",
+                                backgroundClip: "text",
+                            }}
+                        >
+                            {currentContent.title}{" "}
+                        </span>
                         {currentContent.highlightedTitle && (
                             <span
                                 style={{
-                                    background: "linear-gradient(to right, #4ECDC4 0%, #5bb5a2 100%)",
+                                    background: "linear-gradient(135deg, #000000 0%, #2d2d2d 50%, #4a4a4a 100%)",
                                     WebkitBackgroundClip: "text",
                                     WebkitTextFillColor: "transparent",
                                     backgroundClip: "text",
@@ -112,9 +121,15 @@ export function ServicesSection() {
                     </h2>
 
                     <motion.p
-                        className={`text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed ${
+                        className={`text-base sm:text-lg md:text-xl max-w-4xl mx-auto leading-relaxed ${
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
+                        style={{
+                            background: "linear-gradient(135deg, #2d2d2d 0%, #4a4a4a 50%, #5a5a5a 100%)",
+                            WebkitBackgroundClip: "text",
+                            WebkitTextFillColor: "transparent",
+                            backgroundClip: "text",
+                        }}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2, duration: 0.8 }}
@@ -133,12 +148,16 @@ export function ServicesSection() {
                         return (
                             <motion.div
                                 key={index}
-                                className="group relative overflow-hidden rounded-2xl border border-white/10 hover:border-[#4ECDC4]/50 transition-all duration-300"
+                                className={`group relative overflow-hidden rounded-2xl transition-all duration-300 shadow-md hover:shadow-lg ${
+                                    isOpen ? "bg-white" : "bg-gray-50"
+                                }`}
                                 style={{
-                                    background: isOpen
-                                        ? "linear-gradient(135deg, rgba(26, 26, 36, 0.8) 0%, rgba(20, 40, 160, 0.15) 50%, rgba(20, 20, 28, 0.7) 100%)"
-                                        : "linear-gradient(135deg, rgba(20, 20, 28, 0.6) 0%, rgba(20, 40, 160, 0.08) 50%, rgba(26, 26, 36, 0.5) 100%)",
-                                    backdropFilter: "blur(10px)"
+                                    border: "2px solid transparent",
+                                    backgroundImage: isOpen
+                                        ? "linear-gradient(white, white), linear-gradient(135deg, rgba(0,0,0,0.12) 0%, rgba(64,64,64,0.18) 50%, rgba(26,26,26,0.12) 100%)"
+                                        : "linear-gradient(#fafafa, #fafafa), linear-gradient(135deg, rgba(0,0,0,0.08) 0%, rgba(64,64,64,0.12) 50%, rgba(26,26,26,0.08) 100%)",
+                                    backgroundOrigin: "border-box",
+                                    backgroundClip: "padding-box, border-box",
                                 }}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -159,8 +178,8 @@ export function ServicesSection() {
                                         className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-2xl flex items-center justify-center"
                                         style={{
                                             background: isOpen
-                                                ? "linear-gradient(135deg, rgba(78, 205, 196, 0.3) 0%, rgba(91, 181, 162, 0.2) 100%)"
-                                                : "linear-gradient(135deg, rgba(78, 205, 196, 0.15) 0%, rgba(91, 181, 162, 0.1) 100%)"
+                                                ? "linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(64, 64, 64, 0.2) 100%)"
+                                                : "linear-gradient(135deg, rgba(0, 0, 0, 0.15) 0%, rgba(64, 64, 64, 0.1) 100%)"
                                         }}
                                         animate={{
                                             rotate: isOpen ? 360 : 0,
@@ -168,21 +187,29 @@ export function ServicesSection() {
                                         }}
                                         transition={{ duration: 0.5 }}
                                     >
-                                        <Icon className={`w-8 h-8 sm:w-10 sm:h-10 ${isOpen ? "text-[#4ECDC4]" : "text-[#5bb5a2]"}`} />
+                                        <Icon className={`w-8 h-8 sm:w-10 sm:h-10 ${isOpen ? "text-[#000000]" : "text-[#404040]"}`} />
                                     </motion.div>
 
                                     {/* Title & Number */}
                                     <div className="flex-1">
                                         <div className="flex items-center gap-3 mb-1">
-                                            <span className="text-[#4ECDC4] font-bold text-sm sm:text-base">
+                                            <span className="text-[#000000] font-bold text-sm sm:text-base">
                                                 {String(index + 1).padStart(2, "0")}
                                             </span>
-                                            <div className="h-px flex-1 bg-gradient-to-r from-[#4ECDC4]/30 to-transparent" />
+                                            <div className="h-px flex-1 bg-gradient-to-r from-[#000000]/30 to-transparent" />
                                         </div>
                                         <h3
                                             className={`text-xl sm:text-2xl md:text-3xl font-bold transition-colors ${
-                                                isOpen ? "text-[#4ECDC4]" : "text-white"
-                                            } ${isRTL ? "font-almarai" : "font-poppins"}`}
+                                                isRTL ? "font-almarai" : "font-poppins"
+                                            }`}
+                                            style={{
+                                                background: isOpen
+                                                    ? "linear-gradient(135deg, #000000 0%, #2d2d2d 50%, #4a4a4a 100%)"
+                                                    : "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%)",
+                                                WebkitBackgroundClip: "text",
+                                                WebkitTextFillColor: "transparent",
+                                                backgroundClip: "text",
+                                            }}
                                         >
                                             {service.title}
                                         </h3>
@@ -193,7 +220,7 @@ export function ServicesSection() {
                                         animate={{ rotate: isOpen ? 180 : 0 }}
                                         transition={{ duration: 0.3 }}
                                     >
-                                        <ChevronDown className="w-6 h-6 text-[#4ECDC4]" />
+                                        <ChevronDown className="w-6 h-6 text-[#000000]" />
                                     </motion.div>
                                 </motion.button>
 
@@ -209,15 +236,21 @@ export function ServicesSection() {
                                         >
                                             <div className="px-6 sm:px-8 pb-6 sm:pb-8">
                                                 <motion.div
-                                                    className="pt-4 border-t border-white/10"
+                                                    className="pt-4 border-t border-gray-200"
                                                     initial={{ y: -10 }}
                                                     animate={{ y: 0 }}
                                                     transition={{ delay: 0.1 }}
                                                 >
                                                     <p
-                                                        className={`text-base sm:text-lg text-gray-300 leading-relaxed ${
+                                                        className={`text-base sm:text-lg leading-relaxed ${
                                                             isRTL ? "font-almarai" : "font-poppins"
                                                         }`}
+                                                        style={{
+                                                            background: "linear-gradient(135deg, #2d2d2d 0%, #4a4a4a 50%, #5a5a5a 100%)",
+                                                            WebkitBackgroundClip: "text",
+                                                            WebkitTextFillColor: "transparent",
+                                                            backgroundClip: "text",
+                                                        }}
                                                     >
                                                         {service.description}
                                                     </p>
@@ -231,7 +264,7 @@ export function ServicesSection() {
                                 <motion.div
                                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                                     style={{
-                                        background: "radial-gradient(circle at center, rgba(78, 205, 196, 0.1) 0%, transparent 70%)"
+                                        background: "radial-gradient(circle at center, rgba(0, 0, 0, 0.1) 0%, transparent 70%)"
                                     }}
                                 />
                             </motion.div>

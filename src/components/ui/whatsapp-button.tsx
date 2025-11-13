@@ -91,7 +91,7 @@ export function WhatsAppButton({ phoneNumber, message = "Hello! I'm interested i
                                     {tooltipText}
                                     <button
                                         onClick={() => setShowTooltip(false)}
-                                        className="absolute -top-1 -right-1 text-gray-500 hover:text-gray-700"
+                                        className="absolute -top-1 -right-1 text-gray-600 hover:text-gray-700"
                                     >
                                         <X className="w-3 h-3" />
                                     </button>
@@ -123,7 +123,7 @@ export function WhatsAppButton({ phoneNumber, message = "Hello! I'm interested i
                         />
 
                         {/* Icon */}
-                        <MessageCircle className="w-7 h-7 md:w-8 md:h-8 text-white relative z-10" />
+                        <MessageCircle className="w-7 h-7 md:w-8 md:h-8 text-black relative z-10" />
 
                         {/* Notification Badge */}
                         <motion.div
@@ -132,7 +132,7 @@ export function WhatsAppButton({ phoneNumber, message = "Hello! I'm interested i
                             animate={{ scale: 1 }}
                             transition={{ delay: 0.5 }}
                         >
-                            <span className="text-white text-xs font-bold">1</span>
+                            <span className="text-black text-xs font-bold">1</span>
                         </motion.div>
                     </motion.button>
                 </motion.div>

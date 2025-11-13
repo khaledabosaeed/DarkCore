@@ -28,7 +28,7 @@ export function PageLoader() {
         <AnimatePresence>
             {isLoading && (
                 <motion.div
-                    className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#0a0a0f]"
+                    className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#ffffff]"
                     initial={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.5 }}
@@ -50,7 +50,7 @@ export function PageLoader() {
                             <motion.div
                                 className="absolute inset-0 rounded-full blur-2xl"
                                 style={{
-                                    background: "radial-gradient(circle, rgba(78, 205, 196, 0.4) 0%, transparent 70%)"
+                                    background: "radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, transparent 70%)"
                                 }}
                                 animate={{
                                     scale: [1, 1.5, 1],
@@ -62,13 +62,13 @@ export function PageLoader() {
                                     ease: "easeInOut"
                                 }}
                             />
-                            <TrendingUp className="w-20 h-20 text-[#4ECDC4] relative z-10" strokeWidth={1.5} />
+                            <TrendingUp className="w-20 h-20 text-[#000000] relative z-10" strokeWidth={1.5} />
                         </div>
                     </motion.div>
 
                     {/* Loading Text */}
                     <motion.h2
-                        className="text-3xl md:text-4xl font-bold text-white mb-8 font-poppins tracking-wider"
+                        className="text-3xl md:text-4xl font-bold text-black mb-8 font-poppins tracking-wider"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
@@ -77,9 +77,9 @@ export function PageLoader() {
                     </motion.h2>
 
                     {/* Progress Bar */}
-                    <div className="w-64 md:w-80 h-1.5 bg-white/10 rounded-full overflow-hidden">
+                    <div className="w-64 md:w-80 h-1.5 bg-black/10 rounded-full overflow-hidden">
                         <motion.div
-                            className="h-full bg-gradient-to-r from-[#4ECDC4] to-[#5bb5a2] rounded-full"
+                            className="h-full bg-gradient-to-r from-[#000000] to-[#404040] rounded-full"
                             initial={{ width: "0%" }}
                             animate={{ width: `${progress}%` }}
                             transition={{ duration: 0.3 }}
@@ -88,7 +88,7 @@ export function PageLoader() {
 
                     {/* Progress Percentage */}
                     <motion.p
-                        className="mt-4 text-[#4ECDC4] font-semibold text-lg"
+                        className="mt-4 text-[#000000] font-semibold text-lg"
                         key={progress}
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -102,7 +102,7 @@ export function PageLoader() {
                         {[0, 1, 2].map((i) => (
                             <motion.div
                                 key={i}
-                                className="w-2 h-2 bg-[#4ECDC4] rounded-full"
+                                className="w-2 h-2 bg-[#000000] rounded-full"
                                 animate={{
                                     y: [0, -10, 0],
                                     opacity: [0.3, 1, 0.3]

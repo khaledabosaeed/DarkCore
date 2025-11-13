@@ -32,9 +32,9 @@ export function Accordion({ items, isRTL = false, defaultOpen = 0 }: AccordionPr
                 return (
                     <motion.div
                         key={index}
-                        className="rounded-xl border border-white/10 overflow-hidden"
+                        className="rounded-xl border border-gray-200 overflow-hidden"
                         style={{
-                            background: "rgba(26, 26, 36, 0.4)",
+                            background: "rgba(250, 250, 250, 0.4)",
                             backdropFilter: "blur(10px)"
                         }}
                         initial={{ opacity: 0, y: 20 }}
@@ -45,19 +45,19 @@ export function Accordion({ items, isRTL = false, defaultOpen = 0 }: AccordionPr
                         {/* Header */}
                         <motion.button
                             onClick={() => toggleItem(index)}
-                            className={`w-full p-6 flex items-center justify-between gap-4 hover:bg-white/5 transition-colors ${
+                            className={`w-full p-6 flex items-center justify-between gap-4 hover:bg-black/5 transition-colors ${
                                 isRTL ? "text-right" : "text-left"
                             }`}
                             whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.05)" }}
                         >
                             <div className={`flex items-center gap-4 ${isRTL ? "flex-row-reverse" : ""}`}>
                                 {item.icon && (
-                                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#4ECDC4]/10 flex items-center justify-center">
-                                        <item.icon className="w-5 h-5 text-[#4ECDC4]" />
+                                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#000000]/10 flex items-center justify-center">
+                                        <item.icon className="w-5 h-5 text-[#000000]" />
                                     </div>
                                 )}
                                 <h3
-                                    className={`text-lg sm:text-xl font-bold text-white ${
+                                    className={`text-lg sm:text-xl font-bold text-black ${
                                         isRTL ? "font-almarai" : "font-poppins"
                                     }`}
                                 >
@@ -70,7 +70,7 @@ export function Accordion({ items, isRTL = false, defaultOpen = 0 }: AccordionPr
                                 transition={{ duration: 0.3 }}
                                 className="flex-shrink-0"
                             >
-                                <ChevronDown className="w-5 h-5 text-gray-400" />
+                                <ChevronDown className="w-5 h-5 text-gray-700" />
                             </motion.div>
                         </motion.button>
 
@@ -88,7 +88,7 @@ export function Accordion({ items, isRTL = false, defaultOpen = 0 }: AccordionPr
                                         {contentArray.map((paragraph, pIndex) => (
                                             <p
                                                 key={pIndex}
-                                                className={`text-base text-gray-300 leading-relaxed mb-4 last:mb-0 ${
+                                                className={`text-base text-gray-700 leading-relaxed mb-4 last:mb-0 ${
                                                     isRTL ? "font-almarai" : "font-poppins"
                                                 }`}
                                             >

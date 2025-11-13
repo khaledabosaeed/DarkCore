@@ -33,7 +33,7 @@ export function Footer() {
         <footer
             className="relative overflow-hidden"
             style={{
-                background: "linear-gradient(180deg, #1a1a24 0%, #12121a 100%)"
+                background: "linear-gradient(180deg, #fafafa 0%, #f5f5f5 100%)"
             }}
         >
             {/* Background decorative elements */}
@@ -41,13 +41,13 @@ export function Footer() {
                 <div
                     className="absolute top-1/4 left-1/4 w-[400px] h-[400px] opacity-5"
                     style={{
-                        background: "radial-gradient(circle, rgba(78, 205, 196, 0.2) 0%, transparent 70%)"
+                        background: "radial-gradient(circle, rgba(0, 0, 0, 0.2) 0%, transparent 70%)"
                     }}
                 />
             </div>
 
             {/* Social Media Section */}
-            <div className="relative z-10 py-16 sm:py-20 border-b border-white/10">
+            <div className="relative z-10 py-16 sm:py-20 border-b border-gray-200">
                 <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
                     <motion.div
                         className="text-center mb-8 sm:mb-12"
@@ -57,9 +57,15 @@ export function Footer() {
                         viewport={{ once: true }}
                     >
                         <h3
-                            className={`text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 ${
+                            className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-4 ${
                                 isRTL ? "font-almarai" : "font-poppins"
                             }`}
+                            style={{
+                                background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%)",
+                                WebkitBackgroundClip: "text",
+                                WebkitTextFillColor: "transparent",
+                                backgroundClip: "text",
+                            }}
                         >
                             {t.socialTitle}
                         </h3>
@@ -78,11 +84,17 @@ export function Footer() {
                             href="https://www.instagram.com/darkcoreinv?igsh=MWZ5c2dvMHRreGtiNA=="
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-white/5 hover:bg-[#4ECDC4]/10 border border-white/10 hover:border-[#4ECDC4]/30 flex items-center justify-center transition-all duration-300"
+                            className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg flex items-center justify-center transition-all duration-300"
+                            style={{
+                                border: "2px solid transparent",
+                                backgroundImage: "linear-gradient(#f5f5f5, #f5f5f5), linear-gradient(135deg, rgba(0,0,0,0.08) 0%, rgba(64,64,64,0.12) 50%, rgba(26,26,26,0.08) 100%)",
+                                backgroundOrigin: "border-box",
+                                backgroundClip: "padding-box, border-box",
+                            }}
                             whileHover={{ scale: 1.1, y: -3 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            <Instagram className="w-6 h-6 sm:w-7 sm:h-7 text-gray-400 hover:text-[#4ECDC4]" />
+                            <Instagram className="w-6 h-6 sm:w-7 sm:h-7 text-gray-700 hover:text-black" />
                         </motion.a>
 
                         {/* Twitter/X */}
@@ -90,12 +102,18 @@ export function Footer() {
                             href="https://x.com/darkcoreinv?t=6p14zPsshCyTTkK17_CUDA&s=09"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-white/5 hover:bg-[#4ECDC4]/10 border border-white/10 hover:border-[#4ECDC4]/30 flex items-center justify-center transition-all duration-300"
+                            className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg flex items-center justify-center transition-all duration-300"
+                            style={{
+                                border: "2px solid transparent",
+                                backgroundImage: "linear-gradient(#f5f5f5, #f5f5f5), linear-gradient(135deg, rgba(0,0,0,0.08) 0%, rgba(64,64,64,0.12) 50%, rgba(26,26,26,0.08) 100%)",
+                                backgroundOrigin: "border-box",
+                                backgroundClip: "padding-box, border-box",
+                            }}
                             whileHover={{ scale: 1.1, y: -3 }}
                             whileTap={{ scale: 0.95 }}
                         >
                             <svg
-                                className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400 hover:text-[#4ECDC4]"
+                                className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 hover:text-black"
                                 viewBox="0 0 24 24"
                                 fill="currentColor"
                             >
@@ -108,12 +126,18 @@ export function Footer() {
                             href="https://wa.me/966558181410"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-white/5 hover:bg-[#4ECDC4]/10 border border-white/10 hover:border-[#4ECDC4]/30 flex items-center justify-center transition-all duration-300"
+                            className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg flex items-center justify-center transition-all duration-300"
+                            style={{
+                                border: "2px solid transparent",
+                                backgroundImage: "linear-gradient(#f5f5f5, #f5f5f5), linear-gradient(135deg, rgba(0,0,0,0.08) 0%, rgba(64,64,64,0.12) 50%, rgba(26,26,26,0.08) 100%)",
+                                backgroundOrigin: "border-box",
+                                backgroundClip: "padding-box, border-box",
+                            }}
                             whileHover={{ scale: 1.1, y: -3 }}
                             whileTap={{ scale: 0.95 }}
                         >
                             <svg
-                                className="w-6 h-6 sm:w-7 sm:h-7 text-gray-400 hover:text-[#4ECDC4]"
+                                className="w-6 h-6 sm:w-7 sm:h-7 text-gray-700 hover:text-black"
                                 viewBox="0 0 24 24"
                                 fill="currentColor"
                             >
@@ -143,9 +167,15 @@ export function Footer() {
                                 className="h-12 w-auto mb-4"
                             />
                             <p
-                                className={`text-sm text-gray-400 leading-relaxed ${
+                                className={`text-sm leading-relaxed ${
                                     isRTL ? "font-almarai" : "font-poppins"
                                 }`}
+                                style={{
+                                    background: "linear-gradient(135deg, #2d2d2d 0%, #4a4a4a 50%, #5a5a5a 100%)",
+                                    WebkitBackgroundClip: "text",
+                                    WebkitTextFillColor: "transparent",
+                                    backgroundClip: "text",
+                                }}
                             >
                                 {t.description}
                             </p>
@@ -159,9 +189,15 @@ export function Footer() {
                             viewport={{ once: true }}
                         >
                             <h3
-                                className={`text-lg font-bold text-white mb-4 ${
+                                className={`text-lg font-bold mb-4 ${
                                     isRTL ? "font-almarai" : "font-poppins"
                                 }`}
+                                style={{
+                                    background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%)",
+                                    WebkitBackgroundClip: "text",
+                                    WebkitTextFillColor: "transparent",
+                                    backgroundClip: "text",
+                                }}
                             >
                                 {t.quickLinks.title}
                             </h3>
@@ -170,7 +206,7 @@ export function Footer() {
                                     <li key={index}>
                                         <a
                                             href={link.href}
-                                            className={`text-sm text-gray-400 hover:text-[#4ECDC4] transition-colors duration-300 ${
+                                            className={`text-sm text-gray-700 hover:text-black transition-colors duration-300 ${
                                                 isRTL ? "font-almarai" : "font-poppins"
                                             }`}
                                         >
@@ -189,9 +225,15 @@ export function Footer() {
                             viewport={{ once: true }}
                         >
                             <h3
-                                className={`text-lg font-bold text-white mb-4 ${
+                                className={`text-lg font-bold mb-4 ${
                                     isRTL ? "font-almarai" : "font-poppins"
                                 }`}
+                                style={{
+                                    background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%)",
+                                    WebkitBackgroundClip: "text",
+                                    WebkitTextFillColor: "transparent",
+                                    backgroundClip: "text",
+                                }}
                             >
                                 {t.resources.title}
                             </h3>
@@ -200,7 +242,7 @@ export function Footer() {
                                     <li key={index}>
                                         <a
                                             href={link.href}
-                                            className={`text-sm text-gray-400 hover:text-[#4ECDC4] transition-colors duration-300 ${
+                                            className={`text-sm text-gray-700 hover:text-black transition-colors duration-300 ${
                                                 isRTL ? "font-almarai" : "font-poppins"
                                             }`}
                                         >
@@ -219,9 +261,15 @@ export function Footer() {
                             viewport={{ once: true }}
                         >
                             <h3
-                                className={`text-lg font-bold text-white mb-4 ${
+                                className={`text-lg font-bold mb-4 ${
                                     isRTL ? "font-almarai" : "font-poppins"
                                 }`}
+                                style={{
+                                    background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%)",
+                                    WebkitBackgroundClip: "text",
+                                    WebkitTextFillColor: "transparent",
+                                    backgroundClip: "text",
+                                }}
                             >
                                 {t.legal.title}
                             </h3>
@@ -230,7 +278,7 @@ export function Footer() {
                                     <li key={index}>
                                         <a
                                             href={link.href}
-                                            className={`text-sm text-gray-400 hover:text-[#4ECDC4] transition-colors duration-300 ${
+                                            className={`text-sm text-gray-700 hover:text-black transition-colors duration-300 ${
                                                 isRTL ? "font-almarai" : "font-poppins"
                                             }`}
                                         >
@@ -244,7 +292,7 @@ export function Footer() {
 
                     {/* Bottom Section */}
                     <motion.div
-                        className="pt-8 border-t border-white/10"
+                        className="pt-8 border-t border-gray-200"
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
@@ -252,14 +300,14 @@ export function Footer() {
                     >
                         <div className={`flex flex-col sm:flex-row items-center justify-between gap-4 ${isRTL ? "sm:flex-row-reverse" : ""}`}>
                             <p
-                                className={`text-xs sm:text-sm text-gray-500 ${
+                                className={`text-xs sm:text-sm text-gray-600 ${
                                     isRTL ? "font-almarai text-center sm:text-right" : "font-poppins text-center sm:text-left"
                                 }`}
                             >
                                 {t.copyright}
                             </p>
                             <p
-                                className={`text-xs text-gray-500 ${
+                                className={`text-xs text-gray-600 ${
                                     isRTL ? "font-almarai text-center sm:text-right" : "font-poppins text-center sm:text-left"
                                 }`}
                             >

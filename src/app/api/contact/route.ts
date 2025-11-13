@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
               ${phone ? `<p style="margin: 10px 0;"><strong style="color: #4ECDC4;">الهاتف / Phone:</strong> ${phone}</p>` : ''}
               ${company ? `<p style="margin: 10px 0;"><strong style="color: #4ECDC4;">الشركة / Company:</strong> ${company}</p>` : ''}
             </div>
-
+      
             <div style="margin: 20px 0; padding: 15px; background-color: #f9f9f9; border-left: 4px solid #4ECDC4; border-radius: 5px;">
               <p style="margin: 0;"><strong style="color: #4ECDC4;">الرسالة / Message:</strong></p>
               <p style="margin: 10px 0; line-height: 1.6; white-space: pre-wrap;">${message}</p>
