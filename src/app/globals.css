@@ -561,7 +561,7 @@ input[type="reset"] {
     visibility: visible !important;
   }
 
-  /* Fix gradient text on mobile - fallback to solid color */
+  /* Fix gradient text on mobile - fallback to solid color ONLY for gradient text */
   span[style*="WebkitTextFillColor: transparent"],
   span[style*="-webkit-text-fill-color: transparent"] {
     -webkit-text-fill-color: #4ECDC4 !important;
@@ -575,10 +575,23 @@ input[type="reset"] {
     opacity: 1 !important;
   }
 
-  /* Ensure animated counters show properly */
-  [class*="font-almarai"] span,
-  [class*="font-poppins"] span {
-    color: inherit !important;
+  /* Preserve white text color on mobile */
+  .text-white,
+  [class*="text-white"],
+  span[style*="color: white"],
+  span.text-white {
+    color: white !important;
+  }
+
+  /* Preserve gray text colors */
+  .text-gray-300,
+  [class*="text-gray-300"] {
+    color: rgb(209, 213, 219) !important;
+  }
+
+  .text-gray-400,
+  [class*="text-gray-400"] {
+    color: rgb(156, 163, 175) !important;
   }
 }
 
