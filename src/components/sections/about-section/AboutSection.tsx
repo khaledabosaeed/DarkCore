@@ -199,10 +199,10 @@ export function AboutSection() {
                                 {/* Gradient Border Effect on Hover */}
                                 <motion.div
                                     className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                                    // style={{
-                                    //     background: "linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(64, 64, 64, 0.2) 100%)",
-                                    //     padding: "2px"
-                                    // }}
+                                    style={{
+                                        background: "linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(64, 64, 64, 0.2) 100%)",
+                                        padding: "2px"
+                                    }}
                                 />
 
                                 {/* Icon */}

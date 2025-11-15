@@ -133,17 +133,16 @@ export function PartnershipsSection() {
                         viewport={{ once: true }}
                     >
                         <div
-                            className="relative rounded-2xl overflow-hidden border border-gray-300 bg-gray-50 shadow-md"
+                            className="relative rounded-2xl overflow-hidden border border-gray-300 bg-gray-50 shadow-md aspect-[4/3]"
                         >
-                            {/* Placeholder for image - user will add */}
-                            <div className="aspect-[4/3] bg-gradient-to-br from-[#000000]/20 to-[#404040]/20 flex items-center justify-center">
-                                <div className="text-center p-8">
-                                    <HandshakeIcon className="w-20 h-20 sm:w-24 sm:h-24 text-[#000000] mx-auto mb-4 opacity-50" />
-                                    <p className={`text-gray-700 text-sm sm:text-base ${isRTL ? "font-almarai" : "font-poppins"}`}>
-                                        {isRTL ? "سيتم إضافة الصورة هنا" : "Image will be added here"}
-                                    </p>
-                                </div>
-                            </div>
+                            <Image
+                                src="/partnerships-section/1763196676265 (2).png"
+                                alt="Partnerships"
+                                fill
+                                className="object-cover"
+                                priority
+                                quality={90}
+                            />
 
                             {/* Decorative overlay */}
                             <div className="absolute inset-0 bg-gradient-to-t from-[#ffffff]/50 to-transparent pointer-events-none" />

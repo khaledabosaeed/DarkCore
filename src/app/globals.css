@@ -272,6 +272,7 @@ html {
   transition: direction 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   font-size: var(--font-size);
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 /* Smooth scrolling with easing */
@@ -281,7 +282,7 @@ html {
   }
 
   * {
-    scroll-behavior: smooth;
+    scroll-behavior: inherit;
   }
 }
 

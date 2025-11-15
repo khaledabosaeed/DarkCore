@@ -122,11 +122,11 @@ export function PartnersMarquee() {
                                 backgroundOrigin: "border-box",
                                 backgroundClip: "padding-box, border-box",
                                 backdropFilter: "blur(12px)",
-                                boxShadow: "0 4px 16px rgba(0, 0, 0, 0.15)"
+                                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.08)"
                             }}
                             whileHover={{
                                 scale: 1.08,
-                                boxShadow: "0 8px 24px rgba(0, 0, 0, 0.25)"
+                                boxShadow: "0 4px 12px rgba(0, 0, 0, 0.12)"
                             }}
                         >
                             <motion.div

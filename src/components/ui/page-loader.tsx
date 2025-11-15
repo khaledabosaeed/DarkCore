@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { TrendingUp } from "lucide-react"
+import Image from "next/image"
 
 export function PageLoader() {
     const [isLoading, setIsLoading] = useState(true)
@@ -37,8 +37,7 @@ export function PageLoader() {
                     <motion.div
                         className="mb-8"
                         animate={{
-                            scale: [1, 1.2, 1],
-                            rotate: [0, 5, -5, 0]
+                            scale: [1, 1.1, 1],
                         }}
                         transition={{
                             duration: 2,
@@ -46,15 +45,15 @@ export function PageLoader() {
                             ease: "easeInOut"
                         }}
                     >
-                        <div className="relative">
+                        <div className="relative w-32 h-32 md:w-40 md:h-40">
                             <motion.div
                                 className="absolute inset-0 rounded-full blur-2xl"
                                 style={{
-                                    background: "radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, transparent 70%)"
+                                    background: "radial-gradient(circle, rgba(0, 0, 0, 0.2) 0%, transparent 70%)"
                                 }}
                                 animate={{
                                     scale: [1, 1.5, 1],
-                                    opacity: [0.3, 0.6, 0.3]
+                                    opacity: [0.2, 0.4, 0.2]
                                 }}
                                 transition={{
                                     duration: 2,
@@ -62,7 +61,18 @@ export function PageLoader() {
                                     ease: "easeInOut"
                                 }}
                             />
-                            <TrendingUp className="w-20 h-20 text-[#000000] relative z-10" strokeWidth={1.5} />
+                            <div className="relative z-10 w-full h-full">
+                                <Image
+                                    src="/Asset 1.svg"
+                                    alt="Dark Core Logo"
+                                    fill
+                                    className="object-contain"
+                                    style={{
+                                        filter: "brightness(0)"
+                                    }}
+                                    priority
+                                />
+                            </div>
                         </div>
                     </motion.div>
 

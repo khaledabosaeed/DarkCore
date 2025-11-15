@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { servicesContent } from "./content"
 import { FileText, Users, BarChart3, TrendingUp, Handshake, ChevronDown } from "lucide-react"
 import { InvestmentBackground, AnimatedColorGradient } from "@/components/ui/investment-shapes"
+import Image from "next/image"
 
 export function ServicesSection() {
     const [language, setLanguage] = useState<"en" | "ar">("ar")
@@ -37,10 +38,26 @@ export function ServicesSection() {
         <section
             id="services"
             className="relative py-20 sm:py-24 md:py-28 lg:py-32 overflow-hidden"
-            style={{
-                background: "linear-gradient(180deg, #fafafa 0%, #f5f5f5 50%, #ffffff 100%)"
-            }}
         >
+            {/* Background Image */}
+            <div className="absolute inset-0 w-full h-full overflow-hidden">
+                <Image
+                    src="/services-section/1763196676265 (4).png"
+                    alt="Services Background"
+                    fill
+                    className="object-cover"
+                    priority
+                    quality={90}
+                />
+                {/* Overlay for better text readability */}
+                <div
+                    className="absolute inset-0"
+                    style={{
+                        background: "linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(250, 250, 250, 0.45) 50%, rgba(255, 255, 255, 0.5) 100%)"
+                    }}
+                />
+            </div>
+
             {/* Background decorative elements with animated gradients */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 <motion.div

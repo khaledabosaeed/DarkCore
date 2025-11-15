@@ -3,8 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import { heroContent } from "./content"
-import { ArrowRight, Download } from "lucide-react"
-import { FloatingInvestmentIcons, InvestmentWaves } from "@/components/ui/investment-animations"
+import { ArrowRight } from "lucide-react"
 import { AnimatedCounter } from "@/components/ui/animated-counter"
 import { ScrollIndicator } from "@/components/ui/scroll-indicator"
 
@@ -66,11 +65,11 @@ export function HeroSection() {
                     aria-hidden="true"
                 />
 
-                {/* Main gradient background - solid white overlay */}
+                {/* Dark overlay for better text readability */}
                 <div
                     className="absolute inset-0"
                     style={{
-                        background: "linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(250, 250, 250, 0.97) 50%, rgba(255, 255, 255, 0.98) 100%)"
+                        background: "linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.4) 100%)"
                     }}
                 />
 
@@ -162,18 +161,15 @@ export function HeroSection() {
                             viewport={{ once: true }}
                         >
                             <h1
-                                className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 ${
+                                className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 text-white ${
                                     isRTL ? "font-almarai" : "font-poppins"
                                 }`}
+                                style={{
+                                    textShadow: "0 2px 8px rgba(0, 0, 0, 0.5), 0 4px 16px rgba(0, 0, 0, 0.3)"
+                                }}
                             >
                                 <motion.span
                                     className="inline-block"
-                                    style={{
-                                        background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%)",
-                                        WebkitBackgroundClip: "text",
-                                        WebkitTextFillColor: "transparent",
-                                        backgroundClip: "text",
-                                    }}
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.4, duration: 0.8 }}
@@ -183,12 +179,6 @@ export function HeroSection() {
                                 </motion.span>
                                 <motion.span
                                     className="inline-block"
-                                    style={{
-                                        background: "linear-gradient(135deg, #000000 0%, #2d2d2d 50%, #4a4a4a 100%)",
-                                        WebkitBackgroundClip: "text",
-                                        WebkitTextFillColor: "transparent",
-                                        backgroundClip: "text",
-                                    }}
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.6, duration: 0.8 }}
@@ -200,14 +190,11 @@ export function HeroSection() {
 
                             {/* Description */}
                             <motion.p
-                                className={`text-base sm:text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed ${
+                                className={`text-base sm:text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed text-white/95 ${
                                     isRTL ? "font-almarai" : "font-poppins"
                                 }`}
                                 style={{
-                                    background: "linear-gradient(135deg, #2d2d2d 0%, #4a4a4a 50%, #5a5a5a 100%)",
-                                    WebkitBackgroundClip: "text",
-                                    WebkitTextFillColor: "transparent",
-                                    backgroundClip: "text",
+                                    textShadow: "0 2px 6px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.3)"
                                 }}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
