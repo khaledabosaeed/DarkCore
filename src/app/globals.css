@@ -287,18 +287,21 @@ html {
 }
 
 .hero-responsive-height {
-  min-height: var(--viewport-height, 100vh);
+  height: var(--viewport-height, 100vh);
+  max-height: var(--viewport-height, 100vh);
 }
 
 @supports (height: 100svh) {
   .hero-responsive-height {
-    min-height: 100svh;
+    height: 100svh;
+    max-height: 100svh;
   }
 }
 
 @supports (height: 100dvh) {
   .hero-responsive-height {
-    min-height: 100dvh;
+    height: 100dvh;
+    max-height: 100dvh;
   }
 }
 button,
