@@ -128,7 +128,6 @@ export default function Home() {
       </section>
 
       {/* Partners Marquee */}
-      <PartnersMarquee />
 
       {/* About Section */}
       <AboutSection />

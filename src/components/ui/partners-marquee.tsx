@@ -88,78 +88,9 @@ export function PartnersMarquee() {
                 />
             </div>
 
-            {/* Gradient Overlays for smooth edges */}
-            <div className="absolute left-0 top-0 bottom-0 w-32 sm:w-40 md:w-48 z-10" style={{
-                background: "linear-gradient(to right, rgba(255, 255, 255, 0.98), transparent)"
-            }} />
-            <div className="absolute right-0 top-0 bottom-0 w-32 sm:w-40 md:w-48 z-10" style={{
-                background: "linear-gradient(to left, rgba(255, 255, 255, 0.98), transparent)"
-            }} />
+   
 
-            {/* Marquee Content - Infinite Seamless Scroll */}
-            <motion.div
-                className="flex gap-8 md:gap-12"
-                animate={{
-                    x: isRTL ? [0, "50%"] : [0, "-50%"]
-                }}
-                transition={{
-                    duration: 30,
-                    repeat: Infinity,
-                    ease: "linear",
-                    repeatType: "loop"
-                }}
-            >
-                {/* Render duplicated partners */}
-                {duplicatedPartners.map((partner, index) => {
-                    const Icon = partner.icon
-                    return (
-                        <motion.div
-                            key={`partner-${index}`}
-                            className="flex items-center gap-3 px-8 py-4 rounded-xl whitespace-nowrap min-w-fit transition-all duration-300"
-                            style={{
-                                border: "2px solid transparent",
-                                backgroundImage: "linear-gradient(135deg, rgba(250, 250, 250, 0.95) 0%, rgba(245, 245, 245, 0.9) 50%, rgba(240, 240, 240, 0.95) 100%), linear-gradient(135deg, rgba(0,0,0,0.12) 0%, rgba(64,64,64,0.18) 50%, rgba(26,26,26,0.12) 100%)",
-                                backgroundOrigin: "border-box",
-                                backgroundClip: "padding-box, border-box",
-                                backdropFilter: "blur(12px)",
-                                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.08)"
-                            }}
-                            whileHover={{
-                                scale: 1.08,
-                                boxShadow: "0 4px 12px rgba(0, 0, 0, 0.12)"
-                            }}
-                        >
-                            <motion.div
-                                className="inline-flex items-center justify-center w-10 h-10 rounded-full"
-                                style={{
-                                    background: "linear-gradient(135deg, rgba(0, 0, 0, 0.15) 0%, rgba(64, 64, 64, 0.25) 50%, rgba(26, 26, 26, 0.15) 100%)"
-                                }}
-                                whileHover={{
-                                    scale: 1.15,
-                                    rotate: 5,
-                                    background: "linear-gradient(135deg, rgba(0, 0, 0, 0.25) 0%, rgba(64, 64, 64, 0.35) 50%, rgba(26, 26, 26, 0.25) 100%)"
-                                }}
-                                transition={{ duration: 0.3 }}
-                            >
-                                <Icon className="w-5 h-5 text-[#000000]" />
-                            </motion.div>
-                            <span
-                                className={`font-semibold text-sm md:text-base ${
-                                    isRTL ? "font-almarai" : "font-poppins"
-                                }`}
-                                style={{
-                                    background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%)",
-                                    WebkitBackgroundClip: "text",
-                                    WebkitTextFillColor: "transparent",
-                                    backgroundClip: "text",
-                                }}
-                            >
-                                {partner.name}
-                            </span>
-                        </motion.div>
-                    )
-                })}
-            </motion.div>
+   
         </div>
     )
 }
