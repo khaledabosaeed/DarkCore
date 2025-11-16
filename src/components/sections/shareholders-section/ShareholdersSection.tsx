@@ -49,11 +49,10 @@ export function ShareholdersSection() {
                     priority
                     quality={90}
                 />
-                {/* Overlay for better text readability */}
-                <div
+                  <div
                     className="absolute inset-0"
                     style={{
-                        background: "linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(250, 250, 250, 0.45) 50%, rgba(255, 255, 255, 0.5) 100%)"
+                        background: "linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.4) 100%)"
                     }}
                 />
             </div>
@@ -113,7 +112,7 @@ export function ShareholdersSection() {
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
                     >
-                        <span className="text-black">{currentContent.preTitle} </span>
+                        <span className="text-white">{currentContent.preTitle} </span>
                         {currentContent.title && (
                             <span
                                 style={{
@@ -129,7 +128,7 @@ export function ShareholdersSection() {
                     </h2>
 
                     <motion.p
-                        className={`text-base sm:text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed ${
+                        className={`text-base sm:text-lg md:text-xl text-white/60 max-w-4xl mx-auto leading-relaxed ${
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
                         initial={{ opacity: 0, y: 20 }}
@@ -230,7 +229,7 @@ export function ShareholdersSection() {
                                     {/* Content */}
                                     <div className="flex-1">
                                         <h4
-                                            className={`text-xl sm:text-2xl font-bold text-black mb-2 group-hover:text-[#000000] transition-colors ${
+                                className={`text-base sm:text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed text-white/95 ${
                                                 isRTL ? "font-almarai" : "font-poppins"
                                             }`}
                                         >
@@ -291,7 +290,7 @@ export function ShareholdersSection() {
                     viewport={{ once: true }}
                 >
                     <h4
-                        className={`text-xl sm:text-2xl md:text-3xl font-bold text-black mb-6 ${
+                        className={`text-xl sm:text-2xl md:text-3xl font-bold text-white mb-6 ${
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
                     >
@@ -315,7 +314,7 @@ export function ShareholdersSection() {
                     </motion.button>
 
                     <motion.p
-                        className={`text-sm sm:text-base text-gray-600 mt-6 ${
+                        className={`text-sm sm:text-base text-white/60 mt-6 ${
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
                         initial={{ opacity: 0 }}

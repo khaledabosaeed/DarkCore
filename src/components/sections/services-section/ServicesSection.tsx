@@ -49,11 +49,10 @@ export function ServicesSection() {
                     priority
                     quality={90}
                 />
-                {/* Overlay for better text readability */}
-                <div
+                 <div
                     className="absolute inset-0"
                     style={{
-                        background: "linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(250, 250, 250, 0.45) 50%, rgba(255, 255, 255, 0.5) 100%)"
+                        background: "linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.4) 100%)"
                     }}
                 />
             </div>
@@ -109,28 +108,28 @@ export function ServicesSection() {
                     viewport={{ once: true }}
                 >
                     <h2
-                        className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 ${
+                        className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 ${
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
                     >
                         <span
-                            style={{
-                                background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%)",
-                                WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: "transparent",
-                                backgroundClip: "text",
-                            }}
+                            // style={{
+                            //     background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%)",
+                            //     WebkitBackgroundClip: "text",
+                            //     WebkitTextFillColor: "transparent",
+                            //     backgroundClip: "text",
+                            // }}
                         >
                             {currentContent.title}{" "}
                         </span>
                         {currentContent.highlightedTitle && (
                             <span
-                                style={{
-                                    background: "linear-gradient(135deg, #000000 0%, #2d2d2d 50%, #4a4a4a 100%)",
-                                    WebkitBackgroundClip: "text",
-                                    WebkitTextFillColor: "transparent",
-                                    backgroundClip: "text",
-                                }}
+                                // style={{
+                                //     background: "linear-gradient(135deg, #000000 0%, #2d2d2d 50%, #4a4a4a 100%)",
+                                //     WebkitBackgroundClip: "text",
+                                //     WebkitTextFillColor: "transparent",
+                                //     backgroundClip: "text",
+                                // }}
                             >
                                 {currentContent.highlightedTitle}
                             </span>
@@ -138,15 +137,15 @@ export function ServicesSection() {
                     </h2>
 
                     <motion.p
-                        className={`text-base sm:text-lg md:text-xl max-w-4xl mx-auto leading-relaxed ${
+                        className={`text-base sm:text-lg md:text-xl max-w-4xl text-white/60 mx-auto leading-relaxed ${
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
-                        style={{
-                            background: "linear-gradient(135deg, #2d2d2d 0%, #4a4a4a 50%, #5a5a5a 100%)",
-                            WebkitBackgroundClip: "text",
-                            WebkitTextFillColor: "transparent",
-                            backgroundClip: "text",
-                        }}
+                        // style={{
+                        //     background: "linear-gradient(135deg, #2d2d2d 0%, #4a4a4a 50%, #5a5a5a 100%)",
+                        //     WebkitBackgroundClip: "text",
+                        //     WebkitTextFillColor: "transparent",
+                        //     backgroundClip: "text",
+                        // }}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2, duration: 0.8 }}
