@@ -314,7 +314,7 @@ export function ShareholdersSection() {
                     </motion.button>
 
                     <motion.p
-                        className={`text-sm sm:text-base text-white/60 mt-6 ${
+                        className={`text-sm sm:text-base text-white/60 mt-6 ${  
                             isRTL ? "font-almarai" : "font-poppins"
                         }`}
                         initial={{ opacity: 0 }}

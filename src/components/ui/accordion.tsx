@@ -70,7 +70,7 @@ export function Accordion({ items, isRTL = false, defaultOpen = 0 }: AccordionPr
                                 transition={{ duration: 0.3 }}
                                 className="flex-shrink-0"
                             >
-                                <ChevronDown className="w-5 h-5 text-gray-700" />
+                                <ChevronDown className="w-5 h-5 text-black" />
                             </motion.div>
                         </motion.button>
 
@@ -88,7 +88,7 @@ export function Accordion({ items, isRTL = false, defaultOpen = 0 }: AccordionPr
                                         {contentArray.map((paragraph, pIndex) => (
                                             <p
                                                 key={pIndex}
-                                                className={`text-base text-gray-700 leading-relaxed mb-4 last:mb-0 ${
+                                                className={`text-base text-white/70 leading-relaxed mb-4 last:mb-0 ${
                                                     isRTL ? "font-almarai" : "font-poppins"
                                                 }`}
                                             >
