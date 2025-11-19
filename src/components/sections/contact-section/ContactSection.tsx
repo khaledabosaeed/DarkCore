@@ -84,7 +84,7 @@ export function ContactSection() {
     return (
         <section
             id="contact"
-            className="relative py-20 sm:py-24 md:py-28 lg:py-32 overflow-hidden"
+            className="relative overflow-hidden pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-28 sm:pb-32 md:pb-36 lg:pb-40"
             style={{
                 background: "linear-gradient(180deg, #ffffff 0%, #fafafa 50%, #f5f5f5 100%)"
             }}
@@ -430,86 +430,121 @@ export function ContactSection() {
 
                             {/* Office Cards */}
                             <div className="space-y-4">
-                                {currentContent.offices.locations.map((office, index) => (
-                                    <motion.div
-                                        key={index}
-                                        className="p-6 rounded-xl transition-all duration-300 bg-white shadow-md hover:shadow-lg"
-                                        style={{
-                                            border: "2px solid transparent",
-                                            backgroundImage: "linear-gradient(white, white), linear-gradient(135deg, rgba(0,0,0,0.08) 0%, rgba(64,64,64,0.12) 50%, rgba(26,26,26,0.08) 100%)",
-                                            backgroundOrigin: "border-box",
-                                            backgroundClip: "padding-box, border-box",
-                                        }}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        transition={{ delay: 0.2 + index * 0.1, duration: 0.6 }}
-                                        viewport={{ once: true }}
-                                        whileHover={{ y: -3 }}
-                                    >
-                                        <div className="flex items-start gap-4">
-                                            <div className="flex-shrink-0">
-                                                <div className="w-12 h-12 rounded-full bg-[#000000]/10 flex items-center justify-center">
-                                                    <MapPin className="w-6 h-6 text-[#000000]" />
+                                {currentContent.offices.locations.map((office, index) => {
+                                    const addressIncludesCountry = office.address && office.country
+                                        ? office.address.toLowerCase().includes(office.country.toLowerCase())
+                                        : false
+                                    const showCountryLine = office.country && !addressIncludesCountry
+                                    const sharesGeneralPhone = office.phone === currentContent.generalInquiries.phone
+                                    const showPhoneLine = !!office.phone && !sharesGeneralPhone
+
+                                    return (
+                                        <motion.div
+                                            key={index}
+                                            className="p-6 rounded-xl transition-all duration-300 bg-white shadow-md hover:shadow-lg"
+                                            style={{
+                                                border: "2px solid transparent",
+                                                backgroundImage: "linear-gradient(white, white), linear-gradient(135deg, rgba(0,0,0,0.08) 0%, rgba(64,64,64,0.12) 50%, rgba(26,26,26,0.08) 100%)",
+                                                backgroundOrigin: "border-box",
+                                                backgroundClip: "padding-box, border-box",
+                                            }}
+                                            initial={{ opacity: 0, y: 20 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            transition={{ delay: 0.2 + index * 0.1, duration: 0.6 }}
+                                            viewport={{ once: true }}
+                                            whileHover={{ y: -3 }}
+                                        >
+                                            <div className={`flex items-start gap-4 sm:gap-6 ${isRTL ? "flex-row-reverse" : ""}`}>
+                                                <div className="flex-shrink-0">
+                                                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#000000]/10 flex items-center justify-center">
+                                                        <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-[#000000]" />
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div className={`flex-1 ${isRTL ? "text-right" : "text-left"}`}>
-                                                <h4
-                                                    className={`text-lg font-bold mb-1 ${
-                                                        isRTL ? "font-almarai" : "font-poppins"
-                                                    }`}
-                                                    style={{
-                                                        background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%)",
-                                                        WebkitBackgroundClip: "text",
-                                                        WebkitTextFillColor: "transparent",
-                                                        backgroundClip: "text",
-                                                    }}
-                                                >
-                                                    {office.city}
-                                                </h4>
-                                                <p
-                                                    className={`text-sm mb-2 ${
-                                                        isRTL ? "font-almarai" : "font-poppins"
-                                                    }`}
-                                                    style={{
-                                                        background: "linear-gradient(135deg, #2d2d2d 0%, #4a4a4a 50%, #5a5a5a 100%)",
-                                                        WebkitBackgroundClip: "text",
-                                                        WebkitTextFillColor: "transparent",
-                                                        backgroundClip: "text",
-                                                    }}
-                                                >
-                                                    {office.country}
-                                                </p>
-                                                <p
-                                                    className={`text-sm mb-2 ${
-                                                        isRTL ? "font-almarai" : "font-poppins"
-                                                    }`}
-                                                    style={{
-                                                        background: "linear-gradient(135deg, #2d2d2d 0%, #4a4a4a 50%, #5a5a5a 100%)",
-                                                        WebkitBackgroundClip: "text",
-                                                        WebkitTextFillColor: "transparent",
-                                                        backgroundClip: "text",
-                                                    }}
-                                                >
-                                                    {office.address}
-                                                </p>
-                                                <div className="flex items-center gap-2">
-                                                    <Phone className="w-4 h-4 text-[#000000]" />
-                                                    <a
-                                                        href={`tel:${office.phone}`}
-                                                        className={`text-sm text-[#000000] hover:text-[#404040] transition-colors ${
+                                                <div className={`flex-1 space-y-1.5 ${isRTL ? "text-right" : "text-left"}`}>
+                                                    <h4
+                                                        className={`text-lg font-bold ${
                                                             isRTL ? "font-almarai" : "font-poppins"
                                                         }`}
+                                                        style={{
+                                                            background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%)",
+                                                            WebkitBackgroundClip: "text",
+                                                            WebkitTextFillColor: "transparent",
+                                                            backgroundClip: "text",
+                                                        }}
                                                     >
-                                                        {office.phone}
-                                                    </a>
+                                                        {office.city}
+                                                    </h4>
+                                                    {showCountryLine && (
+                                                        <p
+                                                            className={`text-sm ${
+                                                                isRTL ? "font-almarai" : "font-poppins"
+                                                            }`}
+                                                            style={{
+                                                                background: "linear-gradient(135deg, #2d2d2d 0%, #4a4a4a 50%, #5a5a5a 100%)",
+                                                                WebkitBackgroundClip: "text",
+                                                                WebkitTextFillColor: "transparent",
+                                                                backgroundClip: "text",
+                                                            }}
+                                                        >
+                                                            {office.country}
+                                                        </p>
+                                                    )}
+                                                    {office.address && (
+                                                        <p
+                                                            className={`text-sm ${
+                                                                isRTL ? "font-almarai" : "font-poppins"
+                                                            }`}
+                                                            style={{
+                                                                background: "linear-gradient(135deg, #2d2d2d 0%, #4a4a4a 50%, #5a5a5a 100%)",
+                                                                WebkitBackgroundClip: "text",
+                                                                WebkitTextFillColor: "transparent",
+                                                                backgroundClip: "text",
+                                                            }}
+                                                        >
+                                                            {office.address}
+                                                        </p>
+                                                    )}
+
+                                                    {showPhoneLine && (
+                                                        <div className={`flex items-center gap-3 ${isRTL ? "flex-row-reverse" : ""}`}>
+                                                            <Phone className="w-5 h-5 text-[#000000] flex-shrink-0" />
+                                                            <a
+                                                                href={`tel:${office.phone.replace(/\s/g, '')}`}
+                                                                dir="ltr"
+                                                                className={`text-sm text-[#000000] hover:text-[#404040] transition-colors whitespace-nowrap ${
+                                                                    isRTL ? "font-almarai text-right" : "font-poppins text-left"
+                                                                }`}
+                                                            >
+                                                                {office.phone}
+                                                            </a>
+                                                        </div>
+                                                    )}
+
+                                                    {sharesGeneralPhone && (
+                                                        <p
+                                                            className={`text-xs ${
+                                                                isRTL ? "font-almarai" : "font-poppins"
+                                                            }`}
+                                                            style={{
+                                                                background: "linear-gradient(135deg, #2d2d2d 0%, #4a4a4a 50%, #5a5a5a 100%)",
+                                                                WebkitBackgroundClip: "text",
+                                                                WebkitTextFillColor: "transparent",
+                                                                backgroundClip: "text",
+                                                            }}
+                                                        >
+                                                            {isRTL
+                                                                ? "لجميع الاستفسارات، يُرجى استخدام الرقم الموحد في الأسفل."
+                                                                : "For all inquiries, please use the unified number below."}
+                                                        </p>
+                                                    )}
                                                 </div>
                                             </div>
-                                        </div>
-                                    </motion.div>
-                                ))}
+                                        </motion.div>
+                                    )
+                                })}
                             </div>
                         </div>
-                    </motion.div>
+                    </motion.div>   
                 </div>
 
                 {/* General Inquiries */}
@@ -543,16 +578,18 @@ export function ContactSection() {
                             {currentContent.generalInquiries.title}
                         </h3>
 
-                        <div className={`flex flex-col sm:flex-row items-center justify-center gap-8 ${isRTL ? "sm:flex-row-reverse" : ""}`}>
+                        <div className={`flex flex-col gap-6 sm:gap-8 w-full ${isRTL ? "items-end" : "items-start"}`}>
                             {/* Email */}
-                            <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-full bg-[#000000]/10 flex items-center justify-center">
-                                    <Mail className="w-5 h-5 text-[#000000]" />
+                            <div className={`flex w-full items-center gap-4 sm:gap-6 ${isRTL ? "" : ""}`}>
+                                <div className="mb-2 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#000000]/10 flex items-center justify-center flex-shrink-0">
+                                    <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-[#000000]" />
                                 </div>
                                 <a
                                     href={`mailto:${currentContent.generalInquiries.email}`}
                                     className={`text-base sm:text-lg text-[#000000] hover:text-[#404040] transition-colors ${
-                                        isRTL ? "font-almarai" : "font-poppins"
+                                        isRTL
+                                            ? "font-almarai text-right"
+                                            : "font-poppins text-left flex-1"
                                     }`}
                                 >
                                     {currentContent.generalInquiries.email}
@@ -560,14 +597,17 @@ export function ContactSection() {
                             </div>
 
                             {/* Phone */}
-                            <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-full bg-[#000000]/10 flex items-center justify-center">
-                                    <Phone className="w-5 h-5 text-[#000000]" />
+                            <div className={`flex w-full items-center align-center gap-4 sm:gap-6 ${isRTL ? "" : "justify-start"}`}>
+                                <div className="mb-2 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#000000]/10 flex items-center justify-center flex-shrink-0">
+                                    <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-[#000000]" />
                                 </div>
                                 <a
-                                    href={`tel:${currentContent.generalInquiries.phone}`}
-                                    className={`text-base sm:text-lg text-[#000000] hover:text-[#404040] transition-colors ${
-                                        isRTL ? "font-almarai" : "font-poppins"
+                                    href={`tel:${currentContent.generalInquiries.phone.replace(/\s/g, '')}`}
+                                    dir="ltr"
+                                    className={`text-base sm:text-lg text-[#000000] hover:text-[#404040] transition-colors whitespace-nowrap ${
+                                        isRTL
+                                            ? "font-almarai text-right"
+                                            : "font-poppins text-left flex-1"
                                     }`}
                                 >
                                     {currentContent.generalInquiries.phone}

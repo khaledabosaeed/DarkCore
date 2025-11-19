@@ -183,22 +183,22 @@ export function InsightsSection() {
                             >
                                 {/* Card */}
                                 <div
-                                    className="relative p-6 sm:p-8 h-full bg-white border border-gray-200 rounded-2xl shadow-md"
+                                    className="relative p-6 sm:p-8 h-full bg-white border border-gray-200 rounded-2xl shadow-md flex flex-col items-center justify-center text-center"
                                 >
                                     {/* Icon Section */}
                                     <motion.div
-                                        className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-2xl mb-6"
+                                        className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full mb-6 mx-auto"
                                         style={{
                                             background: "linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(64, 64, 64, 0.15) 100%)"
                                         }}
                                         whileHover={{ rotate: 10, scale: 1.1 }}
                                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                                     >
-                                        <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-[#000000]" />
+                                        <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-[#000000]" />
                                     </motion.div>
 
                                     {/* Category Badge */}
-                                    <div className={`flex items-center gap-2 mb-3 ${isRTL ? "flex-row-reverse" : ""}`}>
+                                    <div className={`flex items-center justify-center gap-2 mb-3 ${isRTL ? "flex-row-reverse" : ""}`}>
                                         <span
                                             className={`text-xs sm:text-sm font-semibold px-3 py-1.5 rounded-full ${
                                                 isRTL ? "font-almarai" : "font-poppins"
@@ -214,7 +214,7 @@ export function InsightsSection() {
 
                                     {/* Title */}
                                     <h3
-                                        className={`text-xl sm:text-2xl font-bold text-black mb-4 group-hover:text-[#000000] transition-colors duration-300 ${
+                                        className={`text-xl sm:text-2xl font-bold text-black mb-4 group-hover:text-[#000000] transition-colors duration-300 text-center ${
                                             isRTL ? "font-almarai" : "font-poppins"
                                         }`}
                                     >
@@ -223,7 +223,7 @@ export function InsightsSection() {
 
                                     {/* Description */}
                                     <p
-                                        className={`text-sm sm:text-base text-gray-700 leading-relaxed mb-6 ${
+                                        className={`text-sm sm:text-base text-gray-700 leading-relaxed mb-6 text-center ${
                                             isRTL ? "font-almarai" : "font-poppins"
                                         }`}
                                     >

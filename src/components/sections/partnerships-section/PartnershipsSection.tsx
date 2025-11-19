@@ -211,7 +211,7 @@ export function PartnershipsSection() {
                         return (
                             <motion.div
                                 key={index}
-                                className="p-6 sm:p-8 rounded-xl border border-gray-200 hover:border-gray-300 transition-all duration-300 bg-white shadow-md hover:shadow-lg"
+                                className="p-6 sm:p-8 rounded-xl border border-gray-200 hover:border-gray-300 transition-all duration-300 bg-white shadow-md hover:shadow-lg flex flex-col items-center justify-center text-center"
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.4 + index * 0.1, duration: 0.6 }}
@@ -222,14 +222,14 @@ export function PartnershipsSection() {
                                 }}
                             >
                                 <motion.div
-                                    className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#000000]/10 mb-6"
+                                    className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#000000]/10 mb-6 mx-auto"
                                     whileHover={{ scale: 1.1, rotate: 5 }}
                                 >
                                     <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-[#000000]" />
                                 </motion.div>
 
                                 <h3
-                                    className={`text-xl sm:text-2xl font-bold text-black mb-3 ${
+                                    className={`text-xl sm:text-2xl font-bold text-black mb-3 text-center ${
                                         isRTL ? "font-almarai" : "font-poppins"
                                     }`}
                                 >
@@ -237,7 +237,7 @@ export function PartnershipsSection() {
                                 </h3>
 
                                 <p
-                                    className={`text-sm sm:text-base text-gray-700 leading-relaxed ${
+                                    className={`text-sm sm:text-base text-gray-700 leading-relaxed text-center ${
                                         isRTL ? "font-almarai" : "font-poppins"
                                     }`}
                                 >
@@ -249,7 +249,7 @@ export function PartnershipsSection() {
                 </div>
 
                 {/* CTA Section */}
-                <motion.div
+                {/* <motion.div
                     className="text-center"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -278,7 +278,7 @@ export function PartnershipsSection() {
                             }`}
                         />
                     </motion.button>
-                </motion.div>
+                </motion.div> */}
             </div>
         </section>
     )

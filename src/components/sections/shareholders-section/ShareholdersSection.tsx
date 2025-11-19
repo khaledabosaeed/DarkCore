@@ -151,11 +151,11 @@ export function ShareholdersSection() {
                         className="relative"
                     >
                         <div
-                            className="relative p-8 sm:p-10 rounded-3xl overflow-hidden h-full bg-white border border-gray-300 shadow-lg"
+                            className="relative p-8 sm:p-10 rounded-3xl overflow-hidden h-full bg-white border border-gray-300 shadow-lg flex flex-col items-center justify-center text-center md:text-left md:items-start"
                         >
                             {/* Large Icon */}
                             <motion.div
-                                className="inline-flex items-center justify-center w-24 h-24 sm:w-32 sm:h-32 rounded-full mb-8"
+                                className="inline-flex items-center justify-center w-24 h-24 sm:w-32 sm:h-32 rounded-full mb-8 mx-auto md:mx-0"
                                 style={{
                                     background: "linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(64, 64, 64, 0.2) 100%)"
                                 }}
@@ -166,7 +166,7 @@ export function ShareholdersSection() {
                             </motion.div>
 
                             <h3
-                                className={`text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6 leading-tight ${
+                                className={`text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6 leading-tight text-center md:text-left ${
                                     isRTL ? "font-almarai" : "font-poppins"
                                 }`}
                             >
@@ -174,7 +174,7 @@ export function ShareholdersSection() {
                             </h3>
 
                             <p
-                                className={`text-lg sm:text-xl text-gray-700 leading-relaxed ${
+                                className={`text-lg sm:text-xl text-gray-700 leading-relaxed text-center md:text-left ${
                                     isRTL ? "font-almarai" : "font-poppins"
                                 }`}
                             >

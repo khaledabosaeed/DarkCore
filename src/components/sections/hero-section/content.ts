@@ -28,7 +28,8 @@ export const heroContent = {
             },
             {
                 value: 500,
-                suffix: "M+",
+                suffix: "+",
+                type: "M",
                 label: "رأس المال المُدار"
             },
             {

@@ -7,6 +7,7 @@ interface AnimatedCounterProps {
     value: number
     duration?: number
     suffix?: string
+    type?: string
     prefix?: string
     decimals?: number
     className?: string
@@ -17,7 +18,8 @@ export function AnimatedCounter({
     suffix = "",
     prefix = "",
     decimals = 0,
-    className = ""
+    className = "",
+    type = ""
 }: AnimatedCounterProps) {
     const ref = useRef<HTMLSpanElement>(null)
     const motionValue = useMotionValue(0)
@@ -44,9 +46,10 @@ export function AnimatedCounter({
 
     return (
         <span ref={ref} className={className}>
-            {prefix}
             {displayValue.toFixed(decimals)}
-            {suffix}
+            {type}
+            {suffix} 
+            {prefix}
         </span>
     )
 }
@@ -56,6 +59,7 @@ interface StatCardProps {
     suffix?: string
     prefix?: string
     label: string
+    type?: string
     icon?: React.ReactNode
     delay?: number
     decimals?: number

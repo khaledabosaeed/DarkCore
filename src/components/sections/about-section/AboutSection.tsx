@@ -179,7 +179,7 @@ export function AboutSection() {
                         return (
                             <motion.div
                                 key={index}
-                                className="group relative p-6 sm:p-8 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
+                                className="group relative p-6 sm:p-8 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center justify-center text-center"
                                 style={{
                                     border: "2px solid transparent",
                                     // backgroundImage: "linear-gradient(white, white), linear-gradient(135deg, rgba(0,0,0,0.08) 0%, rgba(64,64,64,0.12) 50%, rgba(26,26,26,0.08) 100%)",
@@ -207,18 +207,18 @@ export function AboutSection() {
 
                                 {/* Icon */}
                                 <motion.div
-                                    className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full mb-4 relative z-10"
+                                    className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full mb-4 relative z-10 mx-auto"
                                     style={{
                                         background: "linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(64, 64, 64, 0.15) 100%)"
                                     }}
                                     whileHover={{ rotate: 360, scale: 1.2 }}
                                     transition={{ duration: 0.6 }}
                                 >
-                                    <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#000000]" />
+                                    <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-[#000000]" />
                                 </motion.div>
 
                                 {/* Number */}
-                                <div className={`text-4xl sm:text-5xl font-bold mb-2 relative z-10 ${
+                                <div className={`text-4xl sm:text-5xl font-bold mb-2 relative z-10 text-center ${
                                     isRTL ? "font-almarai" : "font-poppins"
                                 }`}>
                                     <span
@@ -240,7 +240,7 @@ export function AboutSection() {
 
                                 {/* Label */}
                                 <p
-                                    className={`text-sm sm:text-base relative z-10 ${
+                                    className={`text-sm sm:text-base relative z-10 text-center ${
                                         isRTL ? "font-almarai" : "font-poppins"
                                     }`}
                                     style={{

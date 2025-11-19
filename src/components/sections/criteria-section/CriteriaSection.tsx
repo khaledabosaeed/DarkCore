@@ -127,32 +127,32 @@ export function CriteriaSection() {
                             >
                                 {/* Content Card */}
                                 <motion.div
-                                    className="group relative flex-1 p-6 sm:p-8 rounded-2xl border border-gray-200 hover:border-gray-300 transition-all duration-300 bg-white shadow-md hover:shadow-lg"
+                                    className="group relative flex-1 p-6 sm:p-8 rounded-2xl border border-gray-200 hover:border-gray-300 transition-all duration-300 bg-white shadow-md hover:shadow-lg flex flex-col items-center justify-center text-center md:text-left md:items-start"
                                     whileHover={{
                                         y: -8,
                                         boxShadow: "0 25px 50px rgba(0, 0, 0, 0.2)"
                                     }}
                                 >
                                     {/* Number Badge */}
-                                    <div className={`absolute -top-4 ${isEven ? "left-6" : "right-6"} w-8 h-8 rounded-full bg-[#000000] flex items-center justify-center text-[#ffffff] font-bold text-sm`}>
+                                    <div className={`absolute -top-4 ${isRTL ? "right-6 " : "left-6"} w-8 h-8 rounded-full bg-[#000000] flex items-center justify-center text-[#ffffff] font-bold text-sm`}>
                                         {index + 1}
                                     </div>
 
                                     {/* Icon */}
                                     <motion.div
-                                        className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full mb-6"
+                                        className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full mb-6 mx-auto md:mx-0"
                                         style={{
                                             background: "linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(64, 64, 64, 0.15) 100%)"
                                         }}
                                         whileHover={{ scale: 1.15, rotate: 10 }}
                                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                                     >
-                                        <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-[#000000]" />
+                                        <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-[#000000]" />
                                     </motion.div>
 
                                     {/* Title */}
                                     <h3
-                                        className={`text-2xl sm:text-3xl font-bold text-black mb-4 group-hover:text-[#000000] transition-colors ${
+                                        className={`text-2xl sm:text-3xl font-bold text-black mb-4 group-hover:text-[#000000] transition-colors text-center md:text-left ${
                                             isRTL ? "font-almarai" : "font-poppins"
                                         }`}
                                     >
@@ -161,7 +161,7 @@ export function CriteriaSection() {
 
                                     {/* Description */}
                                     <p
-                                        className={`text-base sm:text-lg text-gray-700 leading-relaxed group-hover:text-gray-700 transition-colors ${
+                                        className={`text-base sm:text-lg text-gray-700 leading-relaxed group-hover:text-gray-700 transition-colors text-center md:text-left ${
                                             isRTL ? "font-almarai" : "font-poppins"
                                         }`}
                                     >

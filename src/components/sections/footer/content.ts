@@ -29,8 +29,8 @@ export const footerContent = {
                 { label: "سياسة ملفات تعريف الارتباط", href: "#" }
             ]
         },
-copyright: "© 2025 مجموعة دارك كور للاستثمار. جميع الحقوق محفوظة.",
-        regulation: "منظمة من قبل هيئة السلوك المالي (FCA) | مستشار استثماري مسجل في هيئة الأوراق المالية والبورصات"
+        copyright: "©️ 2025 شركة دارك كور – شركة مساهمة مبسطة سعودية، سجل تجاري رقم 7051527807، مدينة الرياض – المملكة العربية السعودية.",
+        regulation: "جميع الحقوق محفوظة. تخضع الشركة لأحكام نظام الشركات السعودي ولوائحه التنفيذية، وتمارس نشاطها وفق ضوابط وزارة التجارة والأنظمة المعمول بها في المملكة العربية السعودية"
     },
     en: {
         socialTitle: "Connect with Us",
@@ -62,7 +62,7 @@ copyright: "© 2025 مجموعة دارك كور للاستثمار. جميع ا
                 { label: "Cookie Policy", href: "#" }
             ]
         },
-        copyright: "© 2025 Dark Core Investment Group. All rights reserved.",
-        regulation: "Regulated by the Financial Conduct Authority (FCA) | SEC Registered Investment Adviser"
+        copyright: "©️ 2025 Dark Core Company – A Saudi Simplified Joint Stock Company (SJSC), Commercial Registration No. 7051527807, Riyadh, Kingdom of Saudi Arabia.",
+        regulation: "All Rights Reserved. The company operates in accordance with the Saudi Companies Law and the regulations of the Ministry of Commerce."
     }
 }

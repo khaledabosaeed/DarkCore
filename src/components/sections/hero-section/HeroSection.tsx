@@ -52,9 +52,17 @@ export function HeroSection() {
             className="relative overflow-hidden hero-responsive-height flex flex-col"
         >
             {/* Background Video & Overlays */}
-            <div className="absolute inset-0 w-full h-full overflow-hidden">
+            <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
                 <video
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute top-0 left-0 w-full h-full object-cover"
+                    style={{
+                        width: "100vw",
+                        height: "100%",
+                        minWidth: "100%",
+                        minHeight: "100%",
+                        objectFit: "cover",
+                        objectPosition: "center center"
+                    }}
                     src="/hero.mp4"
                     autoPlay
                     loop
@@ -148,20 +156,20 @@ export function HeroSection() {
 
             {/* Main Content */}
             <motion.div
-                className="container pt-40 mx-auto px-4 sm:px-6 md:px-8 lg:px-10 relative z-20 flex flex-1 items-center justify-center"
+                className="container pt-20 sm:pt-32 md:pt-40 mx-auto px-4 sm:px-6 md:px-8 lg:px-10 relative z-20 flex flex-1 items-center justify-center pb-8 sm:pb-12 md:pb-16"
             >
                 <div className={`w-full max-w-7xl ${isRTL ? "text-right" : "text-left"}`}>
                     <div className="mx-auto text-center max-w-5xl">
                         {/* Main Heading */}
                         <motion.div
-                            className="mb-6 sm:mb-8"
+                            className="mb-4 sm:mb-6 md:mb-8"
                             initial={{ opacity: 0, y: -30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2, duration: 0.8 }}
                             viewport={{ once: true }}
                         >
                             <h1
-                                className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 text-white ${
+                                className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-3 sm:mb-4 text-white ${
                                     isRTL ? "font-almarai" : "font-poppins"
                                 }`}
                                 style={{
@@ -190,7 +198,7 @@ export function HeroSection() {
 
                             {/* Description */}
                             <motion.p
-                                className={`text-base sm:text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed text-white/95 ${
+                                className={`text-base sm:text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed text-white/95 px-2 ${
                                     isRTL ? "font-almarai" : "font-poppins"
                                 }`}
                                 style={{
@@ -207,7 +215,7 @@ export function HeroSection() {
 
                         {/* CTA Buttons */}
                         <motion.div
-                            className={`flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 ${
+                            className={`flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 sm:mb-10 md:mb-12 ${
                                 isRTL ? "sm:flex-row-reverse" : ""
                             }`}
                             initial={{ opacity: 0, y: 20 }}
@@ -240,24 +248,12 @@ export function HeroSection() {
 
                             </motion.a>
 
-                            {/* Download Button */}
-                            {/* <motion.a
-                                href="/company-profile.pdf"
-                                download
-                                className={`group px-6 sm:px-8 py-4 sm:py-5 rounded-xl font-semibold text-base sm:text-lg text-black border-2 border-[#000000] hover:bg-[#000000]/20 transition-all duration-300 flex items-center gap-2 ${
-                                    isRTL ? "flex-row-reverse font-almarai" : "font-poppins"
-                                }`}
-                                whileHover={{ scale: 1.05, y: -2 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                <Download className="w-5 h-5 group-hover:animate-bounce" />
-                                {currentContent.downloadButton}
-                            </motion.a> */}
+
                         </motion.div>
 
                         {/* Statistics Section - Card style with transparency */}
                         <motion.div
-                            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-16 max-w-5xl mx-auto px-4"
+                            className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mt-8 sm:mt-12 md:mt-16 max-w-5xl mx-auto px-2 sm:px-4"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: 1.2, duration: 0.8 }}
@@ -266,12 +262,8 @@ export function HeroSection() {
                             {currentContent.stats.map((stat, index) => (
                                 <motion.div
                                     key={index}
-                                    className="flex flex-col items-center p-6 sm:p-8 rounded-2xl transition-all duration-300 bg-white relative overflow-hidden"
+                                    className="flex flex-col items-center justify-center text-center p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl transition-all duration-300 bg-white relative overflow-hidden"
                                     style={{
-                                        border: "2px solid transparent",
-                                        backgroundImage: "linear-gradient(white, white), linear-gradient(135deg, rgba(0,0,0,0.08) 0%, rgba(64,64,64,0.12) 50%, rgba(26,26,26,0.08) 100%)",
-                                        backgroundOrigin: "border-box",
-                                        backgroundClip: "padding-box, border-box",
                                         boxShadow: "0 4px 16px rgba(0, 0, 0, 0.1)"
                                     }}
                                     initial={{ opacity: 0, scale: 0.8 }}
@@ -283,7 +275,7 @@ export function HeroSection() {
                                         boxShadow: "0 12px 32px rgba(0, 0, 0, 0.2)"
                                     }}
                                 >
-                                    <div className={`text-4xl sm:text-5xl md:text-6xl font-bold mb-3 ${
+                                    <div className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-3 ${
                                         isRTL ? "font-almarai" : "font-poppins"
                                     }`}
                                     style={{
@@ -295,10 +287,11 @@ export function HeroSection() {
                                         <AnimatedCounter
                                             value={stat.value}
                                             suffix={stat.suffix}
+                                            // type={stat.type}
                                             duration={2.5}
                                         />
                                     </div>
-                                    <div className={`text-xs sm:text-sm text-gray-700 text-center leading-tight ${
+                                    <div className={`text-[10px] sm:text-xs md:text-sm text-gray-700 text-center leading-tight px-1 ${
                                         isRTL ? "font-almarai" : "font-poppins"
                                     }`}>
                                         {stat.label}
