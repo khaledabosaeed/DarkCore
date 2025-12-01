@@ -52,7 +52,7 @@ export function ContactSection() {
         try {
             const response = await fetch('/api/contact', {
                 method: 'POST',
-                headers: {
+                headers: {  
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(formData),
