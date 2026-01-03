@@ -11,8 +11,8 @@ export const aboutContent = {
                 label: "سنوات من الخبرة"
             },
             {
-                value: 2.5,
-                suffix: "B+",
+                value: 500 , 
+                suffix: "+",
                 label: "قيمة الأصول المدارة",
                 decimals: 1
             },
@@ -22,7 +22,7 @@ export const aboutContent = {
                 label: "مشروع ناجح"
             },
             {
-                value: 18,
+                value: 17,
                 suffix: "%+",
                 label: "معدل العائد السنوي"
             }
@@ -63,8 +63,8 @@ export const aboutContent = {
                 label: "Years of Experience"
             },
             {
-                value: 2.5,
-                suffix: "B+",
+                value: 500,
+                suffix: "+",
                 label: "Assets Under Management",
                 decimals: 1
             },
