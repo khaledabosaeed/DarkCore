@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { criteriaContent } from "./content"
-import { FileCheck, Percent, Database, RefreshCw } from "lucide-react"
+import { Search, Coins, Rocket, TrendingUp } from "lucide-react"
 import { InvestmentBackground, AnimatedColorGradient } from "@/components/ui/investment-shapes"
 
 export function CriteriaSection() {
@@ -30,7 +30,7 @@ export function CriteriaSection() {
     const isRTL = language === "ar"
 
     // Icon mapping for criteria
-    const criteriaIcons = [FileCheck, Percent, Database, RefreshCw]
+    const criteriaIcons = [Search, Coins, Rocket, TrendingUp]
 
     return (
         <section

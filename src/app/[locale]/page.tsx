@@ -157,7 +157,7 @@ export default function Home() {
 
       {/* WhatsApp Floating Button */}
       <WhatsAppButton
-        phoneNumber="966500000000"
+        phoneNumber="966535767797"
         message="Hello! I'm interested in learning more about Cityscape Global investment opportunities."
       />
 

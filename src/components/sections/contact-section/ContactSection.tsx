@@ -358,7 +358,7 @@ export function ContactSection() {
                             >
                                 {/* whatsapp */}
                                 <motion.a
-                            href="https://wa.me/966558181410"
+                            href="https://wa.me/966535767797"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-10 h-10 rounded-lg bg-black/5 hover:bg-[#000000]/10 border border-gray-200 hover:border-[#000000]/30 flex items-center justify-center transition-all duration-300"

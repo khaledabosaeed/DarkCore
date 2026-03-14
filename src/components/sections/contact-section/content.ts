@@ -34,14 +34,14 @@ export const contactContent = {
                     city: "الرياض",
                     country: "المملكة العربية السعودية",
                     address: "الرياض، المملكة العربية السعودية",
-                    phone: "+966 55 818 1410"
+                    phone: "+966 53 576 7797"
                 }
             ]
         },
         generalInquiries: {
             title: "الاستفسارات العامة",
             email: "info@darkcore.com",
-            phone: "+966 55 818 1410"
+            phone: "+966 53 576 7797"
         }
     },
     en: {
@@ -79,14 +79,14 @@ export const contactContent = {
                     city: "Riyadh",
                     country: "Saudi Arabia",
                     address: "Riyadh, Saudi Arabia",
-                    phone: "+966 55 818 1410"
+                    phone: "+966 53 576 7797"
                 }
             ]
         },
         generalInquiries: {
             title: "General Inquiries",
             email: "info@darkcore.com",
-            phone: "+966 55 818 1410"
+            phone: "+966 53 576 7797"
         }
     }
 }

@@ -222,7 +222,7 @@ export default async function LocaleLayout({
               "logo": "https://darkcore.sa/Asset 1.svg",
               "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+966558181410",
+                "telephone": "+966535767797",
                 "contactType": "customer service",
                 "areaServed": "SA",
                 "availableLanguage": ["ar", "en"]

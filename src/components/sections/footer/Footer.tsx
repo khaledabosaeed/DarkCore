@@ -123,7 +123,7 @@ export function Footer() {
 
                         {/* WhatsApp */}
                         <motion.a
-                            href="https://wa.me/966558181410"
+                            href="https://wa.me/966535767797"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg flex items-center justify-center transition-all duration-300"
