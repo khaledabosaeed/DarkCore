@@ -252,7 +252,7 @@ export function HeroSection() {
                         </motion.div>
 
                         {/* Statistics Section - Card style with transparency */}
-                        <motion.div
+                        {/* <motion.div
                             className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mt-8 sm:mt-12 md:mt-16 max-w-5xl mx-auto px-2 sm:px-4"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -298,7 +298,7 @@ export function HeroSection() {
                                     </div>
                                 </motion.div>
                             ))}
-                        </motion.div>
+                        </motion.div> */}
                     </div>
                 </div>
             </motion.div>
